@@ -1,9 +1,10 @@
-package timetable.insectiousapp.com.timetable.fragments;
+package timetable.insectiousapp.com.timetable;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import mehdi.sakout.fancybuttons.FancyButton;
-import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
 
 public class SetYourClassFragment extends Fragment implements View.OnClickListener{
@@ -40,6 +39,7 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
         btnSet=(FancyButton)v.findViewById(R.id.fragment_set_your_class_btn_set);
         etClassId=(EditText)v.findViewById(R.id.fragment_set_your_class_et_classid);
         btnSet.setOnClickListener(this);
+        etClassId.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
 
         SharedPreferencesFiles sharedPreferencesFiles=new SharedPreferencesFiles();
         SharedPreferences sharedPreferences=getActivity().getSharedPreferences(sharedPreferencesFiles.getSPClassId(), 0);

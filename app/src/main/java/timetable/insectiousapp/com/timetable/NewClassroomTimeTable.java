@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable.activities;
+package timetable.insectiousapp.com.timetable;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,9 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
-import timetable.insectiousapp.com.timetable.MyVolley;
-import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 
 public class NewClassroomTimeTable extends AppCompatActivity implements View.OnClickListener{
 
@@ -37,12 +34,12 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
 
     ProgressDialog progressDialog;
 
-  
-    String fixedTimeTable;
+    String euro="€";
+    String yen="¥";
+    String fixedTimeTable=euro;
     String CRDetails;
 
     String writeKey;
-    SpecialSymbolsAndOthers sp;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +49,9 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
         progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-         sp=new SpecialSymbolsAndOthers();
-        fixedTimeTable=sp.getMain();
-        
         Intent i=getIntent();
         writeKey=i.getStringExtra("write_api_key_from_detail_activity");
         linkingAndInitializingAllEditTexts();
-        
-        
 
     }
 
@@ -205,25 +197,24 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
     private void getInputFromEditTextsToUpload() {
 
 
-        String mon1=et_mon_1.getText().toString();
-        String repl = mon1.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        fixedTimeTable+=repl+sp.getPrimary()+et_mon_2.getText().toString()+sp.getPrimary()+et_mon_3.getText().toString()+sp.getPrimary()+et_mon_4.getText().toString()+sp.getPrimary()+et_mon_5.getText().toString()+sp.getPrimary()+et_mon_6.getText().toString()+sp.getPrimary()+et_mon_7.getText().toString()+sp.getPrimary()+et_mon_8.getText().toString()+sp.getPrimary()+et_mon_9.getText().toString()+sp.getMain();
+        fixedTimeTable+=et_mon_1.getText().toString()+yen+et_mon_2.getText().toString()+yen+et_mon_3.getText().toString()+yen+et_mon_4.getText().toString()+yen+et_mon_5.getText().toString()+yen+et_mon_6.getText().toString()+yen+et_mon_7.getText().toString()+yen+et_mon_8.getText().toString()+yen+et_mon_9.getText().toString()+euro;
 
-        fixedTimeTable+=et_tue_1.getText().toString()+sp.getPrimary()+et_tue_2.getText().toString()+sp.getPrimary()+et_tue_3.getText().toString()+sp.getPrimary()+et_tue_4.getText().toString()+sp.getPrimary()+et_tue_5.getText().toString()+sp.getPrimary()+et_tue_6.getText().toString()+sp.getPrimary()+et_tue_7.getText().toString()+sp.getPrimary()+et_tue_8.getText().toString()+sp.getPrimary()+et_tue_9.getText().toString()+sp.getMain();
 
-        fixedTimeTable+=et_wed_1.getText().toString()+sp.getPrimary()+et_wed_2.getText().toString()+sp.getPrimary()+et_wed_3.getText().toString()+sp.getPrimary()+et_wed_4.getText().toString()+sp.getPrimary()+et_wed_5.getText().toString()+sp.getPrimary()+et_wed_6.getText().toString()+sp.getPrimary()+et_wed_7.getText().toString()+sp.getPrimary()+et_wed_8.getText().toString()+sp.getPrimary()+et_wed_9.getText().toString()+sp.getMain();
+        fixedTimeTable+=et_tue_1.getText().toString()+yen+et_tue_2.getText().toString()+yen+et_tue_3.getText().toString()+yen+et_tue_4.getText().toString()+yen+et_tue_5.getText().toString()+yen+et_tue_6.getText().toString()+yen+et_tue_7.getText().toString()+yen+et_tue_8.getText().toString()+yen+et_tue_9.getText().toString()+euro;
 
-        fixedTimeTable+=et_thu_1.getText().toString()+sp.getPrimary()+et_thu_2.getText().toString()+sp.getPrimary()+et_thu_3.getText().toString()+sp.getPrimary()+et_thu_4.getText().toString()+sp.getPrimary()+et_thu_5.getText().toString()+sp.getPrimary()+et_thu_6.getText().toString()+sp.getPrimary()+et_thu_7.getText().toString()+sp.getPrimary()+et_thu_8.getText().toString()+sp.getPrimary()+et_thu_9.getText().toString()+sp.getMain();
+        fixedTimeTable+=et_wed_1.getText().toString()+yen+et_wed_2.getText().toString()+yen+et_wed_3.getText().toString()+yen+et_wed_4.getText().toString()+yen+et_wed_5.getText().toString()+yen+et_wed_6.getText().toString()+yen+et_wed_7.getText().toString()+yen+et_wed_8.getText().toString()+yen+et_wed_9.getText().toString()+euro;
 
-        fixedTimeTable+=et_fri_1.getText().toString()+sp.getPrimary()+et_fri_2.getText().toString()+sp.getPrimary()+et_fri_3.getText().toString()+sp.getPrimary()+et_fri_4.getText().toString()+sp.getPrimary()+et_fri_5.getText().toString()+sp.getPrimary()+et_fri_6.getText().toString()+sp.getPrimary()+et_fri_7.getText().toString()+sp.getPrimary()+et_fri_8.getText().toString()+sp.getPrimary()+et_fri_9.getText().toString()+sp.getMain();
+        fixedTimeTable+=et_thu_1.getText().toString()+yen+et_thu_2.getText().toString()+yen+et_thu_3.getText().toString()+yen+et_thu_4.getText().toString()+yen+et_thu_5.getText().toString()+yen+et_thu_6.getText().toString()+yen+et_thu_7.getText().toString()+yen+et_thu_8.getText().toString()+yen+et_thu_9.getText().toString()+euro;
 
-        CRDetails=etName.getText().toString()+sp.getMain()+etContactNo.getText().toString();
+        fixedTimeTable+=et_fri_1.getText().toString()+yen+et_fri_2.getText().toString()+yen+et_fri_3.getText().toString()+yen+et_fri_4.getText().toString()+yen+et_fri_5.getText().toString()+yen+et_fri_6.getText().toString()+yen+et_fri_7.getText().toString()+yen+et_fri_8.getText().toString()+yen+et_fri_9.getText().toString()+euro;
 
-        String[] singleTimePeriod=fixedTimeTable.split(sp.getMain());
+        CRDetails=etName.getText().toString()+euro+etContactNo.getText().toString();
+
+        String[] singleTimePeriod=fixedTimeTable.split(euro);
         for(String t: singleTimePeriod) {
             Log.i("daystring", "day string"+t);
-            String[] singleSlot=t.split(sp.getPrimary());
+            String[] singleSlot=t.split(yen);
              for(String u: singleSlot)
              {
                  Log.i("daystringg", "slot String"+u);
@@ -312,12 +303,14 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
             public void onErrorResponse(VolleyError error) {
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getApplicationContext(), "Cannot save time table, Network Error/ Improper characters used", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Cannot save time table", Toast.LENGTH_LONG).show();
                 progressDialog.hide();
             }
         };
 
 
     }
+
+
 
 }

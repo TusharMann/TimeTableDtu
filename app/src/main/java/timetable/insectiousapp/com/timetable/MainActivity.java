@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable.activities;
+package timetable.insectiousapp.com.timetable;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,12 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
-import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
-import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
-import timetable.insectiousapp.com.timetable.fragments.SetYourClassFragment;
-import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -107,7 +101,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
          if (id == R.id.nav_create_new_fragment) {
-            CreateNewClassFragment createNewClientFragment=new CreateNewClassFragment();
+            CreateNewClientFragment createNewClientFragment=new CreateNewClientFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, createNewClientFragment).commit();
             setTitle("Create new classroom");
         }
@@ -116,12 +110,6 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, setYourClassFragment).commit();
             setTitle("Set Your class room");
         }
-        else if(id ==R.id.nav_default_timetable)
-         {
-             DefaultTimetableFragment defaultTimetableFragment=new DefaultTimetableFragment();
-             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, defaultTimetableFragment).commit();
-             setTitle("Default Timetable");
-         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
