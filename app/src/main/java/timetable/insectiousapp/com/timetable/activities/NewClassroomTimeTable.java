@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import timetable.insectiousapp.com.timetable.MyVolley;
+import timetable.insectiousapp.com.timetable.R;
 
 public class NewClassroomTimeTable extends AppCompatActivity implements View.OnClickListener{
 

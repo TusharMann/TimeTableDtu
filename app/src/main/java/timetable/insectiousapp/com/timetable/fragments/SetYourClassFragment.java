@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
 
 public class SetYourClassFragment extends Fragment implements View.OnClickListener{

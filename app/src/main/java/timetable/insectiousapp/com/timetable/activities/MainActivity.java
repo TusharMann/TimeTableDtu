@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import timetable.insectiousapp.com.timetable.CreateNewClientFragment;
+import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.SetYourClassFragment;
+import timetable.insectiousapp.com.timetable.SharedPreferencesFiles;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

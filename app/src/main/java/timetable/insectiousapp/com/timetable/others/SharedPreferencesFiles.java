@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.others;
 
 /**
  * Created by Codev on 4/20/2016.

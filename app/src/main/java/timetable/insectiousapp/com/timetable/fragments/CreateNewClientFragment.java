@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.fragments;
 
 
 import android.app.ProgressDialog;
@@ -31,6 +31,9 @@ import java.util.List;
 import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import timetable.insectiousapp.com.timetable.MyVolley;
+import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.activities.NewClassroomDetailActivity;
 
 
 public class CreateNewClientFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {

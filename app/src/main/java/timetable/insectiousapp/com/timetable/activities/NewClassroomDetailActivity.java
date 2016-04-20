@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import mehdi.sakout.fancybuttons.FancyButton;
+import timetable.insectiousapp.com.timetable.R;
 
 public class NewClassroomDetailActivity extends AppCompatActivity implements View.OnClickListener{
 

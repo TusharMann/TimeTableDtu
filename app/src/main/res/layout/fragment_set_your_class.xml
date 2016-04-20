@@ -52,7 +52,7 @@
             android:textSize="20sp"
             android:gravity="center"
             android:fontFamily="sans-serif-bold"
-            android:text="Set your class Id" />
+            android:text="Your class Id" />
 
 
         <EditText
