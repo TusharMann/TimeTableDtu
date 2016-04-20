@@ -197,9 +197,10 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
     private void getInputFromEditTextsToUpload() {
 
 
+        String mon1=et_mon_1.getText().toString();
+        String repl = mon1.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        fixedTimeTable+=et_mon_1.getText().toString()+yen+et_mon_2.getText().toString()+yen+et_mon_3.getText().toString()+yen+et_mon_4.getText().toString()+yen+et_mon_5.getText().toString()+yen+et_mon_6.getText().toString()+yen+et_mon_7.getText().toString()+yen+et_mon_8.getText().toString()+yen+et_mon_9.getText().toString()+euro;
-
+        fixedTimeTable+=repl+yen+et_mon_2.getText().toString()+yen+et_mon_3.getText().toString()+yen+et_mon_4.getText().toString()+yen+et_mon_5.getText().toString()+yen+et_mon_6.getText().toString()+yen+et_mon_7.getText().toString()+yen+et_mon_8.getText().toString()+yen+et_mon_9.getText().toString()+euro;
 
         fixedTimeTable+=et_tue_1.getText().toString()+yen+et_tue_2.getText().toString()+yen+et_tue_3.getText().toString()+yen+et_tue_4.getText().toString()+yen+et_tue_5.getText().toString()+yen+et_tue_6.getText().toString()+yen+et_tue_7.getText().toString()+yen+et_tue_8.getText().toString()+yen+et_tue_9.getText().toString()+euro;
 
@@ -303,14 +304,12 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
             public void onErrorResponse(VolleyError error) {
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getApplicationContext(), "Cannot save time table", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Cannot save time table, Network Error/ Improper characters used", Toast.LENGTH_LONG).show();
                 progressDialog.hide();
             }
         };
 
 
     }
-
-
 
 }
