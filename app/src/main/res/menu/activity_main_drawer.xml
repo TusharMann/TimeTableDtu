@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="My Classroom">
+        <menu>
+            <item
+                android:id="@+id/nav_set_your_class"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Set your class" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Default Timetable" />
+
+            <item
+                android:id="@+id/nav_sendd"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Today's Timetable" />
+
+            <item
+                android:id="@+id/nav_sendddd"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Today's Reminders" />
+
+            <item
+                android:id="@+id/nav_senddd"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Manage Timetable" />
+
+
+
+        </menu>
+    </item>
+
+    <item android:title="Other Classrooms">
+        <menu>
+            <item
+                android:icon="@drawable/ic_menu_camera"
+                android:title="All classrooms" />
+            <item
+                android:icon="@drawable/ic_menu_camera"
+                android:id="@+id/nav_create_new_fragment"
+                android:title="Create a new classroom" />
+
+        </menu>
+    </item>
+
+</menu>

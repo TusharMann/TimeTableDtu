@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="fill_parent"
+    tools:context="timetable.insectiousapp.com.timetable.CreateNewClientFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:src="@mipmap/classroomicon512"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:background="@drawable/roundedcorner3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/roundedcorner3"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-bold"
+            android:text="Set your class Id" />
+
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/grey4"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="6 digit class id"
+            android:background="@drawable/whiteedittextbackground"
+            android:id="@+id/fragment_set_your_class_et_classid"
+            />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="60dp"
+            android:layout_width="200dp"
+
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_set_your_class_btn_set"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Set"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        />
+
+
+</LinearLayout>

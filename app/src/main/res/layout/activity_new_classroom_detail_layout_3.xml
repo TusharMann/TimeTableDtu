@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:id="@+id/activity_new_classroom_detail_layout_3_ll_main"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="timetable.insectiousapp.com.timetable.NewClassroomDetailActivity">
+
+
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="2dp"
+            android:layout_gravity="center"
+            android:layout_height="20dp"
+            android:background="@color/grey4" />
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle1"
+            >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@mipmap/proceedicon1"
+                android:padding="15dp"
+                />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_gravity="center"
+            android:layout_height="20dp"
+            android:background="@color/grey4" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/roundedcorner3"
+        >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="50dp"
+            android:layout_width="200dp"
+
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/activity_new_classroom_detail_layout_3_btn_proceed"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Proceed"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            />
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="fill_parent"
+            android:layout_weight="2.5"
+            android:text="(To enter timetable and other details)"
+            android:textColor="#FFF"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>
