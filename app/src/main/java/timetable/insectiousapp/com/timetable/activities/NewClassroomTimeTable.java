@@ -22,7 +22,6 @@ import java.util.Map;
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.MyVolley;
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 
 public class NewClassroomTimeTable extends AppCompatActivity implements View.OnClickListener{
 
@@ -37,12 +36,12 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
 
     ProgressDialog progressDialog;
 
-  
-    String fixedTimeTable;
+    String euro="€";
+    String yen="¥";
+    String fixedTimeTable=euro;
     String CRDetails;
 
     String writeKey;
-    SpecialSymbolsAndOthers sp;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +51,9 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
         progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-         sp=new SpecialSymbolsAndOthers();
-        fixedTimeTable=sp.getMain();
-        
         Intent i=getIntent();
         writeKey=i.getStringExtra("write_api_key_from_detail_activity");
         linkingAndInitializingAllEditTexts();
-        
-        
 
     }
 
@@ -204,26 +198,127 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
 
     private void getInputFromEditTextsToUpload() {
 
+        /////////////////  MONDAY ////////////////////////
+        String mon_1=et_mon_1.getText().toString();
+        String mon_2=et_mon_2.getText().toString();
+        String mon_3=et_mon_3.getText().toString();
+        String mon_4=et_mon_4.getText().toString();
+        String mon_5=et_mon_5.getText().toString();
+        String mon_6=et_mon_6.getText().toString();
+        String mon_7=et_mon_7.getText().toString();
+        String mon_8=et_mon_8.getText().toString();
+        String mon_9=et_mon_9.getText().toString();
 
-        String mon1=et_mon_1.getText().toString();
-        String repl = mon1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_l = mon_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_2 = mon_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_3 =mon_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_4 =mon_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_5 =mon_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_6 =mon_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_7 =mon_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_8 =mon_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_mon_9 =mon_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        fixedTimeTable+=repl+sp.getPrimary()+et_mon_2.getText().toString()+sp.getPrimary()+et_mon_3.getText().toString()+sp.getPrimary()+et_mon_4.getText().toString()+sp.getPrimary()+et_mon_5.getText().toString()+sp.getPrimary()+et_mon_6.getText().toString()+sp.getPrimary()+et_mon_7.getText().toString()+sp.getPrimary()+et_mon_8.getText().toString()+sp.getPrimary()+et_mon_9.getText().toString()+sp.getMain();
+        /////////////////  TUESDAY ////////////////////////
+        String tue_1=et_tue_1.getText().toString();
+        String tue_2=et_mon_2.getText().toString();
+        String tue_3=et_mon_3.getText().toString();
+        String tue_4=et_mon_4.getText().toString();
+        String tue_5=et_mon_5.getText().toString();
+        String tue_6=et_mon_6.getText().toString();
+        String tue_7=et_mon_7.getText().toString();
+        String tue_8=et_mon_8.getText().toString();
+        String tue_9=et_mon_9.getText().toString();
 
-        fixedTimeTable+=et_tue_1.getText().toString()+sp.getPrimary()+et_tue_2.getText().toString()+sp.getPrimary()+et_tue_3.getText().toString()+sp.getPrimary()+et_tue_4.getText().toString()+sp.getPrimary()+et_tue_5.getText().toString()+sp.getPrimary()+et_tue_6.getText().toString()+sp.getPrimary()+et_tue_7.getText().toString()+sp.getPrimary()+et_tue_8.getText().toString()+sp.getPrimary()+et_tue_9.getText().toString()+sp.getMain();
+        String s_tue_l = tue_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_2 = tue_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_3 =tue_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_4 =tue_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_5 =tue_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_6 =tue_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_7 =tue_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_8 =tue_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_9 =tue_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        fixedTimeTable+=et_wed_1.getText().toString()+sp.getPrimary()+et_wed_2.getText().toString()+sp.getPrimary()+et_wed_3.getText().toString()+sp.getPrimary()+et_wed_4.getText().toString()+sp.getPrimary()+et_wed_5.getText().toString()+sp.getPrimary()+et_wed_6.getText().toString()+sp.getPrimary()+et_wed_7.getText().toString()+sp.getPrimary()+et_wed_8.getText().toString()+sp.getPrimary()+et_wed_9.getText().toString()+sp.getMain();
+        /////////////////  WEDNESDAY ////////////////////////
+        String wed_1=et_wed_1.getText().toString();
+        String wed_2=et_wed_2.getText().toString();
+        String wed_3=et_wed_3.getText().toString();
+        String wed_4=et_wed_4.getText().toString();
+        String wed_5=et_wed_5.getText().toString();
+        String wed_6=et_wed_6.getText().toString();
+        String wed_7=et_wed_7.getText().toString();
+        String wed_8=et_wed_8.getText().toString();
+        String wed_9=et_wed_9.getText().toString();
 
-        fixedTimeTable+=et_thu_1.getText().toString()+sp.getPrimary()+et_thu_2.getText().toString()+sp.getPrimary()+et_thu_3.getText().toString()+sp.getPrimary()+et_thu_4.getText().toString()+sp.getPrimary()+et_thu_5.getText().toString()+sp.getPrimary()+et_thu_6.getText().toString()+sp.getPrimary()+et_thu_7.getText().toString()+sp.getPrimary()+et_thu_8.getText().toString()+sp.getPrimary()+et_thu_9.getText().toString()+sp.getMain();
+        String s_wed_l = wed_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_2 = wed_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_3 =wed_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_4 =wed_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_5 =wed_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_6 =wed_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_7 =wed_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_8 =wed_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_9 =wed_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        fixedTimeTable+=et_fri_1.getText().toString()+sp.getPrimary()+et_fri_2.getText().toString()+sp.getPrimary()+et_fri_3.getText().toString()+sp.getPrimary()+et_fri_4.getText().toString()+sp.getPrimary()+et_fri_5.getText().toString()+sp.getPrimary()+et_fri_6.getText().toString()+sp.getPrimary()+et_fri_7.getText().toString()+sp.getPrimary()+et_fri_8.getText().toString()+sp.getPrimary()+et_fri_9.getText().toString()+sp.getMain();
+        /////////////////  THURSDAY ////////////////////////
+        String thu_1=et_thu_1.getText().toString();
+        String thu_2=et_thu_2.getText().toString();
+        String thu_3=et_thu_3.getText().toString();
+        String thu_4=et_thu_4.getText().toString();
+        String thu_5=et_thu_5.getText().toString();
+        String thu_6=et_thu_6.getText().toString();
+        String thu_7=et_thu_7.getText().toString();
+        String thu_8=et_thu_8.getText().toString();
+        String thu_9=et_thu_9.getText().toString();
 
-        CRDetails=etName.getText().toString()+sp.getMain()+etContactNo.getText().toString();
+        String s_thu_l = thu_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_2 = thu_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_3 =thu_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_4 =thu_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_5 =thu_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_6 =thu_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_7 =thu_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_8 =thu_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_9 =thu_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
 
-        String[] singleTimePeriod=fixedTimeTable.split(sp.getMain());
+        /////////////////  FRIDAY ////////////////////////
+        String fri_1=et_fri_1.getText().toString();
+        String fri_2=et_fri_2.getText().toString();
+        String fri_3=et_fri_3.getText().toString();
+        String fri_4=et_fri_4.getText().toString();
+        String fri_5=et_fri_5.getText().toString();
+        String fri_6=et_fri_6.getText().toString();
+        String fri_7=et_fri_7.getText().toString();
+        String fri_8=et_fri_8.getText().toString();
+        String fri_9=et_fri_9.getText().toString();
+
+        String s_fri_l = fri_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_2 = fri_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_3 =fri_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_4 =fri_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_5 =fri_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_6 =fri_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_7 =fri_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_8 =fri_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_9 =fri_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+
+        fixedTimeTable+=s_mon_l+yen+s_mon_2+yen+s_mon_3+yen+s_mon_4+yen+s_mon_5+yen+s_mon_6+yen+s_mon_7+yen+s_mon_8+yen+s_mon_9+euro;
+
+        fixedTimeTable+=s_tue_l+yen+s_tue_2+yen+s_tue_3+yen+s_tue_4+yen+s_tue_5+yen+s_tue_6+yen+s_tue_7+yen+s_tue_8+yen+s_tue_9+euro;
+
+        fixedTimeTable+=s_wed_l+yen+s_wed_2+yen+s_wed_3+yen+s_wed_4+yen+s_wed_5+yen+s_wed_6+yen+s_wed_7+yen+s_wed_8+yen+s_wed_9+euro;
+
+        fixedTimeTable+=s_thu_l+yen+s_thu_2+yen+s_thu_3+yen+s_thu_4+yen+s_thu_5+yen+s_thu_6+yen+s_thu_7+yen+s_thu_8+yen+s_thu_9+euro;
+
+        fixedTimeTable+=s_fri_l+yen+s_fri_2+yen+s_fri_3+yen+s_fri_4+yen+s_fri_5+yen+s_fri_6+yen+s_fri_7+yen+s_fri_8+yen+s_fri_9+euro;
+
+        CRDetails=etName.getText().toString()+euro+etContactNo.getText().toString();
+
+        String[] singleTimePeriod=fixedTimeTable.split(euro);
         for(String t: singleTimePeriod) {
             Log.i("daystring", "day string"+t);
-            String[] singleSlot=t.split(sp.getPrimary());
+            String[] singleSlot=t.split(yen);
              for(String u: singleSlot)
              {
                  Log.i("daystringg", "slot String"+u);
@@ -316,8 +411,5 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
                 progressDialog.hide();
             }
         };
-
-
     }
-
 }

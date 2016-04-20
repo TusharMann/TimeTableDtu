@@ -114,9 +114,12 @@ public class CreateNewClassFragment extends Fragment implements View.OnClickList
         spBranch.setAdapter(dataAdapterMilage);
 
         List<String> styleList = new ArrayList<String>();
-        styleList.add("A");
-        styleList.add("B");
-        styleList.add("C");
+        for(int i=0;i<26;i++)
+        {
+            String alpha =""+ (char)(65+i);
+            styleList.add(alpha);
+        }
+
         ArrayAdapter<String> dataAdapterStyle = new ArrayAdapter<String>(getActivity(), R.layout.spinneritem1dark, styleList);
         dataAdapterStyle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spBatch.setAdapter(dataAdapterStyle);
@@ -127,6 +130,7 @@ public class CreateNewClassFragment extends Fragment implements View.OnClickList
     /////////server request for fetching authorization key
 
     public void requestAuthorizationKeyFromServer() {
+        int yoyo;
         progressDialog.setTitle("Authenticating");
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
