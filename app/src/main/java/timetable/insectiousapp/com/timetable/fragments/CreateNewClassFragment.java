@@ -157,7 +157,7 @@ public class CreateNewClassFragment extends Fragment implements View.OnClickList
             }
         };
 
-        myReq.setRetryPolicy(new DefaultRetryPolicy(5000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        myReq.setRetryPolicy(new DefaultRetryPolicy(2000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(myReq);
 
     }

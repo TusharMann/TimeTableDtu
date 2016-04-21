@@ -375,7 +375,7 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
             }
         };
 
-        myReq.setRetryPolicy(new DefaultRetryPolicy(5000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        myReq.setRetryPolicy(new DefaultRetryPolicy(2000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(myReq);
 
     }
