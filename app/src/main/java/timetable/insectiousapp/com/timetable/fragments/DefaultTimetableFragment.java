@@ -25,7 +25,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import timetable.insectiousapp.com.timetable.MyVolley;
+import timetable.insectiousapp.com.timetable.volley.MyVolley;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;

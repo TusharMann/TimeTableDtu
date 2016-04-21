@@ -1,4 +1,4 @@
-package timetable.insectiousapp.com.timetable;
+package timetable.insectiousapp.com.timetable.volley;
 
 import android.app.ActivityManager;
 import android.content.Context;
