@@ -5,26 +5,26 @@
         <menu>
             <item
                 android:id="@+id/nav_set_your_class"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/set_your_class_icon2"
                 android:title="Set your class" />
             <item
                 android:id="@+id/nav_default_timetable"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/default_timetable_icon2"
                 android:title="Default Timetable" />
 
             <item
                 android:id="@+id/nav_sendd"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Today's Timetable" />
+                android:icon="@drawable/default_timetable_icon2"
+                android:title="Week's Timetable" />
 
             <item
                 android:id="@+id/nav_sendddd"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Today's Reminders" />
+                android:icon="@drawable/todays_reminder"
+                android:title="Week's Reminders" />
 
             <item
                 android:id="@+id/nav_senddd"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/default_timetable_icon2"
                 android:title="Manage Timetable" />
 
 
@@ -35,10 +35,10 @@
     <item android:title="Other Classrooms">
         <menu>
             <item
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/all_classrooms_icon1"
                 android:title="All classrooms" />
             <item
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/create_new_classroom"
                 android:id="@+id/nav_create_new_fragment"
                 android:title="Create a new classroom" />
 
