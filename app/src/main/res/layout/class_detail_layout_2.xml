@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/roundedcorner3"
     android:layout_marginLeft="10dp"
     android:orientation="vertical"
@@ -12,44 +12,26 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.2"
         />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal"
-        >
-
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="0dp"
+            android:layout_width="fill_parent"
             android:layout_weight="2"
-            android:text="Class Name :"
+            android:text="Your credentials :"
             android:textColor="#FFF"
             android:textSize="18sp"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center_vertical|right"
+            android:fontFamily="sans-serif-bold"
+            android:gravity="center"
             android:paddingRight="10dp"
             />
 
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="2.5"
-            android:id="@+id/activity_new_classroom_detail_layout_1_tv_classname"
-            android:text="2k13-CO-A"
-            android:textColor="#FFF"
-            android:textSize="22sp"
-            android:fontFamily="sans-serif-bold"
-            android:gravity="center_vertical|left"
-            android:paddingLeft="10dp"
-            />
-
-
-    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -76,7 +58,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="2.5"
             android:text="107658"
-            android:id="@+id/activity_new_classroom_detail_layout_1_tv_classid"
+            android:id="@+id/class_detail_layout_2_tv_classid"
             android:textColor="#FFF"
             android:textSize="16sp"
             android:fontFamily="sans-serif-bold"
@@ -87,6 +69,11 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -113,7 +100,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="2.5"
             android:text="ACLJEI2DF9"
-            android:id="@+id/activity_new_classroom_detail_layout_1_tv_writeapikey"
+            android:id="@+id/class_detail_layout_2_tv_writekey"
             android:textColor="#FFF"
             android:textSize="16sp"
             android:fontFamily="sans-serif-bold"
@@ -121,27 +108,12 @@
             android:paddingLeft="10dp"
             />
 
-
     </LinearLayout>
 
     <TextView
-        android:layout_height="0dp"
-        android:layout_width="fill_parent"
-        android:layout_weight="2.5"
-        android:text="(Please secure your api key and class Id, it would be used frequently)"
-        android:textColor="#FFF"
-        android:textSize="13sp"
-        android:fontFamily="sans-serif-light"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        />
-
-    <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.2"
         />
-
 
 </LinearLayout>
