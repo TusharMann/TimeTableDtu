@@ -36,7 +36,8 @@
         <menu>
             <item
                 android:icon="@drawable/all_classrooms_icon1"
-                android:title="All classrooms" />
+                android:title="All classrooms"
+                android:id="@+id/nav_all_classroom"/>
             <item
                 android:icon="@drawable/create_new_classroom"
                 android:id="@+id/nav_create_new_fragment"

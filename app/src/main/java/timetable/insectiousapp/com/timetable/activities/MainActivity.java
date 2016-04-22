@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import timetable.insectiousapp.com.timetable.fragments.AllClassroomFragment;
 import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
@@ -128,6 +129,13 @@ public class MainActivity extends AppCompatActivity
              ManageTimeTableFragment manageTimeTableFragment=new ManageTimeTableFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, manageTimeTableFragment).commit();
              setTitle("Update Timetable");
+         }
+        else if(id ==R.id.nav_all_classroom)
+         {
+             AllClassroomFragment allClassroomFragment = new AllClassroomFragment();
+             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, allClassroomFragment).commit();
+             setTitle("All classrooms of DTU");
+
          }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
