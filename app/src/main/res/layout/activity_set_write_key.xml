@@ -52,20 +52,20 @@
             android:textSize="20sp"
             android:gravity="center"
             android:fontFamily="sans-serif-bold"
-            android:text="Your class Id" />
+            android:text="Enter your write key" />
 
 
         <EditText
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="@color/grey4"
             android:gravity="center"
-            android:inputType="number"
-            android:hint="6 digit class id"
+            android:inputType="text"
+            android:hint="-"
             android:background="@drawable/whiteedittextbackground"
-            android:id="@+id/fragment_set_your_class_et_classid"
+            android:id="@+id/fragment_set_write_key_et_writekey"
             />
 
         <TextView
@@ -77,18 +77,18 @@
         <mehdi.sakout.fancybuttons.FancyButton
 
             android:layout_height="60dp"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
 
             fancy:fb_borderColor="#FFFFFF"
             fancy:fb_borderWidth="0dp"
             fancy:fb_defaultColor="@color/red1"
             fancy:fb_focusColor="@color/darkred1"
-            android:id="@+id/fragment_set_your_class_btn_set"
+            android:id="@+id/fragment_set_write_key_btn_save"
             android:fontFamily="sans-serif-light"
             fancy:fb_iconPosition="top"
             fancy:fb_radius="5dp"
             android:gravity="center"
-            fancy:fb_text="Set"
+            fancy:fb_text="Save"
             fancy:fb_textSize="18sp"
             fancy:fb_textColor="#FFFFFF"
             android:layout_gravity="center" />

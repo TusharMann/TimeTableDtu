@@ -21,9 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.NewClassroomDetailActivity" />
-        <activity android:name=".activities.NewClassroomTimeTable"
-            android:screenOrientation="landscape"
-            ></activity>
+        <activity
+            android:name=".activities.NewClassroomTimeTable"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activities.SetWriteKeyActivity"></activity>
     </application>
 
 </manifest>

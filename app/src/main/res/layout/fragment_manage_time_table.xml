@@ -1,13 +1,216 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="timetable.insectiousapp.com.timetable.fragments.ManageTimeTableFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:clickable="true"
+
+            android:src="@drawable/ic_menu_gallery"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:id="@+id/fragment_manage_time_table_iv_editwritekey"
+            android:src="@drawable/ic_menu_camera"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:background="@drawable/roundedcorner3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_weight="1"
+        fancy:fb_borderColor="#FFFFFF"
+        fancy:fb_borderWidth="0dp"
+        fancy:fb_defaultColor="@color/red1"
+        fancy:fb_focusColor="@color/darkred1"
+        android:id="@+id/fragment_manage_time_table_btn_mon"
+        android:fontFamily="sans-serif-light"
+        fancy:fb_iconPosition="top"
+        fancy:fb_radius="5dp"
+        android:gravity="center"
+        fancy:fb_text="Monday"
+        fancy:fb_textSize="18sp"
+        fancy:fb_textColor="#FFFFFF"
+        android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="0dp"
+            android:layout_width="250dp"
+            android:layout_weight="1"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_manage_time_table_btn_tue"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Tuesday"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="0dp"
+            android:layout_width="250dp"
+            android:layout_weight="1"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_manage_time_table_btn_wed"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Wednesday"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="0dp"
+            android:layout_width="250dp"
+            android:layout_weight="1"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_manage_time_table_btn_thu"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Thursday"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="0dp"
+            android:layout_width="250dp"
+            android:layout_weight="1"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_manage_time_table_btn_fri"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Friday"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="0dp"
+            android:layout_width="250dp"
+            android:layout_weight="1"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_manage_time_table_btn_default"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Default Timetable"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            />
+
+    </LinearLayout>
+</LinearLayout>

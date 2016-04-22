@@ -5,7 +5,7 @@ package timetable.insectiousapp.com.timetable.others;
  */
 public class SharedPreferencesFiles {
 
-    ////// for storing class id
+    ////--------for storing class id
 
     String SPClassId="sharedpreferencesforclassid";
     String classId="classid";
@@ -19,4 +19,22 @@ public class SharedPreferencesFiles {
     }
 
     ///// for storing class id
+
+
+
+    ////------- for storing write key
+
+    String SPWriteKey="sharedpreferencesforwritekey";
+    String writeKey="writekey";
+
+    public String getWriteKey() {
+        return writeKey;
+    }
+
+    public String getSPWriteKey() {
+        return SPWriteKey;
+    }
+
+    ////  for storing write key
+
 }

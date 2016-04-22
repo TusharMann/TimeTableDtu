@@ -17,6 +17,7 @@ import android.widget.TextView;
 import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
+import timetable.insectiousapp.com.timetable.fragments.ManageTimeTableFragment;
 import timetable.insectiousapp.com.timetable.fragments.SetYourClassFragment;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
@@ -121,6 +122,12 @@ public class MainActivity extends AppCompatActivity
              DefaultTimetableFragment defaultTimetableFragment=new DefaultTimetableFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, defaultTimetableFragment).commit();
              setTitle("Default Timetable");
+         }
+        else if(id==R.id.nav_manage_timetable)
+         {
+             ManageTimeTableFragment manageTimeTableFragment=new ManageTimeTableFragment();
+             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, manageTimeTableFragment).commit();
+             setTitle("Update Timetable");
          }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

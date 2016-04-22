@@ -23,7 +23,7 @@
                 android:title="Week's Reminders" />
 
             <item
-                android:id="@+id/nav_senddd"
+                android:id="@+id/nav_manage_timetable"
                 android:icon="@drawable/default_timetable_icon2"
                 android:title="Manage Timetable" />
 
