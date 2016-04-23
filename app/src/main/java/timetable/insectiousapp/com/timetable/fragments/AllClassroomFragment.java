@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.others.AllClassesListAdapter;
+import timetable.insectiousapp.com.timetable.others.ClassroomListAdapter;
 import timetable.insectiousapp.com.timetable.others.Classroom;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
@@ -40,7 +40,7 @@ public class AllClassroomFragment extends Fragment {
     ProgressDialog progressDialog;
     String authorizationKey;
     ListView listview;
-    AllClassesListAdapter adapter;
+    ClassroomListAdapter adapter;
     LayoutInflater l;
     ArrayList<Classroom> data;
 
@@ -63,7 +63,7 @@ public class AllClassroomFragment extends Fragment {
         requestAuthorizationKeyFromServer();
 
         l=getActivity().getLayoutInflater();
-        adapter=new AllClassesListAdapter(getActivity(), 0, data, l);
+        adapter=new ClassroomListAdapter(getActivity(), 0, data, l);
         listview.setAdapter(adapter);
 
         //Log.v("checklength", String.valueOf(all_classroom_ids.length));

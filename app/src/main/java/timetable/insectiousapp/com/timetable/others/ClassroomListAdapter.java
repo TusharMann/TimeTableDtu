@@ -15,13 +15,13 @@ import timetable.insectiousapp.com.timetable.R;
 /**
  * Created by Dheeraj on 22-Apr-16.
  */
-public class AllClassesListAdapter extends ArrayAdapter<Classroom> {
+public class ClassroomListAdapter extends ArrayAdapter<Classroom> {
 
     LayoutInflater l;
     Context context;
     List<Classroom> objects;
 
-    public AllClassesListAdapter(Context context, int resource, List<Classroom> objects, LayoutInflater l) {
+    public ClassroomListAdapter(Context context, int resource, List<Classroom> objects, LayoutInflater l) {
         super(context, resource, objects);
         this.context=context;
         this.objects=objects;

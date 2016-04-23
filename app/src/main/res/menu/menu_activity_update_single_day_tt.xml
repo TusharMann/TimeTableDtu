@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_lastupdated"
+        android:orderInCategory="100"
+        android:title="Updated"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_default"
+        android:orderInCategory="100"
+        android:title="Default"
+        app:showAsAction="always" />
+
+</menu>
