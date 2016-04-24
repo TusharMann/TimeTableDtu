@@ -15,6 +15,7 @@ import android.widget.Toast;
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.activities.SetWriteKeyActivity;
+import timetable.insectiousapp.com.timetable.activities.UpdateDefaultTimeTableActivity;
 import timetable.insectiousapp.com.timetable.activities.UpdateSingleDayTTActivity;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
@@ -118,7 +119,10 @@ public class ManageTimeTableFragment extends Fragment implements View.OnClickLis
                     dayNo = 5;
                     break;
                 case R.id.fragment_manage_time_table_btn_default:
-
+                    Intent i2 = new Intent();
+                    i2.setClass(getActivity().getApplicationContext(), UpdateDefaultTimeTableActivity.class);
+                    startActivity(i2);
+                    getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
             }
 

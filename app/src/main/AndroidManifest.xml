@@ -24,9 +24,15 @@
         <activity
             android:name=".activities.NewClassroomTimeTable"
             android:screenOrientation="landscape" />
-        <activity android:name=".activities.SetWriteKeyActivity" />
-        <activity android:name=".activities.UpdateSingleDayTTActivity"
-            android:theme="@style/AppTheme2"
+        <activity
+            android:name=".activities.SetWriteKeyActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.UpdateSingleDayTTActivity"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".activities.UpdateDefaultTimeTableActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="landscape"
             ></activity>
     </application>
 

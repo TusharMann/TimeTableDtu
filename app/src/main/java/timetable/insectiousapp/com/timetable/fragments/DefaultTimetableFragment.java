@@ -69,6 +69,7 @@ public class DefaultTimetableFragment extends Fragment {
         v= inflater.inflate(R.layout.fragment_default_timetable, container, false);
 
         progressDialog=new ProgressDialog(getActivity());
+        progressDialog.setCancelable(false);
         linkingAndInitializingAllEditTexts();
         checkFromSharedPreferencesForClassId();
 

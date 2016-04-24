@@ -49,7 +49,7 @@ public class SetWriteKeyActivity extends AppCompatActivity {
                     editor.putString(sharedPreferencesFiles.getWriteKey(), writeKey);
                     editor.commit();
 
-                    Toast.makeText(getApplicationContext(), "Class Id updated",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Write key updated",Toast.LENGTH_SHORT).show();
 
                 }
                 else

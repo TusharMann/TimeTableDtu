@@ -532,7 +532,7 @@
             android:padding="5dp"
             android:layout_height="80dp"
             android:background="@drawable/whiteedittextbackground"
-            android:id="@+id/et_reminder"
+            android:id="@+id/activity_update_single_day_tt_et_reminder"
             android:hint="Enter a reminder"
             android:textColorHint="@color/grey4"
             android:textColor="@color/grey4"

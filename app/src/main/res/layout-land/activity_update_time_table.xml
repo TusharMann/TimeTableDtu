@@ -131,11 +131,11 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_1"
 
-                android:text="9-10"
+                android:text="09-10"
 
                 android:gravity="center"/>
 
@@ -244,7 +244,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_2"
 
@@ -356,7 +356,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_3"
 
@@ -468,7 +468,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_4"
 
@@ -579,7 +579,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_5"
 
@@ -690,12 +690,11 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_6"
 
                 android:text="02-03"
-                android:maxLength="3"
                 android:gravity="center"/>
 
             <EditText
@@ -802,7 +801,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_7"
 
@@ -913,7 +912,7 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.5"
+                android:layout_weight="0.7"
 
                 android:id="@+id/tv_slot_8"
 
@@ -1028,7 +1027,6 @@
                 android:id="@+id/tv_slot_9"
 
                 android:text="05-06"
-                android:maxLength="3"
                 android:gravity="center"/>
 
             <EditText
