@@ -79,7 +79,6 @@
 
             android:layout_height="60dp"
             android:layout_width="250dp"
-
             fancy:fb_borderColor="#FFFFFF"
             fancy:fb_borderWidth="0dp"
             fancy:fb_defaultColor="@color/red1"
