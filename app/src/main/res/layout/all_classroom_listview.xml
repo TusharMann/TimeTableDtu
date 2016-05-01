@@ -4,10 +4,10 @@
     android:layout_height="70dp">
 
     <LinearLayout
-        android:layout_width="70dp"
+        android:layout_width="65dp"
         android:layout_height="fill_parent"
-        android:background="@color/red1"
         android:layout_margin="5dp"
+        android:id="@+id/all_classroom_ll_color"
         >
 
     <ImageView
@@ -34,7 +34,7 @@
         android:textSize="20sp"
         android:layout_margin="5dp"
         android:textColor="#000"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="sans-serif-bold"
         android:id="@+id/all_classroom_name"
         />
 
@@ -45,9 +45,9 @@
         android:layout_width="fill_parent"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="@color/grey4"
-        android:fontFamily="sans-serif-bold"
+        android:fontFamily="sans-serif-light"
         android:id="@+id/all_classroom_id" />
     </LinearLayout>
 </LinearLayout>
