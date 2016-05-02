@@ -221,37 +221,37 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
 
             String singleDay = null;
             String[] slots;
+            if(Days.length>=5) {
 
-            switch (dayNo)
-            {
-                case 1:
-                    singleDay=Days[1];
-                    break;
-                case 2:
-                    singleDay=Days[2];
-                    break;
-                case 3:
-                    singleDay=Days[3];
-                    break;
-                case 4:
-                    singleDay=Days[4];
-                    break;
-                case 5:
-                    singleDay=Days[5];
-                    break;
+                switch (dayNo) {
+                    case 1:
+                        singleDay = Days[1];
+                        break;
+                    case 2:
+                        singleDay = Days[2];
+                        break;
+                    case 3:
+                        singleDay = Days[3];
+                        break;
+                    case 4:
+                        singleDay = Days[4];
+                        break;
+                    case 5:
+                        singleDay = Days[5];
+                        break;
+                }
+
+                slots = singleDay.split(specialSymbol.getPrimary());
+                et1.setText(slots[0]);
+                et2.setText(slots[1]);
+                et3.setText(slots[2]);
+                et4.setText(slots[3]);
+                et5.setText(slots[4]);
+                et6.setText(slots[5]);
+                et7.setText(slots[6]);
+                et8.setText(slots[7]);
+                et9.setText(slots[8]);
             }
-
-            slots=singleDay.split(specialSymbol.getPrimary());
-            et1.setText(slots[0]);
-            et2.setText(slots[1]);
-            et3.setText(slots[2]);
-            et4.setText(slots[3]);
-            et5.setText(slots[4]);
-            et6.setText(slots[5]);
-            et7.setText(slots[6]);
-            et8.setText(slots[7]);
-            et9.setText(slots[8]);
-
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -368,6 +368,8 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
 
+        Log.i("responsecheckingg", "Request time table from server");
+
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
         MyVolley.init(getApplicationContext());
@@ -404,6 +406,9 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject serverResponse) {
 
+                Log.i("responsecheckingg", "on time table positive response");
+                Log.i("responsecheckingg", "Server response : " + serverResponse.toString());
+
                 progressDialog.hide();
                 jsonObjectTimeTable=serverResponse;
 
@@ -422,7 +427,7 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 setDefaultTimeTableToViews(jsonObjectTimeTable);
-                Log.i("responsecheckingg", "Server response : " + serverResponse.toString());
+
 
 
                 Toast.makeText(getApplicationContext(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
@@ -451,17 +456,16 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
 
     /////////fetching date and time
     public void getCurrentDateAndTimeFromServer() {
-
-
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
         String currentDateandTime = sdf.format(new Date());
 
         currentDate=currentDateandTime.substring(0, 10);
+        currentTime=currentDateandTime.substring(11,16);
 
-        Log.i("dateandtimestring", "date and time string: "+currentDate);
+        Log.i("dateandtimestring", "date and time string: "+currentTime);
 
+        postTimeTableToServer();
     }
-
 
     ////////POSTING timetable
     private void postTimeTableToServer() {
