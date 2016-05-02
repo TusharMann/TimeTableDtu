@@ -58,7 +58,7 @@ public class DefaultTimetableFragment extends Fragment {
     TextView et_thu_1, et_thu_2, et_thu_3, et_thu_4, et_thu_5, et_thu_6, et_thu_7, et_thu_8, et_thu_9;
     TextView et_fri_1, et_fri_2, et_fri_3, et_fri_4, et_fri_5, et_fri_6, et_fri_7, et_fri_8, et_fri_9;
 
-    TextView tvUpdatedOn;
+    TextView tvUpdatedOn, tvCRName, tvCRContact;
 
     /////------
 
@@ -80,6 +80,8 @@ public class DefaultTimetableFragment extends Fragment {
     private void linkingAndInitializingAllEditTexts() {
 
         tvUpdatedOn=(TextView)v.findViewById(R.id.fragment_default_timetable_tv_lastupdated);
+        tvCRName=(TextView)v.findViewById(R.id.fragment_default_timetable_tv_crname);
+        tvCRContact=(TextView)v.findViewById(R.id.fragment_default_timetable_tv_crcontactnumber);
 
         et_mon_1=(TextView)v.findViewById(R.id.et_monday_1);
         et_mon_2=(TextView)v.findViewById(R.id.et_monday_2);
@@ -215,6 +217,9 @@ public class DefaultTimetableFragment extends Fragment {
             uMonth=updatedOn.substring(5,7);
             uYear=updatedOn.substring(0,4);
             tvUpdatedOn.setText(uDay+"-"+uMonth+"-"+uYear);
+            String crDetailsString=serverResponse.getString("field7");
+            String[] crDetailPartList=crDetailsString.split(sp.getMain());
+            
             //---setting updatedOn over
 
             fixedTimetableString=serverResponse.getString("field6");
