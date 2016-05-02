@@ -25,6 +25,8 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -450,75 +452,15 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
     /////////fetching date and time
     public void getCurrentDateAndTimeFromServer() {
 
-        String classTimeTableUrl="http://api.geonames.org/timezoneJSON?formatted=true&lat=28&lng=72&username=demo&style=full";
 
-        MyVolley.init(getApplicationContext());
-        RequestQueue queue = MyVolley.getRequestQueue();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
+        String currentDateandTime = sdf.format(new Date());
 
-        JsonObjectRequest myReq = new JsonObjectRequest(Request.Method.GET, classTimeTableUrl
-                , reqTimeAndDateSuccessListener(), reqTimeAndDateErrorListener()) {
+        currentDate=currentDateandTime.substring(0, 10);
 
-            public String getBodyContentType() {
-                return "application/json; charset=utf-8";
-            }
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> headers = new HashMap<String, String>();
-
-                headers.put("Content-Type", "application/json");
-                return headers;
-            }
-
-            protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                return params;
-            }
-        };
-
-        myReq.setRetryPolicy(new DefaultRetryPolicy(2000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        queue.add(myReq);
+        Log.i("dateandtimestring", "date and time string: "+currentDate);
 
     }
-
-    private com.android.volley.Response.Listener<JSONObject> reqTimeAndDateSuccessListener() {
-        return new com.android.volley.Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject serverResponse) {
-
-                Log.i("responsecheckingg", "Server response date and time : " + serverResponse);
-
-                try {
-                    String time=serverResponse.getString("time");
-                    currentDate=time.substring(0,10);
-                    currentTime=time.substring(11,16);
-                    //after we get the date and time we can update the timetable
-                    postTimeTableToServer();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                Log.i("responsecheckingg", "Server response date and time : " + currentDate+" "+currentTime);
-            }
-        };
-    }
-
-
-
-    private com.android.volley.Response.ErrorListener reqTimeAndDateErrorListener() {
-        return new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getApplicationContext(), "Network error, cannot update", Toast.LENGTH_LONG).show();
-
-            }
-        };
-
-
-    }
-    ////////fetching dateandtime
 
 
     ////////POSTING timetable
