@@ -219,7 +219,8 @@ public class DefaultTimetableFragment extends Fragment {
             tvUpdatedOn.setText(uDay+"-"+uMonth+"-"+uYear);
             String crDetailsString=serverResponse.getString("field7");
             String[] crDetailPartList=crDetailsString.split(sp.getMain());
-            
+            tvCRName.setText(crDetailPartList[0]);
+            tvCRContact.setText(crDetailPartList[1]);
             //---setting updatedOn over
 
             fixedTimetableString=serverResponse.getString("field6");
