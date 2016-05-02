@@ -1122,24 +1122,73 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
+            android:gravity="center"
             >
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="Class room created On:"
-                android:fontFamily="sans-serif"
+                android:layout_width="wrap_content"
+                android:text="CR: "
+                android:fontFamily="sans-serif-bold"
                 android:textColor="#fff"
                 android:gravity="center_vertical|right"
-                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="CR Name"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#fff"
+                android:gravity="center_vertical|left"
+                android:id="@+id/fragment_default_timetable_tv_crname"
+                android:layout_marginLeft="5dp"
                 android:textSize="16sp"
                 android:layout_height="fill_parent" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:text="Contact: "
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#fff"
+                android:gravity="center_vertical|right"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="9999999999"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#fff"
+                android:gravity="center_vertical|left"
+                android:id="@+id/fragment_default_timetable_tv_crcontactnumber"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:layout_height="fill_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Class room created On:"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#fff"
+                android:gravity="center_vertical|right"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:text="N/A"
-                android:fontFamily="sans-serif"
+                android:fontFamily="sans-serif-light"
                 android:textColor="#fff"
                 android:gravity="center_vertical|left"
                 android:id="@+id/fragment_default_timetable_tv_lastupdated"
