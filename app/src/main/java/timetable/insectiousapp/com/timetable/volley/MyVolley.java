@@ -14,6 +14,7 @@ public class MyVolley {
 
     private static RequestQueue mRequestQueue;
     private static ImageLoader mImageLoader;
+    int tushar;
 
 
     private MyVolley() {
