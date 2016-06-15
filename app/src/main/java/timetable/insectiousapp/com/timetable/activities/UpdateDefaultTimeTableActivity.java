@@ -1,6 +1,5 @@
 package timetable.insectiousapp.com.timetable.activities;
 
-import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,7 +42,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     FancyButton btnSave;
     EditText etName, etContactNo;
 
-    ProgressDialog progressDialog;
+    //ProgressDialog progressDialog;
 
     String euro="€";
     String yen="¥";
@@ -60,8 +59,8 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
         Log.i("crashbug", "update default timetable OnCreate");
 
-        progressDialog=new ProgressDialog(this);
-        progressDialog.setCancelable(false);
+        //progressDialog=new ProgressDialog(this);
+        //progressDialog.setCancelable(false);
 
         SharedPreferencesFiles SPF=new SharedPreferencesFiles();
         //for class id
@@ -74,8 +73,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         //
 
 
-        linkingAndInitializingAllEditTexts();
-        requestTimeTableFromServer();
+
     }
 
     private void linkingAndInitializingAllEditTexts() {
@@ -351,9 +349,9 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
 
     public void requestPostDataOnServer() {
-        progressDialog.setTitle("Saving timetable");
-        progressDialog.setMessage("Please Wait...");
-        progressDialog.show();
+        //progressDialog.setTitle("Saving timetable");
+        //progressDialog.setMessage("Please Wait...");
+        //progressDialog.show();
 
         String serverPostDataUrl="http://api.thingspeak.com/update?key="+writeKey+"&field6="+fixedTimeTable+"&field7="+CRDetails;
         serverPostDataUrl=serverPostDataUrl+"&field1="+field1+"&field2="+field2+"&field3="+field3+"&field4="+field4+"&field5="+field5+"&field8="+field8;
@@ -418,7 +416,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_LONG).show();
                     finish();
                 }
-                progressDialog.hide();
+                //progressDialog.hide();
 
             }
         };
@@ -431,7 +429,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
                 Toast.makeText(getApplicationContext(), "Cannot save time table, Network Error/ Improper characters used", Toast.LENGTH_LONG).show();
-                progressDialog.hide();
+                //progressDialog.hide();
             }
         };
     }
@@ -441,9 +439,9 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
     /////////fetching timetable
     public void requestTimeTableFromServer() {
-        progressDialog.setTitle("Fetching Timetable");
-        progressDialog.setMessage("Please Wait...");
-        progressDialog.show();
+       // progressDialog.setTitle("Fetching Timetable");
+        //progressDialog.setMessage("Please Wait...");
+       // progressDialog.show();
 
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
@@ -483,7 +481,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
             @Override
             public void onResponse(JSONObject serverResponse) {
 
-                progressDialog.hide();
+                //progressDialog.hide();
 
                 try {
                     field1=serverResponse.getString("field1");
@@ -521,7 +519,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
                 btnSave.setEnabled(false);
                 Toast.makeText(getApplicationContext(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
-                progressDialog.hide();
+               // progressDialog.hide();
             }
         };
 
@@ -622,6 +620,10 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
+
+        linkingAndInitializingAllEditTexts();
+        requestTimeTableFromServer();
+
         Log.i("crashbug", "update default timetable OnResume");
     }
 
