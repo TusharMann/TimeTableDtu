@@ -73,7 +73,8 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         //
 
 
-
+        linkingAndInitializingAllEditTexts();
+        requestTimeTableFromServer();
     }
 
     private void linkingAndInitializingAllEditTexts() {
@@ -620,10 +621,6 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-
-        linkingAndInitializingAllEditTexts();
-        requestTimeTableFromServer();
-
         Log.i("crashbug", "update default timetable OnResume");
     }
 
