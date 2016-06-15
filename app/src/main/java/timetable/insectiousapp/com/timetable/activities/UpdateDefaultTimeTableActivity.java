@@ -58,6 +58,8 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_time_table);
 
+        Log.i("crashbug", "update default timetable OnCreate");
+
         progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
@@ -615,6 +617,18 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_activity_update_default_timetable, menu);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("crashbug", "update default timetable OnResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("crashbug", "update default timetable OnPause");
     }
 
     @Override
