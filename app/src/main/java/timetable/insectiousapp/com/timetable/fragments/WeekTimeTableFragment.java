@@ -40,6 +40,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     int date;
     JSONObject jsonObjectTimeTable=null;
 
+    String field1, field2, field3, field4, field5, field6, field7, field8;
+
     public WeekTimeTableFragment() {
         // Required empty public constructor
     }
@@ -169,7 +171,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                setDefaultTimeTableToViews(jsonObjectTimeTable);
+                ParseRecievedJsonObject(jsonObjectTimeTable);
 
 
 
@@ -196,5 +198,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     }
     ////////fetching timetable
 
+
+    public void ParseRecievedJsonObject(JSONObject jsonObject)
+    {
+
+    }
 
 }
