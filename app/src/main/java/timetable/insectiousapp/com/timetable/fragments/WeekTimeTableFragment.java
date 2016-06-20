@@ -84,7 +84,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         date=Integer.parseInt(currentDate);
 
         Log.i("dateandtimestring", "date and time string: "+currentDate);
-
+        int b;
 
     }
 
