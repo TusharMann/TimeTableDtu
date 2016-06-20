@@ -248,8 +248,12 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
         try {
 
+            Log.i("dateandtimestring", "inside parse json object");
             //tvLastUpdatedOn.setText("");
             selectedDayTimeTableString=jsonObject.getString("field"+day);
+
+            Log.i("dateandtimestring", "field"+day);
+
 
             Log.i("stringdetails", "timetable string"+selectedDayTimeTableString);
 
@@ -268,12 +272,17 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 ////setting updatedOn
                 singleSlot=SlotsList[11];
 
+                Log.i("dateandtimestring", "single slot :"+singleSlot);
+
                 if(singleSlot==null||singleSlot.contentEquals(""))
                 {
                     Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
+                    Log.i("dateandtimestring", "inside if");
                 }
                 else
                 {
+                    Log.i("dateandtimestring", "inside else");
+
                     String date1=singleSlot.substring(0,1);
 
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
