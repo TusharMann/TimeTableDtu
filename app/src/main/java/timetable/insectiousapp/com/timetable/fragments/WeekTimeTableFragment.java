@@ -103,7 +103,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
         String currentDateandTime = sdf.format(new Date());
 
-        currentDate=currentDateandTime.substring(0, 1);
+        currentDate=currentDateandTime.substring(0, 2);
         date=Integer.parseInt(currentDate);
 
         Log.i("dateandtimestring", "date and time string: "+currentDate);
@@ -277,6 +277,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     int idate1=Integer.parseInt(date1);
                     int idate2=Integer.parseInt(date2);
 
+
+
                 }
 
             }
@@ -290,8 +292,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
     public String getCurrentDayName()
     {
-
-        return currentDayName;
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        String dayOfTheWeek = sdf.format(d);
+        return dayOfTheWeek;
     }
 
 }
