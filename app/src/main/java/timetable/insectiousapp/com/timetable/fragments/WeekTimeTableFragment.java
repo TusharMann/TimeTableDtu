@@ -161,6 +161,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 progressDialog.hide();
                 jsonObjectTimeTable=serverResponse;
 
+                Log.i("dateandtimestring", "fetched response");
+
                 try {
                     field1=serverResponse.getString("field1");
                     field2=serverResponse.getString("field2");
@@ -177,6 +179,9 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 }
 
                 String day=getCurrentDayName();
+
+                Log.i("dateandtimestring", "after current day");
+
                 if(day.contentEquals("Monday"))
                 {
                     currentDayNo=1;
@@ -185,6 +190,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 else if(day.contentEquals("Tuesday"))
                 {
                     currentDayNo=2;
+                    Log.i("dateandtimestring", "inside tuesday");
                     ParseRecievedJsonObject(jsonObjectTimeTable, 2);
                 }
                 else if(day.contentEquals("Wednesday"))
@@ -277,8 +283,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     int idate1=Integer.parseInt(date1);
                     int idate2=Integer.parseInt(date2);
 
-
-
+                    Log.i("dateandtimestring", "1:"+idate1);
+                    Log.i("dateandtimestring", "2:"+idate2);
                 }
 
             }
