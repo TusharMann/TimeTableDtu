@@ -266,11 +266,11 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 {
                     Log.i("dateandtimestring", "inside else");
 
-                    String date1=singleSlot.substring(0,1);
+                    String date1=singleSlot.substring(0,2);
 
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
                     String currentDateandTime = sdf.format(new Date());
-                    String date2=currentDateandTime.substring(0, 1);
+                    String date2=currentDateandTime.substring(0, 2);
 
                     int idate1=Integer.parseInt(date1);
                     int idate2=Integer.parseInt(date2);
