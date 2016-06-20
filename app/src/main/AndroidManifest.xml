@@ -3,7 +3,7 @@
     package="timetable.insectiousapp.com.timetable">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -31,10 +31,14 @@
         <activity
             android:name=".activities.UpdateSingleDayTTActivity"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".activities.UpdateDefaultTimeTableActivity"
-            android:windowSoftInputMode="adjustResize"
+        <activity
+            android:name=".activities.UpdateDefaultTimeTableActivity"
             android:screenOrientation="landscape"
-            ></activity>
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.WeekTimeTableActivity"
+            android:label="@string/title_activity_week_time_table"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
