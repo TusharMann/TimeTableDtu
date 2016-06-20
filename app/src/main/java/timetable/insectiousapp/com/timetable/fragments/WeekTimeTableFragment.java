@@ -11,12 +11,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
+import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
 
 public class WeekTimeTableFragment extends Fragment implements View.OnClickListener{
@@ -46,7 +59,9 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         progressDialog=new ProgressDialog(getActivity());
         progressDialog.setCancelable(false);
 
+        getCurrentDateAndTimeFromSystem();
         setCredentialsFromSharedPreferences();
+
 
 
         return v;
@@ -72,11 +87,12 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         else
         {
             //it means class id is already set, you can begin working
+
         }
     }
 
     /////////fetching date and time
-    public void getCurrentDateAndTimeFromServer() {
+    public void getCurrentDateAndTimeFromSystem() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
         String currentDateandTime = sdf.format(new Date());
 
@@ -84,9 +100,100 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         date=Integer.parseInt(currentDate);
 
         Log.i("dateandtimestring", "date and time string: "+currentDate);
-        int b;
+
 
     }
+
+    /////////fetching timetable
+    public void requestTimeTableFromServer() {
+        progressDialog.setTitle("Fetching Timetable");
+        progressDialog.setMessage("Please Wait...");
+        progressDialog.show();
+
+        Log.i("responsecheckingg", "Request time table from server");
+
+        String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
+
+        MyVolley.init(getApplicationContext());
+        RequestQueue queue = MyVolley.getRequestQueue();
+
+        JsonObjectRequest myReq = new JsonObjectRequest(Request.Method.GET, classTimeTableUrl
+                , reqTimeTableSuccessListener(), reqTimeTableErrorListener()) {
+
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<String, String>();
+
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+
+            protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                return params;
+            }
+        };
+
+        myReq.setRetryPolicy(new DefaultRetryPolicy(2000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(myReq);
+
+    }
+
+    private com.android.volley.Response.Listener<JSONObject> reqTimeTableSuccessListener() {
+        return new com.android.volley.Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject serverResponse) {
+
+                Log.i("responsecheckingg", "on time table positive response");
+                Log.i("responsecheckingg", "Server response : " + serverResponse.toString());
+
+                progressDialog.hide();
+                jsonObjectTimeTable=serverResponse;
+
+                try {
+                    field1=serverResponse.getString("field1");
+                    field2=serverResponse.getString("field2");
+                    field3=serverResponse.getString("field3");
+                    field4=serverResponse.getString("field4");
+                    field5=serverResponse.getString("field5");
+                    field6=serverResponse.getString("field6");
+                    field7=serverResponse.getString("field7");
+                    field8=serverResponse.getString("field8");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                setDefaultTimeTableToViews(jsonObjectTimeTable);
+
+
+
+                Toast.makeText(getApplicationContext(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
+
+            }
+        };
+    }
+
+
+
+    private com.android.volley.Response.ErrorListener reqTimeTableErrorListener() {
+        return new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.i("responsecheckingg", "Server Error response : " + error.toString());
+                Toast.makeText(getApplicationContext(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
+                progressDialog.hide();
+            }
+        };
+
+
+    }
+    ////////fetching timetable
 
 
 }
