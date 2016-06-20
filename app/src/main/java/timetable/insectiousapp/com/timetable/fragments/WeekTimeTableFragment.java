@@ -38,6 +38,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     ProgressDialog progressDialog;
     String classId, currentDate;
     int date;
+    JSONObject jsonObjectTimeTable=null;
 
     public WeekTimeTableFragment() {
         // Required empty public constructor
@@ -114,7 +115,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
-        MyVolley.init(getApplicationContext());
+        MyVolley.init(getActivity());
         RequestQueue queue = MyVolley.getRequestQueue();
 
         JsonObjectRequest myReq = new JsonObjectRequest(Request.Method.GET, classTimeTableUrl
