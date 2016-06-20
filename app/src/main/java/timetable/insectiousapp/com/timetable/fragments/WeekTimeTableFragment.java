@@ -1,19 +1,25 @@
 package timetable.insectiousapp.com.timetable.fragments;
 
 
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
 
 public class WeekTimeTableFragment extends Fragment implements View.OnClickListener{
 
     FancyButton btnToday, btnTomorrow;
+    ProgressDialog progressDialog;
+    String classId;
 
     public WeekTimeTableFragment() {
         // Required empty public constructor
@@ -32,13 +38,37 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         btnToday.setOnClickListener(this);
         btnTomorrow.setOnClickListener(this);
 
+        progressDialog=new ProgressDialog(getActivity());
+        progressDialog.setCancelable(false);
+
+        setCredentialsFromSharedPreferences();
+
+
         return v;
     }
 
     @Override
     public void onClick(View v) {
 
-        
+
+
+    }
+
+    private void setCredentialsFromSharedPreferences() {
+        SharedPreferencesFiles SPF=new SharedPreferencesFiles();
+        //for class id
+        SharedPreferences sharedPreferences=getActivity().getSharedPreferences(SPF.getSPClassId(), 0);
+        classId=sharedPreferences.getString(SPF.getClassId(), "Not set yet");
+
+        if(classId.contentEquals("Not set yet"))
+        {
+            Toast.makeText(getActivity(), "Set your class id first", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            //it means class id is already set, you can begin working
+        }
+
 
     }
 }
