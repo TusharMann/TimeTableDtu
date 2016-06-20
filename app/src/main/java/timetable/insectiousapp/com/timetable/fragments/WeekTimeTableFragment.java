@@ -42,6 +42,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     JSONObject jsonObjectTimeTable=null;
 
     String field1, field2, field3, field4, field5, field6, field7, field8;
+    String currentDayName;
 
     public WeekTimeTableFragment() {
         // Required empty public constructor
@@ -172,6 +173,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                String day=getCurrentDayName();
+                
+
                 ParseRecievedJsonObject(jsonObjectTimeTable);
                 Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
 
@@ -298,6 +303,12 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         }
 
 
+    }
+
+    public String getCurrentDayName()
+    {
+
+        return currentDayName;
     }
 
 }
