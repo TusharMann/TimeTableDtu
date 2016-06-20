@@ -43,6 +43,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
     String field1, field2, field3, field4, field5, field6, field7, field8;
     String currentDayName;
+    String selectedDayTimeTableString;
     int currentDayNo;
 
     public WeekTimeTableFragment() {
@@ -242,7 +243,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         try {
 
             //tvLastUpdatedOn.setText("");
-            selectedDayTimeTableString=serverResponse.getString("field"+dayNo);
+            selectedDayTimeTableString=jsonObject.getString("field"+day);
 
             Log.i("stringdetails", "timetable string"+selectedDayTimeTableString);
 
@@ -258,77 +259,13 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 String singleSlot;
                 String[] singleSlotParts;
 
-                ////slot 1
-                singleSlot=SlotsList[1];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et1.setText(singleSlotParts[0]);
-                cb1.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 1
-
-                ////slot 2
-                singleSlot=SlotsList[2];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et2.setText(singleSlotParts[0]);
-                cb2.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 2
-
-                ////slot 3
-                singleSlot=SlotsList[3];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et3.setText(singleSlotParts[0]);
-                cb3.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 3
-
-                ////slot 4
-                singleSlot=SlotsList[4];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et4.setText(singleSlotParts[0]);
-                cb4.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 4
-
-                ////slot 5
-                singleSlot=SlotsList[5];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et5.setText(singleSlotParts[0]);
-                cb5.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 5
-
-                ////slot 6
-                singleSlot=SlotsList[6];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et6.setText(singleSlotParts[0]);
-                cb6.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 6
-
-                ////slot 7
-                singleSlot=SlotsList[7];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et7.setText(singleSlotParts[0]);
-                cb7.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 7
-
-                ////slot 8
-                singleSlot=SlotsList[8];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et8.setText(singleSlotParts[0]);
-                cb8.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 8
-
-                ////slot 9
-                singleSlot=SlotsList[9];
-                singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
-                et9.setText(singleSlotParts[0]);
-                cb9.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
-                //--slot 9
-
-                ////setting reminder
-                singleSlot=SlotsList[10];
-                etReminder.setText(singleSlot);
-                //--setting reminder
-
                 ////setting updatedOn
                 singleSlot=SlotsList[11];
-                tvLastUpdatedOn.setText("(Last updated On: "+singleSlot+" )");
+
+                if(singleSlot==null||singleSlot.contentEquals(""))
+                {
+                    Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
