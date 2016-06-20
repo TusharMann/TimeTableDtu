@@ -19,12 +19,18 @@ public class WeekTimeTableFragment extends Fragment {
         // Required empty public constructor
     }
 
+    View v;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_week_time_table, container, false);
+        // Inflate the layout for this fragmentView v=null;
+        v= inflater.inflate(R.layout.fragment_week_time_table, container, false);
+
+        btnToday=(FancyButton)v.findViewById(R.id.fragment_week_time_table_btn_today);
+        btnTomorrow=(FancyButton)v.findViewById(R.id.fragment_week_time_table_btn_tomorrow);
+
+        return v;
     }
 
 }
