@@ -277,6 +277,13 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
                     Log.i("dateandtimestring", "1:"+idate1);
                     Log.i("dateandtimestring", "2:"+idate2);
+
+                    if(Math.abs(idate2-idate1)<=2)
+                    {
+                        //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
+                        
+                    }
+
                 }
 
             }
