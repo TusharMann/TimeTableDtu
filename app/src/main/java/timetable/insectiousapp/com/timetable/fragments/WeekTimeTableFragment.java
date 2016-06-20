@@ -274,7 +274,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     String currentDateandTime = sdf.format(new Date());
                     String date2=currentDateandTime.substring(0, 1);
 
-                    
+                    int idate1=Integer.parseInt(date1);
+                    int idate2=Integer.parseInt(date2);
 
                 }
 
