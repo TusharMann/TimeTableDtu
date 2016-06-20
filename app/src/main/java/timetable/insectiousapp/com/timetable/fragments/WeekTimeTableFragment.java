@@ -164,6 +164,9 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 Log.i("dateandtimestring", "fetched response");
 
                 try {
+
+                    Log.i("dateandtimestring", "inside success try:");
+
                     field1=serverResponse.getString("field1");
                     field2=serverResponse.getString("field2");
                     field3=serverResponse.getString("field3");
@@ -173,8 +176,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     field7=serverResponse.getString("field7");
                     field8=serverResponse.getString("field8");
 
+                    Log.i("dateandtimestring", "timetable string field 2: "+field2);
 
                 } catch (JSONException e) {
+                    Log.i("dateandtimestring", "inside success catch:");
                     e.printStackTrace();
                 }
 
@@ -255,7 +260,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             Log.i("dateandtimestring", "field"+day);
 
 
-            Log.i("stringdetails", "timetable string"+selectedDayTimeTableString);
+            Log.i("dateandtimestring", "timetable string : "+selectedDayTimeTableString);
 
             SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
             String[] SlotsList=selectedDayTimeTableString.split(specialSymbol.getMain());

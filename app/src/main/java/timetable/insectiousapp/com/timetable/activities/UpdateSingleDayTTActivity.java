@@ -422,6 +422,7 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
                     field7=serverResponse.getString("field7");
                     field8=serverResponse.getString("field8");
 
+                    Log.i("dateandtimestring", "timetable string field 2: "+field2);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
