@@ -24,6 +24,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     FancyButton btnToday, btnTomorrow;
     ProgressDialog progressDialog;
     String classId, currentDate;
+    int date;
 
     public WeekTimeTableFragment() {
         // Required empty public constructor
@@ -80,6 +81,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         String currentDateandTime = sdf.format(new Date());
 
         currentDate=currentDateandTime.substring(0, 1);
+        date=Integer.parseInt(currentDate);
 
         Log.i("dateandtimestring", "date and time string: "+currentDate);
 
