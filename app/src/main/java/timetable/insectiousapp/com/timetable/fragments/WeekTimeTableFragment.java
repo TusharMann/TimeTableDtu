@@ -172,10 +172,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     e.printStackTrace();
                 }
                 ParseRecievedJsonObject(jsonObjectTimeTable);
-
-
-
-                Toast.makeText(getApplicationContext(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
 
             }
         };
@@ -189,7 +186,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             public void onErrorResponse(VolleyError error) {
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getApplicationContext(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
                 progressDialog.hide();
             }
         };
