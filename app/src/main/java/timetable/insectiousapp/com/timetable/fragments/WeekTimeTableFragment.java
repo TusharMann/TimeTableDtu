@@ -155,18 +155,11 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             @Override
             public void onResponse(JSONObject serverResponse) {
 
-                Log.i("responsecheckingg", "on time table positive response");
-                Log.i("responsecheckingg", "Server response : " + serverResponse.toString());
-
                 progressDialog.hide();
                 jsonObjectTimeTable=serverResponse;
 
-                Log.i("dateandtimestring", "fetched response");
 
                 try {
-
-                    Log.i("dateandtimestring", "inside success try:");
-
                     field1=serverResponse.getString("field1");
                     field2=serverResponse.getString("field2");
                     field3=serverResponse.getString("field3");
@@ -176,17 +169,11 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     field7=serverResponse.getString("field7");
                     field8=serverResponse.getString("field8");
 
-                    Log.i("dateandtimestring", "timetable string field 2: "+field2);
-
                 } catch (JSONException e) {
-                    Log.i("dateandtimestring", "inside success catch:");
                     e.printStackTrace();
                 }
 
                 String day=getCurrentDayName();
-
-                Log.i("dateandtimestring", "after current day");
-
                 if(day.contentEquals("Monday"))
                 {
                     currentDayNo=1;
@@ -195,8 +182,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 else if(day.contentEquals("Tuesday"))
                 {
                     currentDayNo=2;
-                    Log.i("dateandtimestring", "inside tuesday");
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                    ///////////////////////--edit this again----
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
                 }
                 else if(day.contentEquals("Wednesday"))
                 {
@@ -252,24 +239,15 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     {
 
         try {
-
-            Log.i("dateandtimestring", "inside parse json object");
-            //tvLastUpdatedOn.setText("");
             selectedDayTimeTableString=jsonObject.getString("field"+day);
 
             Log.i("dateandtimestring", "field"+day);
-
-
             Log.i("dateandtimestring", "timetable string : "+selectedDayTimeTableString);
 
             SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
             String[] SlotsList=selectedDayTimeTableString.split(specialSymbol.getMain());
             if(SlotsList.length>=10)
             {
-
-
-                Log.i("stringdetailsz", "slots list"+SlotsList);
-
                 String singleDay = null;
                 String singleSlot;
                 String[] singleSlotParts;
@@ -304,6 +282,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             }
 
         } catch (JSONException e) {
+            Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
