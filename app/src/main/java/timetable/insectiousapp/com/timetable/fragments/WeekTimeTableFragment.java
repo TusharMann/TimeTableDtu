@@ -268,7 +268,14 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 }
                 else
                 {
-                    String datee=singleSlot.substring(0,1);
+                    String date1=singleSlot.substring(0,1);
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
+                    String currentDateandTime = sdf.format(new Date());
+                    String date2=currentDateandTime.substring(0, 1);
+
+                    
+
                 }
 
             }
