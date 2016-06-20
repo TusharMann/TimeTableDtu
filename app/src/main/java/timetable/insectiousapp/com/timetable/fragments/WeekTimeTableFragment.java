@@ -11,7 +11,7 @@ import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
 
 
-public class WeekTimeTableFragment extends Fragment {
+public class WeekTimeTableFragment extends Fragment implements View.OnClickListener{
 
     FancyButton btnToday, btnTomorrow;
 
@@ -29,8 +29,16 @@ public class WeekTimeTableFragment extends Fragment {
 
         btnToday=(FancyButton)v.findViewById(R.id.fragment_week_time_table_btn_today);
         btnTomorrow=(FancyButton)v.findViewById(R.id.fragment_week_time_table_btn_tomorrow);
+        btnToday.setOnClickListener(this);
+        btnTomorrow.setOnClickListener(this);
 
         return v;
     }
 
+    @Override
+    public void onClick(View v) {
+
+        
+
+    }
 }
