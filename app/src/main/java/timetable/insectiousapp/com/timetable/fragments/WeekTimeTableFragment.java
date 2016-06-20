@@ -94,7 +94,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         else
         {
             //it means class id is already set, you can begin working
-
+            requestTimeTableFromServer();
         }
     }
 
@@ -177,38 +177,38 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 }
 
                 String day=getCurrentDayName();
-                if(day.contentEquals("monday"))
+                if(day.contentEquals("Monday"))
                 {
                     currentDayNo=1;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 1);
                 }
-                else if(day.contentEquals("tuesday"))
+                else if(day.contentEquals("Tuesday"))
                 {
                     currentDayNo=2;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 2);
                 }
-                else if(day.contentEquals("wednesday"))
+                else if(day.contentEquals("Wednesday"))
                 {
                     currentDayNo=3;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 3);
                 }
-                else if(day.contentEquals("thursday"))
+                else if(day.contentEquals("Thursday"))
                 {
                     currentDayNo=4;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 4);
                 }
-                else if(day.contentEquals("friday"))
+                else if(day.contentEquals("Friday"))
                 {
                     currentDayNo=5;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 5);
                 }
-                else if(day.contentEquals("saturday"))
+                else if(day.contentEquals("Saturday"))
                 {
                     currentDayNo=6;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 1);
                     Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
                 }
-                else if(day.contentEquals("sunday"))
+                else if(day.contentEquals("Sunday"))
                 {
                     currentDayNo=7;
                     ParseRecievedJsonObject(jsonObjectTimeTable, 1);
@@ -295,6 +295,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
         Date d = new Date();
         String dayOfTheWeek = sdf.format(d);
+        Log.i("dateandtimestring", dayOfTheWeek);
         return dayOfTheWeek;
     }
 
