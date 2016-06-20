@@ -43,6 +43,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
     String field1, field2, field3, field4, field5, field6, field7, field8;
     String currentDayName;
+    int currentDayNo;
 
     public WeekTimeTableFragment() {
         // Required empty public constructor
@@ -175,9 +176,45 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 }
 
                 String day=getCurrentDayName();
-                
+                if(day.contentEquals("monday"))
+                {
+                    currentDayNo=1;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                }
+                else if(day.contentEquals("tuesday"))
+                {
+                    currentDayNo=2;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                }
+                else if(day.contentEquals("wednesday"))
+                {
+                    currentDayNo=3;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 3);
+                }
+                else if(day.contentEquals("thursday"))
+                {
+                    currentDayNo=4;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 4);
+                }
+                else if(day.contentEquals("friday"))
+                {
+                    currentDayNo=5;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 5);
+                }
+                else if(day.contentEquals("saturday"))
+                {
+                    currentDayNo=6;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                }
+                else if(day.contentEquals("sunday"))
+                {
+                    currentDayNo=7;
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                }
 
-                ParseRecievedJsonObject(jsonObjectTimeTable);
+
                 Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
 
             }
@@ -202,7 +239,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     ////////fetching timetable
 
 
-    public void ParseRecievedJsonObject(JSONObject jsonObject)
+    public void ParseRecievedJsonObject(JSONObject jsonObject, int day)
     {
 
         try {
