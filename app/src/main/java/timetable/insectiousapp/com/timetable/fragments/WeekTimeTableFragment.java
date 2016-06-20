@@ -266,6 +266,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 {
                     Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
                 }
+                else
+                {
+                    String datee=singleSlot.substring(0,1);
+                }
 
             }
 
