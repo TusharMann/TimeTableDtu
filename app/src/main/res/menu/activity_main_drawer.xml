@@ -13,7 +13,7 @@
                 android:title="Default Timetable" />
 
             <item
-                android:id="@+id/nav_sendd"
+                android:id="@+id/nav_week_timetable"
                 android:icon="@drawable/default_timetable_icon2"
                 android:title="Week's Timetable" />
 

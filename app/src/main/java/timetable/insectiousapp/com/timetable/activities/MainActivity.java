@@ -20,6 +20,7 @@ import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
 import timetable.insectiousapp.com.timetable.fragments.ManageTimeTableFragment;
 import timetable.insectiousapp.com.timetable.fragments.SetYourClassFragment;
+import timetable.insectiousapp.com.timetable.fragments.WeekTimeTableFragment;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
 public class MainActivity extends AppCompatActivity
@@ -136,6 +137,12 @@ public class MainActivity extends AppCompatActivity
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, allClassroomFragment).commit();
              setTitle("All classrooms of DTU");
 
+         }
+        else if(id==R.id.nav_week_timetable)
+         {
+             WeekTimeTableFragment weekTimeTableFragment=new WeekTimeTableFragment();
+             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, weekTimeTableFragment).commit();
+             setTitle("This week's timetable");
          }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
