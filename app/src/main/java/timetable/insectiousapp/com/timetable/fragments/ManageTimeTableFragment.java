@@ -86,7 +86,7 @@ public class ManageTimeTableFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
-        if (classId.contentEquals("Not set yet") || writeKey.contentEquals("Not set yet")) {
+        if (classId.contentEquals("Not set yet")) {
             Toast.makeText(getActivity(), "Set both class id & write key", Toast.LENGTH_SHORT).show();
         } else {
             switch (v.getId()) {
@@ -94,6 +94,7 @@ public class ManageTimeTableFragment extends Fragment implements View.OnClickLis
 
                     Intent i = new Intent();
                     i.setClass(getActivity().getApplicationContext(), SetWriteKeyActivity.class);
+                    i.putExtra("ClassId",classId);
                     startActivity(i);
                     getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
