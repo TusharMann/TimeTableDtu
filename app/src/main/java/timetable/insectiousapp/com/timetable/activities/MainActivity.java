@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
 
     TextView tvClassId;
     NavigationView navigationView;
+      int gitVar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
