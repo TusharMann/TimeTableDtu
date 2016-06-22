@@ -1,6 +1,8 @@
 package timetable.insectiousapp.com.timetable.activities;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -12,11 +14,14 @@ import android.widget.Toast;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.Sqlite.TT_Sqlite;
 
 public class NewClassroomDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvClassName, tvWriteApiKey, tvClassId;
     String className, writeKey, classId;
+    TT_Sqlite sqlite;
+    SQLiteDatabase db;
 
     EditText etEmailId;
     FancyButton btnEmail, btnProceed;
@@ -25,6 +30,7 @@ public class NewClassroomDetailActivity extends AppCompatActivity implements Vie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_classroom_detail);
+        sqlite=new TT_Sqlite(this,1);
 
         linkingandInitialSetup();
 
@@ -36,6 +42,18 @@ public class NewClassroomDetailActivity extends AppCompatActivity implements Vie
         className=i.getStringExtra("created_classroom_name");
         writeKey=i.getStringExtra("write_api_key");
         classId=i.getStringExtra("class_id");
+
+        db=sqlite.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put(TT_Sqlite.cid,classId);
+
+        cv.put(TT_Sqlite.api,writeKey);
+
+        cv.put(TT_Sqlite.name,className);
+
+        db.insert(TT_Sqlite.Tname,null,cv);
+
+
 
         tvClassName=(TextView)findViewById(R.id.activity_new_classroom_detail_layout_1_tv_classname);
         tvClassId=(TextView)findViewById(R.id.activity_new_classroom_detail_layout_1_tv_classid);

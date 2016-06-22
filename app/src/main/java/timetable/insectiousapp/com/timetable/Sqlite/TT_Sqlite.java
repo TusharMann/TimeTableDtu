@@ -9,11 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class TT_Sqlite extends SQLiteOpenHelper {
 
-   public final static String DATABASE_NAME = "Time_Table_Database";
-    public final static String Tname = "Class_Details";
-    public final static String cid = "Class_ID";
-    public final static String api = "API_Key";
-    public final static String name = "Class_Name";
+    public final static String DATABASE_NAME = "Time_Table_Database";
+    public final static String Tname = "CDETAILS";
+    public final static String cid = "ID";
+    public final static String api = "APIKEY";
+    public final static String name = "CNAME";
 
     public TT_Sqlite(Context context,int version){
         super(context,DATABASE_NAME,null,version);
@@ -24,7 +24,7 @@ public class TT_Sqlite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String query="CREATE TABLE"+Tname+"("+cid+"TEXT,"+api+"TEXT);";
+        String query="CREATE TABLE "+Tname+"("+cid +" VARCHAR(50),"+name+" VARCHAR(50),"+api +" VARCHAR(50));";
         db.execSQL(query);
 
     }
