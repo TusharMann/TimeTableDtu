@@ -83,6 +83,33 @@
             fancy:fb_borderWidth="0dp"
             fancy:fb_defaultColor="@color/red1"
             fancy:fb_focusColor="@color/darkred1"
+            android:id="@+id/fragment_set_write_key_btn_load"
+            android:fontFamily="sans-serif-light"
+            fancy:fb_iconPosition="top"
+            fancy:fb_radius="5dp"
+            android:gravity="center"
+            fancy:fb_text="Load Class_Id from List"
+            fancy:fb_textSize="18sp"
+            fancy:fb_textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+
+            android:layout_height="60dp"
+            android:layout_width="250dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="0dp"
+            fancy:fb_defaultColor="@color/red1"
+            fancy:fb_focusColor="@color/darkred1"
             android:id="@+id/fragment_set_write_key_btn_save"
             android:fontFamily="sans-serif-light"
             fancy:fb_iconPosition="top"
@@ -92,6 +119,8 @@
             fancy:fb_textSize="18sp"
             fancy:fb_textColor="#FFFFFF"
             android:layout_gravity="center" />
+
+
 
         <TextView
             android:layout_width="fill_parent"

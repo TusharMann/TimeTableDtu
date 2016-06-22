@@ -17,7 +17,7 @@ import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 public class SetWriteKeyActivity extends AppCompatActivity {
 
     EditText etWriteKey;
-    FancyButton btnSave;
+    FancyButton btnSave,btnLoad;
     String classID;
 
     @Override
@@ -31,11 +31,23 @@ public class SetWriteKeyActivity extends AppCompatActivity {
         etWriteKey=(EditText)findViewById(R.id.fragment_set_write_key_et_writekey);
         etWriteKey.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
         btnSave=(FancyButton)findViewById(R.id.fragment_set_write_key_btn_save);
+        btnLoad=(FancyButton)findViewById(R.id.fragment_set_write_key_btn_load);
 
         SharedPreferencesFiles sharedPreferencesFiles=new SharedPreferencesFiles();
         SharedPreferences sharedPreferences=getSharedPreferences(sharedPreferencesFiles.getSPWriteKey(), 0);
         String classId=sharedPreferences.getString(sharedPreferencesFiles.getWriteKey(), "Not set Yet");
         etWriteKey.setText(classId);
+
+        btnLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i=new Intent();
+                i.setClass(SetWriteKeyActivity.this,LoadList.class);
+                startActivity(i);
+
+            }
+        });
 
 
 
