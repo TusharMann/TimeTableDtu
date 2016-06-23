@@ -1,9 +1,13 @@
 package timetable.insectiousapp.com.timetable.activities;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -31,6 +35,21 @@ public class LoadList extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.listView) ;
         adapter=new Class_Load_Adapter(this,list);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Class_Load c=list.get(position);
+                Intent i=new Intent();
+                Log.i("TagLoad Id",c.id);
+                Log.i("TagLoad Api",c.api);
+                i.putExtra("Object",c);
+                setResult(RESULT_OK,i);
+                finish();
+
+            }
+        });
 
 
         String[] columns={TT_Sqlite.cid,TT_Sqlite.name,TT_Sqlite.api};

@@ -50,8 +50,8 @@ public class Class_Load_Adapter extends ArrayAdapter<Class_Load> {
 
         Class_Load c = classlist.get(position);
 
-        vh.showid.setText(c.id);
-        vh.showname.setText(c.name);
+        vh.showid.setText(c.id+"      ");
+        vh.showname.setText(c.name+"      ");
         vh.showapi.setText(c.api);
 
 

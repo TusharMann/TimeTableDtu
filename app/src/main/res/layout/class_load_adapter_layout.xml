@@ -8,18 +8,33 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/load_class_id"/>
+        android:id="@+id/load_class_id"
+        android:textSize="10dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"/>
+
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/load_class_name"/>
+        android:id="@+id/load_class_name"
+        android:textSize="10dp"/>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/load_class_api"/>
+        android:id="@+id/load_class_api"
+        android:textSize="10dp"/>
 
 </LinearLayout>

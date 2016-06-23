@@ -1,9 +1,12 @@
 package timetable.insectiousapp.com.timetable.others;
 
+import java.io.Serializable;
+
 /**
  * Created by Tushar on 22-06-2016.
  */
-public class Class_Load {
+
+public class Class_Load implements Serializable {
 
     public String id;
     public String name;
