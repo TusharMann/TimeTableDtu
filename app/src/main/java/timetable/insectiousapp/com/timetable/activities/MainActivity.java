@@ -14,9 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.AllClassroomFragment;
 import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
-import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
 import timetable.insectiousapp.com.timetable.fragments.ManageTimeTableFragment;
 import timetable.insectiousapp.com.timetable.fragments.SetYourClassFragment;
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
