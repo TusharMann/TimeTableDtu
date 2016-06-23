@@ -43,15 +43,6 @@ public class NewClassroomDetailActivity extends AppCompatActivity implements Vie
         writeKey=i.getStringExtra("write_api_key");
         classId=i.getStringExtra("class_id");
 
-        db=sqlite.getWritableDatabase();
-        ContentValues cv=new ContentValues();
-        cv.put(TT_Sqlite.cid,classId);
-
-        cv.put(TT_Sqlite.api,writeKey);
-
-        cv.put(TT_Sqlite.name,className);
-
-        db.insert(TT_Sqlite.Tname,null,cv);
 
 
 
@@ -105,6 +96,17 @@ public class NewClassroomDetailActivity extends AppCompatActivity implements Vie
 
 
                 Intent i=new Intent();
+                db=sqlite.getWritableDatabase();
+                ContentValues cv=new ContentValues();
+                cv.put(TT_Sqlite.cid,classId);
+
+                cv.put(TT_Sqlite.api,writeKey);
+
+                cv.put(TT_Sqlite.name,className);
+
+                db.insert(TT_Sqlite.Tname,null,cv);
+
+
                 i.setClass(this, NewClassroomTimeTable.class);
                 i.putExtra("write_api_key_from_detail_activity", writeKey);
                 startActivity(i);

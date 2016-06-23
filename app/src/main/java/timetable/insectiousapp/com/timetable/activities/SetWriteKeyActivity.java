@@ -88,6 +88,8 @@ public class SetWriteKeyActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter the write key",Toast.LENGTH_SHORT).show();
                 }
 
+                finish();
+
             }
         });
 
