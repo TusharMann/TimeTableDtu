@@ -182,8 +182,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 else if(day.contentEquals("Tuesday"))
                 {
                     currentDayNo=2;
-                    ///////////////////////--edit this again----
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 2);
                 }
                 else if(day.contentEquals("Wednesday"))
                 {
