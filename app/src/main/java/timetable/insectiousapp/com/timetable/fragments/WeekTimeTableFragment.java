@@ -285,7 +285,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                         //send the data to the weektimetable activity, send the  particular string
                         Intent i=new Intent();
                         i.setClass(getActivity(), WeekTimeTableActivity.class);
-                        
+                        i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
                         startActivity(i);
                     }
 
