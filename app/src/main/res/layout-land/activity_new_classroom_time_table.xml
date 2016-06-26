@@ -695,7 +695,6 @@
                 android:id="@+id/tv_slot_6"
 
                 android:text="02-03"
-                android:maxLength="3"
                 android:gravity="center"/>
 
             <EditText
@@ -1023,12 +1022,11 @@
                 android:fontFamily="sans-serif-bold"
                 android:layout_height="match_parent"
 
-                android:layout_weight="0.7"
+                android:layout_weight="0.5"
 
                 android:id="@+id/tv_slot_9"
 
                 android:text="05-06"
-                android:maxLength="3"
                 android:gravity="center"/>
 
             <EditText
