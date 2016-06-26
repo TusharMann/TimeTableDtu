@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
 
     TextView tvClassId;
     NavigationView navigationView;
+    int counter,i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +63,14 @@ public class MainActivity extends AppCompatActivity
             SetYourClassFragment fragment=new SetYourClassFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
             setTitle("Set Your Class");
+            counter=0;
+
         }
         else{
             DefaultTimetableFragment fragment=new DefaultTimetableFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
             setTitle("Default Timetable");
+            counter=0;
 
         }
 
@@ -91,11 +95,37 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
+        if(counter==0){
             super.onBackPressed();
+        }
+
+        else {
+            SharedPreferencesFiles sf=new SharedPreferencesFiles();
+            SharedPreferences sharedPreferences=getSharedPreferences(sf.getSPClassId(),0);
+            String key=sharedPreferences.getString(sf.getClassId(),"Not Yet Set");
+
+            if(key=="Not Yet Set"){
+                if(i==0){
+                    super.onBackPressed();
+                }
+                SetYourClassFragment fragment=new SetYourClassFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+                setTitle("Set Your Class");
+                counter=0;
+            }
+            else{
+                if(i==1){
+                    super.onBackPressed();
+                }
+
+                DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+                setTitle("Default Timetable");
+                counter=0;
+
+            }
+
+
         }
     }
 
@@ -131,29 +161,36 @@ public class MainActivity extends AppCompatActivity
             CreateNewClassFragment createNewClientFragment=new CreateNewClassFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, createNewClientFragment).commit();
             setTitle("Create new classroom");
+             counter=1;
         }
         else if(id ==R.id.nav_set_your_class) {
             SetYourClassFragment setYourClassFragment=new SetYourClassFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, setYourClassFragment).commit();
             setTitle("Set Your class room");
+             counter=1;
+             i=0;
         }
         else if(id ==R.id.nav_default_timetable)
          {
              DefaultTimetableFragment defaultTimetableFragment=new DefaultTimetableFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, defaultTimetableFragment).commit();
              setTitle("Default Timetable");
+             counter=1;
+             i=1;
          }
         else if(id==R.id.nav_manage_timetable)
          {
              ManageTimeTableFragment manageTimeTableFragment=new ManageTimeTableFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, manageTimeTableFragment).commit();
              setTitle("Update Timetable");
+             counter=1;
          }
         else if(id ==R.id.nav_all_classroom)
          {
              AllClassroomFragment allClassroomFragment = new AllClassroomFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, allClassroomFragment).commit();
              setTitle("All classrooms of DTU");
+             counter=1;
 
          }
         else if(id==R.id.nav_week_timetable)
@@ -161,6 +198,7 @@ public class MainActivity extends AppCompatActivity
              WeekTimeTableFragment weekTimeTableFragment=new WeekTimeTableFragment();
              getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, weekTimeTableFragment).commit();
              setTitle("This week's timetable");
+             counter=1;
          }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
