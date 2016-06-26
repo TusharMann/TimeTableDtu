@@ -2,6 +2,7 @@ package timetable.insectiousapp.com.timetable.fragments;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,7 @@ import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.activities.WeekTimeTableActivity;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
@@ -182,8 +184,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 else if(day.contentEquals("Tuesday"))
                 {
                     currentDayNo=2;
-                    ///////////////////////--edit this again----
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    ParseRecievedJsonObject(jsonObjectTimeTable, 2);
                 }
                 else if(day.contentEquals("Wednesday"))
                 {
@@ -281,7 +282,11 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     if(Math.abs(idate2-idate1)<=2)
                     {
                         //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
-                        
+                        //send the data to the weektimetable activity, send the  particular string
+                        Intent i=new Intent();
+                        i.setClass(getActivity(), WeekTimeTableActivity.class);
+                        i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
+                        startActivity(i);
                     }
 
                 }
