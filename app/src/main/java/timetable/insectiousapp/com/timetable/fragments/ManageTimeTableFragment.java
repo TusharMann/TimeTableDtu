@@ -72,7 +72,7 @@ public class ManageTimeTableFragment extends Fragment implements View.OnClickLis
     private void setCredentialsFromSharedPreferences() {
         SharedPreferencesFiles SPF=new SharedPreferencesFiles();
         //for class id
-        SharedPreferences sharedPreferences=getActivity().getSharedPreferences(SPF.getSPClassId(), 0);
+        SharedPreferences sharedPreferences=getActivity().getSharedPreferences(SPF.getSPClassId(),0  );
         classId=sharedPreferences.getString(SPF.getClassId(), "Not set yet");
         //
         //for write key

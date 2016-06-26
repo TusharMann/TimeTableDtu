@@ -54,6 +54,22 @@ public class MainActivity extends AppCompatActivity
 
         tvClassId = (TextView)headerView.findViewById(R.id.nav_header_main_tv_classid);
 
+        SharedPreferencesFiles sf=new SharedPreferencesFiles();
+        SharedPreferences sharedPreferences=getSharedPreferences(sf.getSPClassId(),0);
+        String key=sharedPreferences.getString(sf.getClassId(),"Not Yet Set");
+
+        if(key=="Not Yet Set"){
+            SetYourClassFragment fragment=new SetYourClassFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+            setTitle("Set Your Class");
+        }
+        else{
+            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+            setTitle("Default Timetable");
+
+        }
+
 
     }
 
