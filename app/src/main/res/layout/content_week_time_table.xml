@@ -59,7 +59,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -112,7 +112,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -166,7 +166,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -219,7 +219,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -272,7 +272,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -325,7 +325,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -378,7 +378,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -431,7 +431,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -484,7 +484,7 @@
                 android:gravity="center"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
@@ -526,7 +526,7 @@
             android:background="@drawable/roundedgreybackground2dp"
             >
 
-            <EditText
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_margin="20dp"
                 android:padding="5dp"
@@ -540,25 +540,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 />
-
-            <mehdi.sakout.fancybuttons.FancyButton
-
-                android:layout_height="60dp"
-                android:layout_width="200dp"
-                fancy:fb_borderColor="#FFFFFF"
-                fancy:fb_borderWidth="0dp"
-                fancy:fb_defaultColor="@color/red1"
-                fancy:fb_focusColor="@color/darkred1"
-                android:id="@+id/activity_update_single_day_tt_btn_save"
-                android:fontFamily="sans-serif-light"
-                fancy:fb_iconPosition="top"
-                fancy:fb_radius="5dp"
-                android:gravity="center"
-                fancy:fb_text="Save"
-                fancy:fb_textSize="18sp"
-                fancy:fb_textColor="#FFFFFF"
-                android:layout_gravity="center" />
-
+            
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="20dp" />
