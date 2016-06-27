@@ -165,7 +165,6 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                         ParseRecievedJsonObject(jsonObjectTimeTable, 1);
                         Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
 
 
                     break;

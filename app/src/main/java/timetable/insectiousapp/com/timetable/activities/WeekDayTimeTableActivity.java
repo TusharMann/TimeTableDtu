@@ -28,6 +28,7 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
     String defaultTimeTableString, selectedDayTimeTableString;
     String currentDate, currentTime;
     String field1, field2, field3, field4, field5, field6, field7, field8;
+    String currentDayName;
 
     JSONObject jsonObjectTimeTable=null;
     String recievedDayTimeTableString;
@@ -105,33 +106,24 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
         tvLastUpdatedOn=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_lastupdatedon);
         tvDayName=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_dayname);
 
-        tvDayName.setText(getDayNamefromDayNo(dayNo));
-
+        getDayNamefromDayNo(dayNo);
+        tvDayName.setText(currentDayName);
     }
 
-    private String getDayNamefromDayNo(int dayNumber)
+    private void getDayNamefromDayNo(int dayNumber)
     {
-        String dayName="Monday";
-        switch (dayNumber)
-        {
-            case 1:
-                dayName="Monday";
-                break;
-            case 2:
-                dayName="Tuesday";
-                break;
-            case 3:
-                dayName="Wednesday";
-                break;
-            case 4:
-                dayName= "Thursday";
-                break;
-            case 5:
-                dayName= "Friday";
-                break;
-        }
 
-        return dayName;
+        if(dayNumber==1)
+            currentDayName="Monday";
+        else if(dayNumber==2)
+            currentDayName="Tuesday";
+        else if(dayNumber==3)
+            currentDayName="Wednesday";
+        else if(dayNumber==4)
+            currentDayName="Thursday";
+        else if(dayNumber==5)
+            currentDayName="Friday";
+
     }
 
     private void setSelectedDayTimeTableToViews() {
