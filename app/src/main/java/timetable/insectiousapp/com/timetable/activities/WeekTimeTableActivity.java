@@ -35,20 +35,21 @@ public class WeekTimeTableActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_single_day_tt);
+        setContentView(R.layout.activity_week_time_table);
 
-
+        setTitle("Week's Timetable");
 
         progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-        RecievingDataAndChecking();
+
         initializingViews();
+        RecievingDataAndCheckingAndSettingTimeTable();
     }
 
 
 
-    private void RecievingDataAndChecking() {
+    private void RecievingDataAndCheckingAndSettingTimeTable() {
         Intent i=getIntent();
         if(i!=null)
         {
