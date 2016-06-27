@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import timetable.insectiousapp.com.timetable.R;
@@ -111,7 +110,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
     private String getDayNamefromDayNo(int dayNumber)
     {
         String dayName="Monday";
-        switch (dayNo)
+        switch (dayNumber)
         {
             case 1:
                 dayName="Monday";
@@ -132,76 +131,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
 
         return dayName;
     }
-
-
-    private void setDefaultTimeTableToViews(JSONObject serverResponse) {
-
-
-        cb1.setChecked(true);
-        cb2.setChecked(true);
-        cb2.setChecked(true);
-        cb3.setChecked(true);
-        cb4.setChecked(true);
-        cb5.setChecked(true);
-        cb6.setChecked(true);
-        cb7.setChecked(true);
-        cb8.setChecked(true);
-        cb9.setChecked(true);
-
-        Log.i("stringdetails", "Deault timetable inside function "+defaultTimeTableString);
-
-        try {
-
-            etReminder.setText("-");
-
-            tvLastUpdatedOn.setText("");
-            defaultTimeTableString=serverResponse.getString("field6");
-
-            Log.i("stringdetails", "Deault timetable inside try "+defaultTimeTableString);
-
-            SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
-            String[] Days=defaultTimeTableString.split(specialSymbol.getMain());
-
-            String singleDay = null;
-            String[] slots;
-            if(Days.length>=5) {
-
-                switch (dayNo) {
-                    case 1:
-                        singleDay = Days[1];
-                        break;
-                    case 2:
-                        singleDay = Days[2];
-                        break;
-                    case 3:
-                        singleDay = Days[3];
-                        break;
-                    case 4:
-                        singleDay = Days[4];
-                        break;
-                    case 5:
-                        singleDay = Days[5];
-                        break;
-                }
-
-                slots = singleDay.split(specialSymbol.getPrimary());
-                et1.setText(slots[0]);
-                et2.setText(slots[1]);
-                et3.setText(slots[2]);
-                et4.setText(slots[3]);
-                et5.setText(slots[4]);
-                et6.setText(slots[5]);
-                et7.setText(slots[6]);
-                et8.setText(slots[7]);
-                et9.setText(slots[8]);
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
+    
     private void setSelectedDayTimeTableToViews() {
 
         SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
