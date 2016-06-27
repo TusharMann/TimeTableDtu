@@ -285,7 +285,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                         //send the data to the weektimetable activity, send the  particular string
                         Intent i=new Intent();
                         i.setClass(getActivity(), WeekTimeTableActivity.class);
+                        //sending the only string containing timetable for the current day
                         i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
+                        //sending the number of day of which timetable is to be shown
+                        i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
                         startActivity(i);
                     }
 

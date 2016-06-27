@@ -8,9 +8,7 @@ import android.text.InputFilter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +28,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
@@ -41,12 +38,11 @@ public class WeekTimeTableActivity extends AppCompatActivity {
     String writeKey;
     int dayNo;
 
-    EditText et1, et2, et3, et4, et5, et6, et7, et8, et9, etReminder;
+    TextView et1, et2, et3, et4, et5, et6, et7, et8, et9, etReminder;
     CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9;
     TextView tvLastUpdatedOn, tvDayName;
     ProgressDialog progressDialog;
     String defaultTimeTableString, selectedDayTimeTableString;
-    FancyButton btnSave;
     String currentDate, currentTime;
     String field1, field2, field3, field4, field5, field6, field7, field8;
 
@@ -80,7 +76,9 @@ public class WeekTimeTableActivity extends AppCompatActivity {
             recievedDayTimeTableString=i.getStringExtra("fromweektimetablefragment_daytimetable");
             if(recievedDayTimeTableString!=null&&!recievedDayTimeTableString.contentEquals(""))
             {
-
+                dayNo=i.getIntExtra("fromweektimetablefragment_daytimetable_dayno", 1);
+                Log.i("dayNo", "Day No :"+dayNo);
+                Log.i("dayNo", "Timetabe string :"+recievedDayTimeTableString);
             }
             else
             {
@@ -92,16 +90,16 @@ public class WeekTimeTableActivity extends AppCompatActivity {
 
     public void initializingViews()
     {
-        et1=(EditText)findViewById(R.id.subject_slot_1);
-        et2=(EditText)findViewById(R.id.subject_slot_2);
-        et3=(EditText)findViewById(R.id.subject_slot_3);
-        et4=(EditText)findViewById(R.id.subject_slot_4);
-        et5=(EditText)findViewById(R.id.subject_slot_5);
-        et6=(EditText)findViewById(R.id.subject_slot_6);
-        et7=(EditText)findViewById(R.id.subject_slot_7);
-        et8=(EditText)findViewById(R.id.subject_slot_8);
-        et9=(EditText)findViewById(R.id.subject_slot_9);
-        etReminder=(EditText)findViewById(R.id.activity_update_single_day_tt_et_reminder);
+        et1=(TextView)findViewById(R.id.subject_slot_1);
+        et2=(TextView)findViewById(R.id.subject_slot_2);
+        et3=(TextView)findViewById(R.id.subject_slot_3);
+        et4=(TextView)findViewById(R.id.subject_slot_4);
+        et5=(TextView)findViewById(R.id.subject_slot_5);
+        et6=(TextView)findViewById(R.id.subject_slot_6);
+        et7=(TextView)findViewById(R.id.subject_slot_7);
+        et8=(TextView)findViewById(R.id.subject_slot_8);
+        et9=(TextView)findViewById(R.id.subject_slot_9);
+        etReminder=(TextView)findViewById(R.id.activity_update_single_day_tt_et_reminder);
 
         et1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
         et2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
@@ -123,17 +121,9 @@ public class WeekTimeTableActivity extends AppCompatActivity {
         cb8=(CheckBox)findViewById(R.id.cb_slot_8);
         cb9=(CheckBox)findViewById(R.id.cb_slot_9);
 
-        btnSave=(FancyButton)findViewById(R.id.activity_update_single_day_tt_btn_save);
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getCurrentDateAndTimeFromServer();
-            }
-        });
-
-
         tvLastUpdatedOn=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_lastupdatedon);
         tvDayName=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_dayname);
+
         switch (dayNo)
         {
             case 1:

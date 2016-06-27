@@ -540,7 +540,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 />
-            
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="20dp" />
