@@ -83,8 +83,90 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             {
                 case R.id.fragment_week_time_table_btn_today:
 
+                    String day=getCurrentDayName();
+                    if(day.contentEquals("Monday"))
+                    {
+                        currentDayNo=1;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    }
+                    else if(day.contentEquals("Tuesday"))
+                    {
+                        currentDayNo=2;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                    }
+                    else if(day.contentEquals("Wednesday"))
+                    {
+                        currentDayNo=3;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 3);
+                    }
+                    else if(day.contentEquals("Thursday"))
+                    {
+                        currentDayNo=4;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 4);
+                    }
+                    else if(day.contentEquals("Friday"))
+                    {
+                        currentDayNo=5;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 5);
+                    }
+                    else if(day.contentEquals("Saturday"))
+                    {
+                        currentDayNo=6;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Sunday"))
+                    {
+                        currentDayNo=7;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+
+
                     break;
                 case R.id.fragment_week_time_table_btn_tomorrow:
+
+                     day=getCurrentDayName();
+                    if(day.contentEquals("Monday"))
+                    {
+                        currentDayNo=1;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                    }
+                    else if(day.contentEquals("Tuesday"))
+                    {
+                        currentDayNo=2;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 3);
+                    }
+                    else if(day.contentEquals("Wednesday"))
+                    {
+                        currentDayNo=3;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 4);
+                    }
+                    else if(day.contentEquals("Thursday"))
+                    {
+                        currentDayNo=4;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 5);
+                    }
+                    else if(day.contentEquals("Friday"))
+                    {
+                        currentDayNo=5;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Saturday"))
+                    {
+                        currentDayNo=6;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Sunday"))
+                    {
+                        currentDayNo=7;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
+
 
                     break;
             }
@@ -183,46 +265,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     e.printStackTrace();
                 }
 
-                String day=getCurrentDayName();
-                if(day.contentEquals("Monday"))
-                {
-                    currentDayNo=1;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                }
-                else if(day.contentEquals("Tuesday"))
-                {
-                    currentDayNo=2;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                }
-                else if(day.contentEquals("Wednesday"))
-                {
-                    currentDayNo=3;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 3);
-                }
-                else if(day.contentEquals("Thursday"))
-                {
-                    currentDayNo=4;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 4);
-                }
-                else if(day.contentEquals("Friday"))
-                {
-                    currentDayNo=5;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 5);
-                }
-                else if(day.contentEquals("Saturday"))
-                {
-                    currentDayNo=6;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
-                }
-                else if(day.contentEquals("Sunday"))
-                {
-                    currentDayNo=7;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
-                }
-                Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
-            }
+             }
         };
     }
 
