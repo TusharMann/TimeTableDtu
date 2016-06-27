@@ -6,28 +6,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
-import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
 public class WeekTimeTableActivity extends AppCompatActivity {
 
@@ -57,11 +44,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
 
         RecievingDataAndChecking();
-        requestTimeTableFromServer();
         initializingViews();
-
-        cb2.setChecked(true);
-
     }
 
 
@@ -121,27 +104,35 @@ public class WeekTimeTableActivity extends AppCompatActivity {
         tvLastUpdatedOn=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_lastupdatedon);
         tvDayName=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_dayname);
 
+        tvDayName.setText(getDayNamefromDayNo(dayNo));
+
+    }
+
+    private String getDayNamefromDayNo(int dayNumber)
+    {
+        String dayName="Monday";
         switch (dayNo)
         {
             case 1:
-                tvDayName.setText("Monday");
+                dayName="Monday";
                 break;
             case 2:
-                tvDayName.setText("Tuesday");
+                dayName="Tuesday";
                 break;
             case 3:
-                tvDayName.setText("Wednesday");
+                dayName="Wednesday";
                 break;
             case 4:
-                tvDayName.setText("Thursday");
+                dayName= "Thursday";
                 break;
             case 5:
-                tvDayName.setText("Friday");
+                dayName= "Friday";
                 break;
         }
 
+        return dayName;
     }
-    
+
 
     private void setDefaultTimeTableToViews(JSONObject serverResponse) {
 
