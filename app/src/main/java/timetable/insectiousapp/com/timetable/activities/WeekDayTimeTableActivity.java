@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 
-public class WeekTimeTableActivity extends AppCompatActivity {
+public class WeekDayTimeTableActivity extends AppCompatActivity {
 
     String classId;
     String writeKey;
@@ -35,7 +35,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_week_time_table);
+        setContentView(R.layout.activity_week_day_time_table);
 
         setTitle("Week's Timetable");
 

@@ -29,7 +29,7 @@ import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.activities.WeekTimeTableActivity;
+import timetable.insectiousapp.com.timetable.activities.WeekDayTimeTableActivity;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
@@ -284,7 +284,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                         //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
                         //send the data to the weektimetable activity, send the  particular string
                         Intent i=new Intent();
-                        i.setClass(getActivity(), WeekTimeTableActivity.class);
+                        i.setClass(getActivity(), WeekDayTimeTableActivity.class);
                         //sending the only string containing timetable for the current day
                         i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
                         //sending the number of day of which timetable is to be shown
