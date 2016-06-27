@@ -294,7 +294,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
             Log.i("dateandtimestring", "field"+day);
             Log.i("dateandtimestring", "timetable string : "+selectedDayTimeTableString);
-
+            if(selectedDayTimeTableString.contentEquals("")||selectedDayTimeTableString==null)
+            {
+                Toast.makeText(getActivity(), "Timetable not updated yet", Toast.LENGTH_SHORT).show();
+            }
             SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
             String[] SlotsList=selectedDayTimeTableString.split(specialSymbol.getMain());
             if(SlotsList.length>=10)
