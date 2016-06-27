@@ -58,8 +58,8 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
             if(recievedDayTimeTableString!=null&&!recievedDayTimeTableString.contentEquals(""))
             {
                 dayNo=i.getIntExtra("fromweektimetablefragment_daytimetable_dayno", 1);
-                Log.i("dayNo", "Day No :"+dayNo);
-                Log.i("dayNo", "Timetabe string :"+recievedDayTimeTableString);
+                getDayNamefromDayNo(dayNo);
+                tvDayName.setText(currentDayName);
                 setSelectedDayTimeTableToViews();
             }
             else
@@ -105,9 +105,6 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
 
         tvLastUpdatedOn=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_lastupdatedon);
         tvDayName=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_dayname);
-
-        getDayNamefromDayNo(dayNo);
-        tvDayName.setText(currentDayName);
     }
 
     private void getDayNamefromDayNo(int dayNumber)
