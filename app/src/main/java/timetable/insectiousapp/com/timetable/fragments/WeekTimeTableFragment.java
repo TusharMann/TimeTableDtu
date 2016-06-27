@@ -79,7 +79,15 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+            switch (v.getId())
+            {
+                case R.id.fragment_week_time_table_btn_today:
 
+                    break;
+                case R.id.fragment_week_time_table_btn_tomorrow:
+
+                    break;
+            }
 
     }
 
@@ -290,6 +298,10 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                         //sending the number of day of which timetable is to be shown
                         i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
                         startActivity(i);
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "Timetable not modified recently ", Toast.LENGTH_SHORT).show();
                     }
 
                 }
