@@ -294,7 +294,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
             Log.i("dateandtimestring", "field"+day);
             Log.i("dateandtimestring", "timetable string : "+selectedDayTimeTableString);
-            if(selectedDayTimeTableString.contentEquals("")||selectedDayTimeTableString==null)
+            if(selectedDayTimeTableString.isEmpty()&&selectedDayTimeTableString==null)
             {
                 Log.i("dateandtimestring", "empty string");
                 Toast.makeText(getActivity(), "Timetable not updated yet", Toast.LENGTH_SHORT).show();
