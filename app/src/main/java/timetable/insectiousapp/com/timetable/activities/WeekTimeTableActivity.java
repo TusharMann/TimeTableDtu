@@ -58,6 +58,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
                 dayNo=i.getIntExtra("fromweektimetablefragment_daytimetable_dayno", 1);
                 Log.i("dayNo", "Day No :"+dayNo);
                 Log.i("dayNo", "Timetabe string :"+recievedDayTimeTableString);
+                setSelectedDayTimeTableToViews();
             }
             else
             {
@@ -131,7 +132,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
 
         return dayName;
     }
-    
+
     private void setSelectedDayTimeTableToViews() {
 
         SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
