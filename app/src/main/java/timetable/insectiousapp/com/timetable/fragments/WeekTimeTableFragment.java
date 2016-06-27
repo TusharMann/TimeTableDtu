@@ -298,59 +298,54 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
             {
                 Toast.makeText(getActivity(), "Timetable not updated yet", Toast.LENGTH_SHORT).show();
             }
-            SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
-            String[] SlotsList=selectedDayTimeTableString.split(specialSymbol.getMain());
-            if(SlotsList.length>=10)
-            {
-                String singleDay = null;
-                String singleSlot;
-                String[] singleSlotParts;
+            else {
+                SpecialSymbolsAndOthers specialSymbol = new SpecialSymbolsAndOthers();
+                String[] SlotsList = selectedDayTimeTableString.split(specialSymbol.getMain());
+                if (SlotsList.length >= 10) {
+                    String singleDay = null;
+                    String singleSlot;
+                    String[] singleSlotParts;
 
-                ////setting updatedOn
-                singleSlot=SlotsList[11];
+                    ////setting updatedOn
+                    singleSlot = SlotsList[11];
 
-                Log.i("dateandtimestring", "single slot :"+singleSlot);
+                    Log.i("dateandtimestring", "single slot :" + singleSlot);
 
-                if(singleSlot==null||singleSlot.contentEquals(""))
-                {
-                    Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
-                    Log.i("dateandtimestring", "inside if");
-                }
-                else
-                {
-                    Log.i("dateandtimestring", "inside else");
+                    if (singleSlot == null || singleSlot.contentEquals("")) {
+                        Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
+                        Log.i("dateandtimestring", "inside if");
+                    } else {
+                        Log.i("dateandtimestring", "inside else");
 
-                    String date1=singleSlot.substring(0,2);
+                        String date1 = singleSlot.substring(0, 2);
 
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
-                    String currentDateandTime = sdf.format(new Date());
-                    String date2=currentDateandTime.substring(0, 2);
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
+                        String currentDateandTime = sdf.format(new Date());
+                        String date2 = currentDateandTime.substring(0, 2);
 
-                    int idate1=Integer.parseInt(date1);
-                    int idate2=Integer.parseInt(date2);
+                        int idate1 = Integer.parseInt(date1);
+                        int idate2 = Integer.parseInt(date2);
 
-                    Log.i("dateandtimestring", "1:"+idate1);
-                    Log.i("dateandtimestring", "2:"+idate2);
+                        Log.i("dateandtimestring", "1:" + idate1);
+                        Log.i("dateandtimestring", "2:" + idate2);
 
-                    if(Math.abs(idate2-idate1)<=2)
-                    {
-                        //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
-                        //send the data to the weektimetable activity, send the  particular string
-                        Intent i=new Intent();
-                        i.setClass(getActivity(), WeekDayTimeTableActivity.class);
-                        //sending the only string containing timetable for the current day
-                        i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
-                        //sending the number of day of which timetable is to be shown
-                        i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
-                        startActivity(i);
-                    }
-                    else
-                    {
-                        Toast.makeText(getActivity(), "Timetable not modified recently ", Toast.LENGTH_SHORT).show();
+                        if (Math.abs(idate2 - idate1) <= 2) {
+                            //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
+                            //send the data to the weektimetable activity, send the  particular string
+                            Intent i = new Intent();
+                            i.setClass(getActivity(), WeekDayTimeTableActivity.class);
+                            //sending the only string containing timetable for the current day
+                            i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
+                            //sending the number of day of which timetable is to be shown
+                            i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
+                            startActivity(i);
+                        } else {
+                            Toast.makeText(getActivity(), "Timetable not modified recently ", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
 
                 }
-
             }
 
         } catch (JSONException e) {
