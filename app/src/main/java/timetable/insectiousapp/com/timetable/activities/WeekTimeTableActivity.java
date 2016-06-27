@@ -22,7 +22,7 @@ public class WeekTimeTableActivity extends AppCompatActivity {
         if(i!=null)
         {
             selectedDayTimetable=i.getStringExtra("fromweektimetablefragment_daytimetable");
-            if(selectedDayTimetable!=null||!selectedDayTimetable.contentEquals(""))
+            if(selectedDayTimetable!=null&&!selectedDayTimetable.contentEquals(""))
             {
                 
             }
