@@ -695,7 +695,7 @@
                 android:id="@+id/tv_slot_6"
 
                 android:text="02-03"
-                android:maxLength="3"
+
                 android:gravity="center"/>
 
             <TextView
@@ -1028,7 +1028,6 @@
                 android:id="@+id/tv_slot_9"
 
                 android:text="05-06"
-                android:maxLength="3"
                 android:gravity="center"/>
 
             <TextView
