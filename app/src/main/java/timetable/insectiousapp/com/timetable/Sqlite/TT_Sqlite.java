@@ -22,6 +22,12 @@ public class TT_Sqlite extends SQLiteOpenHelper {
     public final static String four="THURSDAY";
     public final static String five="FRIDAY";
 
+    public final static String tdet="UPDATE_DETAILS";
+    public final static String cname="CRNAME";
+    public final static String cno="CRNUMBER";
+    public final static String updon="UPDATEDON";
+
+
 
 
     public TT_Sqlite(Context context,int version){
@@ -41,6 +47,8 @@ public class TT_Sqlite extends SQLiteOpenHelper {
 
         db.execSQL(query2);
 
+        String query3="CREATE TABLE "+tdet+"("+cname +" VARCHAR(50),"+cno+" VARCHAR(50),"+updon +" VARCHAR(50));";
+        db.execSQL(query3);
     }
 
     @Override

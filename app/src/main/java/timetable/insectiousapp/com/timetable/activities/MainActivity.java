@@ -117,6 +117,11 @@ public class MainActivity extends AppCompatActivity
                 if(i==1){
                     super.onBackPressed();
                 }
+//
+//                SharedPreferences sp=getSharedPreferences("CheckDatabase",MODE_PRIVATE);
+//                SharedPreferences.Editor  editor=sp.edit();
+//                editor.putBoolean("CheckKey",true);
+//                editor.commit();
 
                 DefaultTimetableFragment fragment=new DefaultTimetableFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
