@@ -29,7 +29,7 @@ import java.util.Map;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.activities.WeekTimeTableActivity;
+import timetable.insectiousapp.com.timetable.activities.WeekDayTimeTableActivity;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
@@ -79,7 +79,96 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+            switch (v.getId())
+            {
+                case R.id.fragment_week_time_table_btn_today:
 
+                    String day=getCurrentDayName();
+                    if(day.contentEquals("Monday"))
+                    {
+                        currentDayNo=1;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                    }
+                    else if(day.contentEquals("Tuesday"))
+                    {
+                        currentDayNo=2;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                    }
+                    else if(day.contentEquals("Wednesday"))
+                    {
+                        currentDayNo=3;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 3);
+                    }
+                    else if(day.contentEquals("Thursday"))
+                    {
+                        currentDayNo=4;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 4);
+                    }
+                    else if(day.contentEquals("Friday"))
+                    {
+                        currentDayNo=5;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 5);
+                    }
+                    else if(day.contentEquals("Saturday"))
+                    {
+                        currentDayNo=6;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Sunday"))
+                    {
+                        currentDayNo=7;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    break;
+                case R.id.fragment_week_time_table_btn_tomorrow:
+
+                     day=getCurrentDayName();
+                    if(day.contentEquals("Monday"))
+                    {
+                        currentDayNo=1;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 2);
+                    }
+                    else if(day.contentEquals("Tuesday"))
+                    {
+                        currentDayNo=2;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 3);
+                    }
+                    else if(day.contentEquals("Wednesday"))
+                    {
+                        currentDayNo=3;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 4);
+                    }
+                    else if(day.contentEquals("Thursday"))
+                    {
+                        currentDayNo=4;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 5);
+                    }
+                    else if(day.contentEquals("Friday"))
+                    {
+                        currentDayNo=5;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Saturday"))
+                    {
+                        currentDayNo=6;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(day.contentEquals("Sunday"))
+                    {
+                        currentDayNo=7;
+                        ParseRecievedJsonObject(jsonObjectTimeTable, 1);
+                        Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    break;
+            }
 
     }
 
@@ -175,46 +264,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                     e.printStackTrace();
                 }
 
-                String day=getCurrentDayName();
-                if(day.contentEquals("Monday"))
-                {
-                    currentDayNo=1;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                }
-                else if(day.contentEquals("Tuesday"))
-                {
-                    currentDayNo=2;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 2);
-                }
-                else if(day.contentEquals("Wednesday"))
-                {
-                    currentDayNo=3;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 3);
-                }
-                else if(day.contentEquals("Thursday"))
-                {
-                    currentDayNo=4;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 4);
-                }
-                else if(day.contentEquals("Friday"))
-                {
-                    currentDayNo=5;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 5);
-                }
-                else if(day.contentEquals("Saturday"))
-                {
-                    currentDayNo=6;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
-                }
-                else if(day.contentEquals("Sunday"))
-                {
-                    currentDayNo=7;
-                    ParseRecievedJsonObject(jsonObjectTimeTable, 1);
-                    Toast.makeText(getActivity(), "Showing monday's timetable", Toast.LENGTH_SHORT).show();
-                }
-                Toast.makeText(getActivity(), "TimeTable Fetched", Toast.LENGTH_LONG).show();
-            }
+             }
         };
     }
 
@@ -244,53 +294,59 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
             Log.i("dateandtimestring", "field"+day);
             Log.i("dateandtimestring", "timetable string : "+selectedDayTimeTableString);
-
-            SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
-            String[] SlotsList=selectedDayTimeTableString.split(specialSymbol.getMain());
-            if(SlotsList.length>=10)
+            if(selectedDayTimeTableString.isEmpty()&&selectedDayTimeTableString==null)
             {
-                String singleDay = null;
-                String singleSlot;
-                String[] singleSlotParts;
+                Log.i("dateandtimestring", "empty string");
+                Toast.makeText(getActivity(), "Timetable not updated yet", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                SpecialSymbolsAndOthers specialSymbol = new SpecialSymbolsAndOthers();
+                String[] SlotsList = selectedDayTimeTableString.split(specialSymbol.getMain());
+                if (SlotsList.length >= 10) {
+                    String singleDay = null;
+                    String singleSlot;
+                    String[] singleSlotParts;
 
-                ////setting updatedOn
-                singleSlot=SlotsList[11];
+                    ////setting updatedOn
+                    singleSlot = SlotsList[11];
 
-                Log.i("dateandtimestring", "single slot :"+singleSlot);
+                    Log.i("dateandtimestring", "single slot :" + singleSlot);
 
-                if(singleSlot==null||singleSlot.contentEquals(""))
-                {
-                    Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
-                    Log.i("dateandtimestring", "inside if");
-                }
-                else
-                {
-                    Log.i("dateandtimestring", "inside else");
+                    if (singleSlot == null || singleSlot.contentEquals("")) {
+                        Toast.makeText(getActivity(), "Haven't updated yet", Toast.LENGTH_SHORT).show();
+                        Log.i("dateandtimestring", "inside if");
+                    } else {
+                        Log.i("dateandtimestring", "inside else");
 
-                    String date1=singleSlot.substring(0,2);
+                        String date1 = singleSlot.substring(0, 2);
 
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
-                    String currentDateandTime = sdf.format(new Date());
-                    String date2=currentDateandTime.substring(0, 2);
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy_HH:mm");
+                        String currentDateandTime = sdf.format(new Date());
+                        String date2 = currentDateandTime.substring(0, 2);
 
-                    int idate1=Integer.parseInt(date1);
-                    int idate2=Integer.parseInt(date2);
+                        int idate1 = Integer.parseInt(date1);
+                        int idate2 = Integer.parseInt(date2);
 
-                    Log.i("dateandtimestring", "1:"+idate1);
-                    Log.i("dateandtimestring", "2:"+idate2);
+                        Log.i("dateandtimestring", "1:" + idate1);
+                        Log.i("dateandtimestring", "2:" + idate2);
 
-                    if(Math.abs(idate2-idate1)<=2)
-                    {
-                        //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
-                        //send the data to the weektimetable activity, send the  particular string
-                        Intent i=new Intent();
-                        i.setClass(getActivity(), WeekTimeTableActivity.class);
-                        i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
-                        startActivity(i);
+                        if (Math.abs(idate2 - idate1) <= 2) {
+                            //it means it has been updated recently in last 1-2 days or today only so we can display the timetable successfully
+                            //send the data to the weektimetable activity, send the  particular string
+                            Intent i = new Intent();
+                            i.setClass(getActivity(), WeekDayTimeTableActivity.class);
+                            //sending the only string containing timetable for the current day
+                            i.putExtra("fromweektimetablefragment_daytimetable", selectedDayTimeTableString);
+                            //sending the number of day of which timetable is to be shown
+                            i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
+                            startActivity(i);
+                        } else {
+                            Toast.makeText(getActivity(), "Timetable not modified recently ", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
 
                 }
-
             }
 
         } catch (JSONException e) {
