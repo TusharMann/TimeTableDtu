@@ -37,4 +37,8 @@ public class SharedPreferencesFiles {
 
     ////  for storing write key
 
+    //// to check whether to load data or get data from database
+
+
+
 }
