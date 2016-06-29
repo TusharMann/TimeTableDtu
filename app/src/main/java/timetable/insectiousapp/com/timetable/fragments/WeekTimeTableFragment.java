@@ -341,7 +341,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                             i.putExtra("fromweektimetablefragment_daytimetable_dayno", day);
                             startActivity(i);
                         } else {
-                            Toast.makeText(getActivity(), "Timetable not modified recently ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Timetable not modified in last two days ", Toast.LENGTH_SHORT).show();
                         }
 
                     }
