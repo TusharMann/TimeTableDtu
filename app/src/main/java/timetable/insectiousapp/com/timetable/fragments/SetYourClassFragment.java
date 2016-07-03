@@ -65,6 +65,9 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
 
             Toast.makeText(getActivity(), "Class Id updated",Toast.LENGTH_SHORT).show();
 
+            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+            getActivity().setTitle("Default Timetable");
         }
         else
         {
