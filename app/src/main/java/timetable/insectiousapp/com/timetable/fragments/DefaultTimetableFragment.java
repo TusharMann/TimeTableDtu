@@ -419,17 +419,29 @@ public class DefaultTimetableFragment extends Fragment {
             uMonth=updatedOn.substring(5,7);
             uYear=updatedOn.substring(0,4);
             tvUpdatedOn.setText(uDay+"-"+uMonth+"-"+uYear);
+
             String crDetailsString=serverResponse.getString("field7");
-            String[] crDetailPartList=crDetailsString.split(sp.getMain());
-            tvCRName.setText(crDetailPartList[0]);
-            tvCRContact.setText(crDetailPartList[1]);
 
-            ContentValues cv2=new ContentValues();
-            cv2.put(TT_Sqlite.cname,(String )tvCRName.getText());
-            cv2.put(TT_Sqlite.cno,(String )tvCRContact.getText());
-            cv2.put(TT_Sqlite.updon,(String )tvUpdatedOn.getText());
+            if(crDetailsString!=null&&crDetailsString!="")
+            {
+                String[] crDetailPartList=crDetailsString.split(sp.getMain());
+                tvCRName.setText(crDetailPartList[0]);
+                tvCRContact.setText(crDetailPartList[1]);
 
-            db.insert(TT_Sqlite.tdet,null,cv2);
+                ContentValues cv2=new ContentValues();
+                cv2.put(TT_Sqlite.cname,(String )tvCRName.getText());
+                cv2.put(TT_Sqlite.cno,(String )tvCRContact.getText());
+                cv2.put(TT_Sqlite.updon,(String )tvUpdatedOn.getText());
+
+                db.insert(TT_Sqlite.tdet,null,cv2);
+            }
+            else
+            {
+
+                Toast.makeText(getActivity(), "Can't load CR Details", Toast.LENGTH_SHORT).show();
+
+            }
+
 
             Log.i("Tag","fetchfunction");
 
