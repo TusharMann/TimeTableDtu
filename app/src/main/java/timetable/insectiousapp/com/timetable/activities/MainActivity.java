@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.AllClassroomFragment;
@@ -101,6 +102,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         else {
+            Toast.makeText(this,"Press once again to exit",Toast.LENGTH_SHORT).show();
+
             SharedPreferencesFiles sf=new SharedPreferencesFiles();
             SharedPreferences sharedPreferences=getSharedPreferences(sf.getSPClassId(),0);
             String key=sharedPreferences.getString(sf.getClassId(),"Not Yet Set");

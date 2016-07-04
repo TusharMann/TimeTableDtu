@@ -5,8 +5,8 @@ package timetable.insectiousapp.com.timetable.others;
  */
 public class Classroom {
 
-    String id;
-    String name;
+    public String id;
+    public String name;
 
     public Classroom(String id, String name)
     {
