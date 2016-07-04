@@ -178,6 +178,8 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
         SharedPreferences sharedPreferences=getActivity().getSharedPreferences(SPF.getSPClassId(), 0);
         classId=sharedPreferences.getString(SPF.getClassId(), "Not set yet");
 
+        Log.i("checkingg", "Class id1:"+classId);
+
         if(classId.contentEquals("Not set yet"))
         {
             Toast.makeText(getActivity(), "Set your class id first", Toast.LENGTH_LONG).show();
@@ -210,6 +212,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
 
         Log.i("responsecheckingg", "Request time table from server");
 
+        Log.i("checkingg", "Class id2:"+classId);
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
         MyVolley.init(getActivity());
@@ -249,7 +252,7 @@ public class WeekTimeTableFragment extends Fragment implements View.OnClickListe
                 progressDialog.hide();
                 jsonObjectTimeTable=serverResponse;
 
-
+                Log.i("checkingg", "Server Response:"+serverResponse.toString());
                 try {
                     field1=serverResponse.getString("field1");
                     field2=serverResponse.getString("field2");

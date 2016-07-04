@@ -196,8 +196,6 @@ public class WeekReminderFragment extends Fragment {
 
                     reminder_slot2.setText(tuerem);
                     update_slot2.setText(tueupd);
-
-
                 }
 
 

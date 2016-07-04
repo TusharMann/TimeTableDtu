@@ -355,6 +355,8 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
             }
 
         } catch (JSONException e) {
+            Log.i("logginggg", "No updated timtable");
+            Toast.makeText(getApplicationContext(), "No updated timetable", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
@@ -596,7 +598,7 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getApplicationContext(), "Cannot Update, Network Error", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Cannot Update, Network Error or Invalid API Key set", Toast.LENGTH_LONG).show();
                 progressDialog.hide();
             }
         };
