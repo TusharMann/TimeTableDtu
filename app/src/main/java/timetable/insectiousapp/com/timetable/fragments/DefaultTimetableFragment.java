@@ -422,10 +422,10 @@ public class DefaultTimetableFragment extends Fragment {
 
             String crDetailsString=serverResponse.getString("field7");
 
-            if(crDetailsString!=null&&crDetailsString!="")
+            if(crDetailsString!=null&&!crDetailsString.isEmpty())
             {
                 String[] crDetailPartList=crDetailsString.split(sp.getMain());
-                tvCRName.setText(crDetailPartList[0]);
+                tvCRName.setText(crDetailPartList[0]);S
                 tvCRContact.setText(crDetailPartList[1]);
 
                 ContentValues cv2=new ContentValues();
@@ -457,176 +457,171 @@ public class DefaultTimetableFragment extends Fragment {
             //---setting updatedOn over
 
             fixedTimetableString=serverResponse.getString("field6");
+            if(fixedTimetableString!=null&&!fixedTimetableString.isEmpty()) {
+                String[] singleTimePeriod = fixedTimetableString.split(sp.getMain());
+                mondayTime = singleTimePeriod[1];
+                tuesdayTime = singleTimePeriod[2];
+                wednesdayTime = singleTimePeriod[3];
+                thursdayTime = singleTimePeriod[4];
+                fridayTime = singleTimePeriod[5];
 
-            String[] singleTimePeriod=fixedTimetableString.split(sp.getMain());
-            mondayTime=singleTimePeriod[1];
-            tuesdayTime=singleTimePeriod[2];
-            wednesdayTime=singleTimePeriod[3];
-            thursdayTime=singleTimePeriod[4];
-            fridayTime=singleTimePeriod[5];
+                ///--monday
+                slots = mondayTime.split(sp.getPrimary());
+                et_mon_1.setText(slots[0]);
+                et_mon_2.setText(slots[1]);
+                et_mon_3.setText(slots[2]);
+                et_mon_4.setText(slots[3]);
+                et_mon_5.setText(slots[4]);
+                et_mon_6.setText(slots[5]);
+                et_mon_7.setText(slots[6]);
+                et_mon_8.setText(slots[7]);
+                et_mon_9.setText(slots[8]);
+                ///--monday over
 
+                ///--tuesday
+                slots = tuesdayTime.split(sp.getPrimary());
+                et_tue_1.setText(slots[0]);
+                et_tue_2.setText(slots[1]);
+                et_tue_3.setText(slots[2]);
+                et_tue_4.setText(slots[3]);
+                et_tue_5.setText(slots[4]);
+                et_tue_6.setText(slots[5]);
+                et_tue_7.setText(slots[6]);
+                et_tue_8.setText(slots[7]);
+                et_tue_9.setText(slots[8]);
+                ///--tuesday over
 
-//            TT_Sqlite sqlite1=new TT_Sqlite(getContext(),1);
-//            SQLiteDatabase sb=sqlite1.getWritableDatabase();
-//
-//
-//            String query="DROP TABLE "+TT_Sqlite.tname+" IF EXISTS";
-//            sb.execSQL(query);
+                ///--wed
+                slots = wednesdayTime.split(sp.getPrimary());
+                et_wed_1.setText(slots[0]);
+                et_wed_2.setText(slots[1]);
+                et_wed_3.setText(slots[2]);
+                et_wed_4.setText(slots[3]);
+                et_wed_5.setText(slots[4]);
+                et_wed_6.setText(slots[5]);
+                et_wed_7.setText(slots[6]);
+                et_wed_8.setText(slots[7]);
+                et_wed_9.setText(slots[8]);
+                ///--wed over
 
+                ///--thu
+                slots = thursdayTime.split(sp.getPrimary());
+                et_thu_1.setText(slots[0]);
+                et_thu_2.setText(slots[1]);
+                et_thu_3.setText(slots[2]);
+                et_thu_4.setText(slots[3]);
+                et_thu_5.setText(slots[4]);
+                et_thu_6.setText(slots[5]);
+                et_thu_7.setText(slots[6]);
+                et_thu_8.setText(slots[7]);
+                et_thu_9.setText(slots[8]);
+                ///--thu over
 
-            ///--monday
-            slots=mondayTime.split(sp.getPrimary());
-            et_mon_1.setText(slots[0]);
-            et_mon_2.setText(slots[1]);
-            et_mon_3.setText(slots[2]);
-            et_mon_4.setText(slots[3]);
-            et_mon_5.setText(slots[4]);
-            et_mon_6.setText(slots[5]);
-            et_mon_7.setText(slots[6]);
-            et_mon_8.setText(slots[7]);
-            et_mon_9.setText(slots[8]);
-            ///--monday over
+                ///--fri
+                slots = fridayTime.split(sp.getPrimary());
+                et_fri_1.setText(slots[0]);
+                et_fri_2.setText(slots[1]);
+                et_fri_3.setText(slots[2]);
+                et_fri_4.setText(slots[3]);
+                et_fri_5.setText(slots[4]);
+                et_fri_6.setText(slots[5]);
+                et_fri_7.setText(slots[6]);
+                et_fri_8.setText(slots[7]);
+                et_fri_9.setText(slots[8]);
+                ///--fri over
 
-            ///--tuesday
-            slots=tuesdayTime.split(sp.getPrimary());
-            et_tue_1.setText(slots[0]);
-            et_tue_2.setText(slots[1]);
-            et_tue_3.setText(slots[2]);
-            et_tue_4.setText(slots[3]);
-            et_tue_5.setText(slots[4]);
-            et_tue_6.setText(slots[5]);
-            et_tue_7.setText(slots[6]);
-            et_tue_8.setText(slots[7]);
-            et_tue_9.setText(slots[8]);
-            ///--tuesday over
-
-            ///--wed
-            slots=wednesdayTime.split(sp.getPrimary());
-            et_wed_1.setText(slots[0]);
-            et_wed_2.setText(slots[1]);
-            et_wed_3.setText(slots[2]);
-            et_wed_4.setText(slots[3]);
-            et_wed_5.setText(slots[4]);
-            et_wed_6.setText(slots[5]);
-            et_wed_7.setText(slots[6]);
-            et_wed_8.setText(slots[7]);
-            et_wed_9.setText(slots[8]);
-            ///--wed over
-
-            ///--thu
-            slots=thursdayTime.split(sp.getPrimary());
-            et_thu_1.setText(slots[0]);
-            et_thu_2.setText(slots[1]);
-            et_thu_3.setText(slots[2]);
-            et_thu_4.setText(slots[3]);
-            et_thu_5.setText(slots[4]);
-            et_thu_6.setText(slots[5]);
-            et_thu_7.setText(slots[6]);
-            et_thu_8.setText(slots[7]);
-            et_thu_9.setText(slots[8]);
-            ///--thu over
-
-            ///--fri
-            slots=fridayTime.split(sp.getPrimary());
-            et_fri_1.setText(slots[0]);
-            et_fri_2.setText(slots[1]);
-            et_fri_3.setText(slots[2]);
-            et_fri_4.setText(slots[3]);
-            et_fri_5.setText(slots[4]);
-            et_fri_6.setText(slots[5]);
-            et_fri_7.setText(slots[6]);
-            et_fri_8.setText(slots[7]);
-            et_fri_9.setText(slots[8]);
-            ///--fri over
-
-            ///////Storing Default TimeTable in the database
-            Log.i("Tag","Database Created");
-            ContentValues cv1=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_1.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_1.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_1.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_1.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_1.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                ///////Storing Default TimeTable in the database
+                Log.i("Tag", "Database Created");
+                ContentValues cv1 = new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_1.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_1.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_1.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_1.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_1.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-           // ContentValues cv2=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_2.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_2.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_2.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_2.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_2.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                // ContentValues cv2=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_2.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_2.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_2.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_2.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_2.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-            //ContentValues cv3=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_3.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_3.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_3.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_3.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_3.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                //ContentValues cv3=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_3.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_3.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_3.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_3.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_3.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-            //ContentValues cv4=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_4.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_4.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_4.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_4.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_4.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                //ContentValues cv4=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_4.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_4.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_4.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_4.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_4.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-            //ContentValues cv5=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_5.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_5.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_5.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_5.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_5.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                //ContentValues cv5=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_5.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_5.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_5.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_5.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_5.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-           // ContentValues cv6=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_6.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_6.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_6.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_6.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_6.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                // ContentValues cv6=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_6.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_6.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_6.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_6.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_6.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-            //ContentValues cv7=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_7.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_7.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_7.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_7.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_7.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                //ContentValues cv7=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_7.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_7.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_7.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_7.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_7.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
-           // ContentValues cv8=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_8.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_8.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_8.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_8.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_8.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
+                // ContentValues cv8=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_8.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_8.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_8.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_8.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_8.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
-           // ContentValues cv9=new ContentValues();
-            cv1.put(TT_Sqlite.one, (String) et_mon_9.getText());
-            cv1.put(TT_Sqlite.two, (String) et_tue_9.getText());
-            cv1.put(TT_Sqlite.three, (String) et_wed_9.getText());
-            cv1.put(TT_Sqlite.four, (String) et_thu_9.getText());
-            cv1.put(TT_Sqlite.five, (String) et_fri_9.getText());
-            db.insert(TT_Sqlite.tname,null,cv1);
-
-
-            SharedPreferences sp1=getActivity().getSharedPreferences("CheckDatabase", Context.MODE_PRIVATE);
-            SharedPreferences.Editor  editor=sp1.edit();
-            editor.putBoolean("CheckKey",true);
-            editor.commit();
+                // ContentValues cv9=new ContentValues();
+                cv1.put(TT_Sqlite.one, (String) et_mon_9.getText());
+                cv1.put(TT_Sqlite.two, (String) et_tue_9.getText());
+                cv1.put(TT_Sqlite.three, (String) et_wed_9.getText());
+                cv1.put(TT_Sqlite.four, (String) et_thu_9.getText());
+                cv1.put(TT_Sqlite.five, (String) et_fri_9.getText());
+                db.insert(TT_Sqlite.tname, null, cv1);
 
 
+                SharedPreferences sp1 = getActivity().getSharedPreferences("CheckDatabase", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp1.edit();
+                editor.putBoolean("CheckKey", true);
+                editor.commit();
+
+            }
+            else
+            {
+                Toast.makeText(getActivity(), "No default TimeTable is found for corresponding ClassId", Toast.LENGTH_SHORT).show();
+            }
 
 
         } catch (JSONException e) {
