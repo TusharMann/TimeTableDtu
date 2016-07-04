@@ -18,7 +18,7 @@
                 android:title="Week's Timetable" />
 
             <item
-                android:id="@+id/nav_sendddd"
+                android:id="@+id/nav_reminder"
                 android:icon="@drawable/todays_reminder"
                 android:title="Week's Reminders" />
 

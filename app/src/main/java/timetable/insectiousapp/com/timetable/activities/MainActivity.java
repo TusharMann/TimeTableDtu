@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.fragments.AllClassroomFragment;
@@ -20,6 +21,7 @@ import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
 import timetable.insectiousapp.com.timetable.fragments.ManageTimeTableFragment;
 import timetable.insectiousapp.com.timetable.fragments.SetYourClassFragment;
+import timetable.insectiousapp.com.timetable.fragments.WeekReminderFragment;
 import timetable.insectiousapp.com.timetable.fragments.WeekTimeTableFragment;
 import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 
@@ -100,6 +102,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         else {
+            Toast.makeText(this,"Press once again to exit",Toast.LENGTH_SHORT).show();
+
             SharedPreferencesFiles sf=new SharedPreferencesFiles();
             SharedPreferences sharedPreferences=getSharedPreferences(sf.getSPClassId(),0);
             String key=sharedPreferences.getString(sf.getClassId(),"Not Yet Set");
@@ -205,6 +209,15 @@ public class MainActivity extends AppCompatActivity
              setTitle("This week's timetable");
              counter=1;
          }
+        else if(id==R.id.nav_reminder)
+         {
+             WeekReminderFragment weekReminder=new WeekReminderFragment();
+             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,weekReminder).commit();
+             setTitle("Week's Remainder");
+             counter=1;
+         }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

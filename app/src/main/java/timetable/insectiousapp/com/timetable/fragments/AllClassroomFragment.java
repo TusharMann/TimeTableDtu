@@ -2,12 +2,15 @@ package timetable.insectiousapp.com.timetable.fragments;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +32,7 @@ import java.util.Map;
 import timetable.insectiousapp.com.timetable.R;
 import timetable.insectiousapp.com.timetable.others.ClassroomListAdapter;
 import timetable.insectiousapp.com.timetable.others.Classroom;
+import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
 /**
@@ -65,6 +69,30 @@ public class AllClassroomFragment extends Fragment {
         l=getActivity().getLayoutInflater();
         adapter=new ClassroomListAdapter(getActivity(), 0, data, l);
         listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Classroom c=adapter.getItem(position);
+                String cid=c.id;
+
+                SharedPreferencesFiles sharedPreferencesFiles = new SharedPreferencesFiles();
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPreferencesFiles.getSPClassId(), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(sharedPreferencesFiles.getClassId(),cid );
+                editor.commit();
+
+                Toast.makeText(getActivity(), "Class Id updated",Toast.LENGTH_SHORT).show();
+
+                DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+                getActivity().setTitle("Default Timetable");
+
+
+
+            }
+        });
 
         //Log.v("checklength", String.valueOf(all_classroom_ids.length));
 
