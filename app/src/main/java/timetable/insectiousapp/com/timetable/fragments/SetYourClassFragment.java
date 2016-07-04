@@ -80,7 +80,7 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
         }
         else
         {
-            Toast.makeText(getActivity(), "Please enter the class id",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Please enter a valid ClassId !!!",Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -88,11 +88,9 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
 
     /////////fetching timetable
     public void requestTimeTableFromServer(String classId) {
-        progressDialog.setTitle("Fetching Timetable");
+        progressDialog.setTitle("Verifying ClassId");
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
-
-        Log.i("responsecheckingg", "Request time table from server");
 
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
@@ -131,11 +129,7 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
             public void onResponse(String serverResponse) {
 
                 progressDialog.hide();
-                if(!serverResponse.contentEquals("-1"))
-                {
-                    setSharedPreferenceForClassIdAndApiKey(classId);
-                }
-
+                setSharedPreferenceForClassIdAndApiKey(classId);
             }
         };
     }
@@ -148,7 +142,7 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
             public void onErrorResponse(VolleyError error) {
 
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
-                Toast.makeText(getActivity(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Invalid Class Id !", Toast.LENGTH_LONG).show();
                 progressDialog.hide();
             }
         };
