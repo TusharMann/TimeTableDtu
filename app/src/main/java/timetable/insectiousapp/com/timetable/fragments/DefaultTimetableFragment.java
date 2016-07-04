@@ -421,14 +421,9 @@ public class DefaultTimetableFragment extends Fragment {
             tvUpdatedOn.setText(uDay+"-"+uMonth+"-"+uYear);
 
             String crDetailsString=serverResponse.getString("field7");
-            Log.i("nullcheck", "Field 7:"+crDetailsString);
-            if(crDetailsString.contentEquals("null"))
+
+            if(!crDetailsString.contentEquals("null"))
             {
-                Log.i("nullcheck", "string content is null");
-            }
-            if(crDetailsString!=null&&!crDetailsString.isEmpty())
-            {
-                Log.i("nullcheck", "string not null");
                 String[] crDetailPartList=crDetailsString.split(sp.getMain());
                 tvCRName.setText(crDetailPartList[0]);
                 tvCRContact.setText(crDetailPartList[1]);
@@ -442,13 +437,8 @@ public class DefaultTimetableFragment extends Fragment {
             }
             else
             {
-                Log.i("nullcheck", "string null");
                 Toast.makeText(getActivity(), "Can't load CR Details", Toast.LENGTH_SHORT).show();
-
             }
-
-
-            Log.i("Tag","fetchfunction");
 
 //                SharedPreferencesFiles sharedPreferencesFiles = new SharedPreferencesFiles();
 //                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPreferencesFiles.getcheck(), Context.MODE_PRIVATE);
@@ -456,13 +446,10 @@ public class DefaultTimetableFragment extends Fragment {
 //                editor.putString(sharedPreferencesFiles.getkey(),"checked" );
 //                editor.commit();
 
-
-
-
             //---setting updatedOn over
 
             fixedTimetableString=serverResponse.getString("field6");
-            if(fixedTimetableString!=null&&!fixedTimetableString.isEmpty()) {
+            if(!fixedTimetableString.contentEquals("null")) {
                 String[] singleTimePeriod = fixedTimetableString.split(sp.getMain());
                 mondayTime = singleTimePeriod[1];
                 tuesdayTime = singleTimePeriod[2];
