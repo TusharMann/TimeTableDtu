@@ -58,10 +58,16 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
 
         if(classId!=null&&!classId.isEmpty()) {
             SharedPreferencesFiles sharedPreferencesFiles = new SharedPreferencesFiles();
+
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPreferencesFiles.getSPClassId(), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(sharedPreferencesFiles.getClassId(), classId);
             editor.commit();
+
+            SharedPreferences sharedPreferences2=getActivity().getSharedPreferences(sharedPreferencesFiles.getSPWriteKey(), Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor1=sharedPreferences2.edit();
+            editor1.putString(sharedPreferencesFiles.getWriteKey(), "Not set yet");
+            editor1.commit();
 
             Toast.makeText(getActivity(), "Class Id updated",Toast.LENGTH_SHORT).show();
 
