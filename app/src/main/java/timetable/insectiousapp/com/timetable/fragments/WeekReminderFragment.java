@@ -58,6 +58,9 @@ public class WeekReminderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        v= inflater.inflate(R.layout.fragment_week_reminder, container, false);
+
+
         update_slot1=(TextView)v.findViewById(R.id.update_slot_1);
         update_slot2=(TextView)v.findViewById(R.id.update_slot_2);
         update_slot3=(TextView)v.findViewById(R.id.update_slot_3);
@@ -70,11 +73,13 @@ public class WeekReminderFragment extends Fragment {
         reminder_slot4=(TextView)v.findViewById(R.id.reminder_slot_4);
         reminder_slot5=(TextView)v.findViewById(R.id.reminder_slot_5);
 
+        progressDialog=new ProgressDialog(getActivity());
+        progressDialog.setCancelable(false);
+
+
         specialSymbolsAndOthers=new SpecialSymbolsAndOthers();
 
-
-
-       v= inflater.inflate(R.layout.fragment_week_reminder, container, false);
+        Log.i("Reminder","onCreateFunction");
 
         setCredentialsFromSharedPreferences();
 
@@ -92,8 +97,9 @@ public class WeekReminderFragment extends Fragment {
         {
             Toast.makeText(getActivity(), "Set your class id first", Toast.LENGTH_LONG).show();
         }
-        else
-        {
+        else {
+            Log.i("Reminder","setCredentialFunction");
+
             //it means class id is already set, you can begin working
             requestTimeTableFromServer();
         }
@@ -103,7 +109,7 @@ public class WeekReminderFragment extends Fragment {
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
 
-        Log.i("responsecheckingg", "Request time table from server");
+        Log.i("Reminder", "Request time table from server");
 
         String classTimeTableUrl="https://api.thingspeak.com/channels/"+classId+"/feed/last.json";
 
