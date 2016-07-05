@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
-import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +21,8 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
     int dayNo;
 
     TextView et1, et2, et3, et4, et5, et6, et7, et8, et9, etReminder;
-    CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9;
+    LinearLayout lt1,lt2,lt3,lt4,lt5,lt6,lt7,lt8,lt9;
+   // CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9;
     TextView tvLastUpdatedOn, tvDayName;
     ProgressDialog progressDialog;
     String defaultTimeTableString, selectedDayTimeTableString;
@@ -71,6 +72,18 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
 
     public void initializingViews()
     {
+        lt1=(LinearLayout)findViewById(R.id.week_day_hour1);
+        lt2=(LinearLayout)findViewById(R.id.week_day_hour2);
+        lt3=(LinearLayout)findViewById(R.id.week_day_hour3);
+        lt4=(LinearLayout)findViewById(R.id.week_day_hour4);
+        lt5=(LinearLayout)findViewById(R.id.week_day_hour5);
+        lt6=(LinearLayout)findViewById(R.id.week_day_hour6);
+        lt7=(LinearLayout)findViewById(R.id.week_day_hour7);
+        lt8=(LinearLayout)findViewById(R.id.week_day_hour8);
+        lt9=(LinearLayout)findViewById(R.id.week_day_hour9);
+
+
+
         et1=(TextView)findViewById(R.id.subject_slot_1);
         et2=(TextView)findViewById(R.id.subject_slot_2);
         et3=(TextView)findViewById(R.id.subject_slot_3);
@@ -92,15 +105,15 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
         et8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
         et9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
 
-        cb1=(CheckBox)findViewById(R.id.cb_slot_1);
-        cb2=(CheckBox)findViewById(R.id.cb_slot_2);
-        cb3=(CheckBox)findViewById(R.id.cb_slot_3);
-        cb4=(CheckBox)findViewById(R.id.cb_slot_4);
-        cb5=(CheckBox)findViewById(R.id.cb_slot_5);
-        cb6=(CheckBox)findViewById(R.id.cb_slot_6);
-        cb7=(CheckBox)findViewById(R.id.cb_slot_7);
-        cb8=(CheckBox)findViewById(R.id.cb_slot_8);
-        cb9=(CheckBox)findViewById(R.id.cb_slot_9);
+//        cb1=(CheckBox)findViewById(R.id.cb_slot_1);
+//        cb2=(CheckBox)findViewById(R.id.cb_slot_2);
+//        cb3=(CheckBox)findViewById(R.id.cb_slot_3);
+//        cb4=(CheckBox)findViewById(R.id.cb_slot_4);
+//        cb5=(CheckBox)findViewById(R.id.cb_slot_5);
+//        cb6=(CheckBox)findViewById(R.id.cb_slot_6);
+//        cb7=(CheckBox)findViewById(R.id.cb_slot_7);
+//        cb8=(CheckBox)findViewById(R.id.cb_slot_8);
+//        cb9=(CheckBox)findViewById(R.id.cb_slot_9);
 
         tvLastUpdatedOn=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_lastupdatedon);
         tvDayName=(TextView)findViewById(R.id.activity_update_single_day_tt_tv_dayname);
@@ -126,6 +139,7 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
 
         SpecialSymbolsAndOthers specialSymbol=new SpecialSymbolsAndOthers();
         String[] SlotsList=recievedDayTimeTableString.split(specialSymbol.getMain());
+
         if(SlotsList.length>=10)
         {
             String singleDay = null;
@@ -136,63 +150,93 @@ public class WeekDayTimeTableActivity extends AppCompatActivity {
             singleSlot=SlotsList[1];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et1.setText(singleSlotParts[0]);
-            cb1.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb1.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+               lt1.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+
+            }
             //--slot 1
 
             ////slot 2
             singleSlot=SlotsList[2];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et2.setText(singleSlotParts[0]);
-            cb2.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb2.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt2.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
+
             //--slot 2
 
             ////slot 3
             singleSlot=SlotsList[3];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et3.setText(singleSlotParts[0]);
-            cb3.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+           // cb3.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt3.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 3
 
             ////slot 4
             singleSlot=SlotsList[4];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et4.setText(singleSlotParts[0]);
-            cb4.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+           // cb4.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt4.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 4
 
             ////slot 5
             singleSlot=SlotsList[5];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et5.setText(singleSlotParts[0]);
-            cb5.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb5.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt5.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 5
 
             ////slot 6
             singleSlot=SlotsList[6];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et6.setText(singleSlotParts[0]);
-            cb6.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb6.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt6.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
+
             //--slot 6
 
             ////slot 7
             singleSlot=SlotsList[7];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et7.setText(singleSlotParts[0]);
-            cb7.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb7.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt7.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 7
 
             ////slot 8
             singleSlot=SlotsList[8];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et8.setText(singleSlotParts[0]);
-            cb8.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb8.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt8.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 8
 
             ////slot 9
             singleSlot=SlotsList[9];
             singleSlotParts=singleSlot.split(specialSymbol.getPrimary());
             et9.setText(singleSlotParts[0]);
-            cb9.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            //cb9.setChecked((singleSlotParts[1].contentEquals("1"))?true:false);
+            if(singleSlotParts[1].contentEquals("1")){
+                lt9.setBackgroundColor(getResources().getColor(R.color.lightgreen1));
+            }
             //--slot 9
 
             ////setting reminder

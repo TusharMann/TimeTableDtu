@@ -45,6 +45,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour1"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -63,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_1"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -73,16 +74,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_1"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:gravity="center"
-                android:checked="true"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -98,6 +89,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour2"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -116,7 +108,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_2"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -126,16 +118,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_2"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:checked="true"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -152,6 +134,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour3"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -170,7 +153,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_3"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -180,16 +163,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_3"
-                android:checked="true"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -205,6 +178,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour4"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -223,7 +197,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_4"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -233,16 +207,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_4"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:gravity="center"
-                android:checked="true"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -258,6 +222,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour5"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -276,7 +241,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_5"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -286,16 +251,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_5"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:checked="true"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -311,6 +266,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour6"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -329,7 +285,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_6"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -339,16 +295,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_6"
-                android:layout_weight="0.5"
-                android:checked="true"
-                android:paddingLeft="5dp"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -364,6 +310,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour7"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -382,7 +329,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_7"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -392,16 +339,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_7"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:checked="true"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -417,6 +354,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour8"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -435,7 +373,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_8"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -445,16 +383,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_8"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:gravity="center"
-                android:checked="true"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"
@@ -470,6 +398,7 @@
             android:orientation="horizontal"
             android:layout_margin="2dp"
             android:gravity="center"
+            android:id="@+id/week_day_hour9"
             android:background="@drawable/roundedgreybackground2dp"
             >
 
@@ -488,7 +417,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="2.5"
                 android:layout_height="fill_parent"
-                android:background="@drawable/greyedittextbackground"
+
                 android:id="@+id/subject_slot_9"
                 android:hint="Subject"
                 android:textColorHint="#fff"
@@ -498,16 +427,6 @@
                 android:gravity="center"
                 />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/cb_slot_9"
-                android:layout_weight="0.5"
-                android:paddingLeft="5dp"
-                android:checked="true"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
 
             <TextView
                 android:layout_width="0dp"

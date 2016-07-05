@@ -166,21 +166,8 @@ public class MainActivity extends AppCompatActivity
         else if(id == R.id.menu_refresh){
 
             Log.i("Refresh","Clicked");
+            refresh();
 
-            SharedPreferences sp1 = getSharedPreferences("CheckDatabase", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sp1.edit();
-            editor.putBoolean("CheckKey", false);
-            editor.commit();
-
-            TT_Sqlite sqlite=new TT_Sqlite(this,1);
-            SQLiteDatabase db=sqlite.getWritableDatabase();
-
-            db.execSQL("DELETE FROM "+TT_Sqlite.tname);
-            db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
-
-            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment);
-            setTitle("Default Timetable");
             return true;
 
         }
@@ -249,4 +236,26 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void refresh(){
+        Log.i("Refresh","Inside refresh function");
+
+        SharedPreferences sp1 = getSharedPreferences("CheckDatabase", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp1.edit();
+        editor.putBoolean("CheckKey", false);
+        editor.commit();
+
+        TT_Sqlite sqlite=new TT_Sqlite(this,1);
+        SQLiteDatabase db=sqlite.getWritableDatabase();
+
+        db.execSQL("DELETE FROM "+TT_Sqlite.tname);
+        db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
+
+        DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment);
+        setTitle("Default Timetable");
+
+
+    }
+
 }
