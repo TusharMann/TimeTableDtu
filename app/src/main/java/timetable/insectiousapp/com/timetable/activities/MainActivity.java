@@ -180,6 +180,7 @@ public class MainActivity extends AppCompatActivity
 
             DefaultTimetableFragment fragment=new DefaultTimetableFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment);
+            return true;
 
         }
 

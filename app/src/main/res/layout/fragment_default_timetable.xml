@@ -19,29 +19,29 @@
         android:background="@color/grey4"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"/>-->
 
-        <mehdi.sakout.fancybuttons.FancyButton
+        <!--<mehdi.sakout.fancybuttons.FancyButton-->
 
-            android:layout_height="50dp"
-            android:layout_width="200dp"
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_width="200dp"-->
 
-            fancy:fb_borderColor="#FFFFFF"
-            fancy:fb_borderWidth="0dp"
-            fancy:fb_defaultColor="@color/red1"
-            fancy:fb_focusColor="@color/darkred1"
-            android:id="@+id/fragment_default_timetable_refresh_btn"
-            android:fontFamily="sans-serif-light"
-            fancy:fb_iconPosition="top"
-            fancy:fb_radius="5dp"
-            android:gravity="center"
-            fancy:fb_text="Refresh"
-            fancy:fb_textSize="18sp"
-            fancy:fb_textColor="#FFFFFF"
-            android:layout_gravity="right" />
+            <!--fancy:fb_borderColor="#FFFFFF"-->
+            <!--fancy:fb_borderWidth="0dp"-->
+            <!--fancy:fb_defaultColor="@color/red1"-->
+            <!--fancy:fb_focusColor="@color/darkred1"-->
+            <!--android:id="@+id/fragment_default_timetable_refresh_btn"-->
+            <!--android:fontFamily="sans-serif-light"-->
+            <!--fancy:fb_iconPosition="top"-->
+            <!--fancy:fb_radius="5dp"-->
+            <!--android:gravity="center"-->
+            <!--fancy:fb_text="Refresh"-->
+            <!--fancy:fb_textSize="18sp"-->
+            <!--fancy:fb_textColor="#FFFFFF"-->
+            <!--android:layout_gravity="right" />-->
 
 
         <LinearLayout

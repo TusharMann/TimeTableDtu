@@ -2,39 +2,38 @@
 
 
  import android.app.ProgressDialog;
- import android.content.ContentValues;
- import android.content.Context;
- import android.content.SharedPreferences;
- import android.database.Cursor;
- import android.database.sqlite.SQLiteDatabase;
- import android.os.Bundle;
- import android.support.v4.app.Fragment;
- import android.util.Log;
- import android.view.LayoutInflater;
- import android.view.View;
- import android.view.ViewGroup;
- import android.widget.TextView;
- import android.widget.Toast;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
- import com.android.volley.AuthFailureError;
- import com.android.volley.DefaultRetryPolicy;
- import com.android.volley.Request;
- import com.android.volley.RequestQueue;
- import com.android.volley.VolleyError;
- import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
- import org.json.JSONException;
- import org.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 
- import java.util.HashMap;
- import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;
 
- import mehdi.sakout.fancybuttons.FancyButton;
- import timetable.insectiousapp.com.timetable.R;
- import timetable.insectiousapp.com.timetable.Sqlite.TT_Sqlite;
- import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
- import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
- import timetable.insectiousapp.com.timetable.volley.MyVolley;
+import timetable.insectiousapp.com.timetable.R;
+import timetable.insectiousapp.com.timetable.Sqlite.TT_Sqlite;
+import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
+import timetable.insectiousapp.com.timetable.others.SpecialSymbolsAndOthers;
+import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,7 +52,7 @@ public class DefaultTimetableFragment extends Fragment {
     String uDay, uMonth, uYear;
     String mondayTime, tuesdayTime, wednesdayTime, thursdayTime, fridayTime;
     String[] slots;
-    FancyButton fancyButton;
+   // FancyButton fancyButton;
 
     String euro="€";
     String yen="¥";
@@ -89,7 +88,7 @@ public class DefaultTimetableFragment extends Fragment {
         tvCRName=(TextView)v.findViewById(R.id.fragment_default_timetable_tv_crname);
         tvCRContact=(TextView)v.findViewById(R.id.fragment_default_timetable_tv_crcontactnumber);
 
-        fancyButton=(FancyButton)v.findViewById(R.id.fragment_default_timetable_refresh_btn);
+     //   fancyButton=(FancyButton)v.findViewById(R.id.fragment_default_timetable_refresh_btn);
 
         Log.i("Tag","function1");
         et_mon_1=(TextView)v.findViewById(R.id.et_monday_1);
@@ -155,17 +154,17 @@ public class DefaultTimetableFragment extends Fragment {
 //        String bol=shared.getString(sf.getkey(), "Not checked");
 //        Log.i("Tag",bol);
 
-        fancyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TT_Sqlite sqlite=new TT_Sqlite(getContext(),1);
-                SQLiteDatabase db=sqlite.getWritableDatabase();
-
-                db.execSQL("DELETE FROM "+TT_Sqlite.tname);
-                db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
-                requestFetchTimeTableFromServer();
-            }
-        });
+//        fancyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TT_Sqlite sqlite=new TT_Sqlite(getContext(),1);
+//                SQLiteDatabase db=sqlite.getWritableDatabase();
+//
+//                db.execSQL("DELETE FROM "+TT_Sqlite.tname);
+//                db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
+//                requestFetchTimeTableFromServer();
+//            }
+//        });
 
 
         SharedPreferences shared=getActivity().getSharedPreferences("CheckDatabase",Context.MODE_PRIVATE);
