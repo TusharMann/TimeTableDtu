@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="timetable.insectiousapp.com.timetable.activities.NewClassroomDetailActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/grey4"
+        android:layout_height="match_parent">
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"/>-->
+
+        <!--<mehdi.sakout.fancybuttons.FancyButton-->
+
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_width="200dp"-->
+
+        <!--fancy:fb_borderColor="#FFFFFF"-->
+        <!--fancy:fb_borderWidth="0dp"-->
+        <!--fancy:fb_defaultColor="@color/red1"-->
+        <!--fancy:fb_focusColor="@color/darkred1"-->
+        <!--android:id="@+id/fragment_default_timetable_refresh_btn"-->
+        <!--android:fontFamily="sans-serif-light"-->
+        <!--fancy:fb_iconPosition="top"-->
+        <!--fancy:fb_radius="5dp"-->
+        <!--android:gravity="center"-->
+        <!--fancy:fb_text="Refresh"-->
+        <!--fancy:fb_textSize="18sp"-->
+        <!--fancy:fb_textColor="#FFFFFF"-->
+        <!--android:layout_gravity="right" />-->
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1" />
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_monday_0"
+
+                android:text="Mon"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_tuesday_0"
+
+                android:text="Tue"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_wednesday_0"
+
+                android:text="Wed"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_thursday_0"
+
+                android:text="Thu"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_friday_0"
+
+                android:text="Fri"
+
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_1"
+
+                android:text="9-10"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_1"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_1"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_1"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_1"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_1"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_2"
+
+                android:text="10-11"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_2"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_2"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_2"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_2"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_2"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_3"
+
+                android:text="11-12"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_3"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_3"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_3"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_3"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_3"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_4"
+
+                android:text="12-01"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_4"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_4"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_4"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_4"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_4"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_5"
+
+                android:text="01-02"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_5"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_5"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_5"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_5"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_5"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_6"
+
+                android:text="02-03"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_6"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_6"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_6"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_6"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_6"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_7"
+
+                android:text="03-04"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_7"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_7"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_7"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_7"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_7"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_8"
+
+                android:text="04-05"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_8"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_8"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_8"
+                android:maxLength="3"
+                android:text="-"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_8"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_friday_8"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_weight="1"
+
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:textColor="#fff"
+                android:fontFamily="sans-serif-bold"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/tv_slot_9"
+
+                android:text="05-06"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_monday_9"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_tuesday_9"
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_wednesday_9"
+                android:maxLength="3"
+                android:text="-"
+
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+
+                android:id="@+id/et_thursday_9"
+
+                android:text="-"
+                android:maxLength="3"
+                android:gravity="center"/>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:background="@drawable/whiteedittextbackground"
+                android:layout_margin="2dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLength="5"
+                android:id="@+id/et_friday_9"
+                android:text="-"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="CR: "
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#fff"
+                android:gravity="center_vertical|right"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="CR Name"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#fff"
+                android:gravity="center_vertical|left"
+                android:id="@+id/fragment_default_timetable_tv_crname"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Contact: "
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#fff"
+                android:gravity="center_vertical|right"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="9999999999"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#fff"
+                android:gravity="center_vertical|left"
+                android:id="@+id/fragment_default_timetable_tv_crcontactnumber"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:layout_height="fill_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Class room created On:"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#fff"
+                android:gravity="center_vertical|right"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="N/A"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#fff"
+                android:gravity="center_vertical|left"
+                android:id="@+id/fragment_default_timetable_tv_lastupdated"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:layout_height="fill_parent" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
