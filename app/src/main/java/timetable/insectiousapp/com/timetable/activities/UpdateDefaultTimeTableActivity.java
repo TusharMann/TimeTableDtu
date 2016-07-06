@@ -47,7 +47,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
     EditText[][] etMon=new EditText[5][10];
 
-    String[] strMon=new String[10];
+    String[][] strMon=new String[5][10];
 
     //ProgressDialog progressDialog;
 
@@ -120,7 +120,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
             }
         }
 
-     
+
     }
 
 
@@ -152,117 +152,13 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
         /////////////////  MONDAY ////////////////////////
 
-        for(int i=1; i<=9; i++)
-        {
-            strMon[i]=etMon[i].getText().toString();
-            strMon[i]=strMon[i].replaceAll(regExpression, "");
+        for(int i=1; i<=5; i++) {
+            for (int j = 1; j <= 9; j++)
+            {
+                strMon[i][j]=etMon[i][j].getText().toString();
+                strMon[i][j]=strMon[i][j].replaceAll(regExpression, "");
+            }
         }
-
-//        String mon_1=et_mon_1.getText().toString();
-//        String mon_2=et_mon_2.getText().toString();
-//        String mon_3=et_mon_3.getText().toString();
-//        String mon_4=et_mon_4.getText().toString();
-//        String mon_5=et_mon_5.getText().toString();
-//        String mon_6=et_mon_6.getText().toString();
-//        String mon_7=et_mon_7.getText().toString();
-//        String mon_8=et_mon_8.getText().toString();
-//        String mon_9=et_mon_9.getText().toString();
-
-
-
-//        String s_mon_l = mon_1.replaceAll(regExpression, "");
-//        String s_mon_2 = mon_2.replaceAll(regExpression, "");
-//        String s_mon_3 =mon_3.replaceAll(regExpression, "");
-//        String s_mon_4 =mon_4.replaceAll(regExpression, "");
-//        String s_mon_5 =mon_5.replaceAll(regExpression, "");
-//        String s_mon_6 =mon_6.replaceAll(regExpression, "");
-//        String s_mon_7 =mon_7.replaceAll(regExpression, "");
-//        String s_mon_8 =mon_8.replaceAll(regExpression, "");
-//        String s_mon_9 =mon_9.replaceAll(regExpression, "");
-
-        /////////////////  TUESDAY ////////////////////////
-        String tue_1=et_tue_1.getText().toString();
-        String tue_2=et_tue_2.getText().toString();
-        String tue_3=et_tue_3.getText().toString();
-        String tue_4=et_tue_4.getText().toString();
-        String tue_5=et_tue_5.getText().toString();
-        String tue_6=et_tue_6.getText().toString();
-        String tue_7=et_tue_7.getText().toString();
-        String tue_8=et_tue_8.getText().toString();
-        String tue_9=et_tue_9.getText().toString();
-
-        String s_tue_l = tue_1.replaceAll(regExpression, "");
-        String s_tue_2 = tue_2.replaceAll(regExpression, "");
-        String s_tue_3 =tue_3.replaceAll(regExpression, "");
-        String s_tue_4 =tue_4.replaceAll(regExpression, "");
-        String s_tue_5 =tue_5.replaceAll(regExpression, "");
-        String s_tue_6 =tue_6.replaceAll(regExpression, "");
-        String s_tue_7 =tue_7.replaceAll(regExpression, "");
-        String s_tue_8 =tue_8.replaceAll(regExpression, "");
-        String s_tue_9 =tue_9.replaceAll(regExpression, "");
-
-        /////////////////  WEDNESDAY ////////////////////////
-        String wed_1=et_wed_1.getText().toString();
-        String wed_2=et_wed_2.getText().toString();
-        String wed_3=et_wed_3.getText().toString();
-        String wed_4=et_wed_4.getText().toString();
-        String wed_5=et_wed_5.getText().toString();
-        String wed_6=et_wed_6.getText().toString();
-        String wed_7=et_wed_7.getText().toString();
-        String wed_8=et_wed_8.getText().toString();
-        String wed_9=et_wed_9.getText().toString();
-
-        String s_wed_l = wed_1.replaceAll(regExpression, "");
-        String s_wed_2 = wed_2.replaceAll(regExpression, "");
-        String s_wed_3 =wed_3.replaceAll(regExpression, "");
-        String s_wed_4 =wed_4.replaceAll(regExpression, "");
-        String s_wed_5 =wed_5.replaceAll(regExpression, "");
-        String s_wed_6 =wed_6.replaceAll(regExpression, "");
-        String s_wed_7 =wed_7.replaceAll(regExpression, "");
-        String s_wed_8 =wed_8.replaceAll(regExpression, "");
-        String s_wed_9 =wed_9.replaceAll(regExpression, "");
-
-        /////////////////  THURSDAY ////////////////////////
-        String thu_1=et_thu_1.getText().toString();
-        String thu_2=et_thu_2.getText().toString();
-        String thu_3=et_thu_3.getText().toString();
-        String thu_4=et_thu_4.getText().toString();
-        String thu_5=et_thu_5.getText().toString();
-        String thu_6=et_thu_6.getText().toString();
-        String thu_7=et_thu_7.getText().toString();
-        String thu_8=et_thu_8.getText().toString();
-        String thu_9=et_thu_9.getText().toString();
-
-        String s_thu_l = thu_1.replaceAll(regExpression, "");
-        String s_thu_2 = thu_2.replaceAll(regExpression, "");
-        String s_thu_3 =thu_3.replaceAll(regExpression, "");
-        String s_thu_4 =thu_4.replaceAll(regExpression, "");
-        String s_thu_5 =thu_5.replaceAll(regExpression, "");
-        String s_thu_6 =thu_6.replaceAll(regExpression, "");
-        String s_thu_7 =thu_7.replaceAll(regExpression, "");
-        String s_thu_8 =thu_8.replaceAll(regExpression, "");
-        String s_thu_9 =thu_9.replaceAll(regExpression, "");
-
-        /////////////////  FRIDAY ////////////////////////
-        String fri_1=et_fri_1.getText().toString();
-        String fri_2=et_fri_2.getText().toString();
-        String fri_3=et_fri_3.getText().toString();
-        String fri_4=et_fri_4.getText().toString();
-        String fri_5=et_fri_5.getText().toString();
-        String fri_6=et_fri_6.getText().toString();
-        String fri_7=et_fri_7.getText().toString();
-        String fri_8=et_fri_8.getText().toString();
-        String fri_9=et_fri_9.getText().toString();
-
-        String s_fri_l = fri_1.replaceAll(regExpression, "");
-        String s_fri_2 = fri_2.replaceAll(regExpression, "");
-        String s_fri_3 =fri_3.replaceAll(regExpression, "");
-        String s_fri_4 =fri_4.replaceAll(regExpression, "");
-        String s_fri_5 =fri_5.replaceAll(regExpression, "");
-        String s_fri_6 =fri_6.replaceAll(regExpression, "");
-        String s_fri_7 =fri_7.replaceAll(regExpression, "");
-        String s_fri_8 =fri_8.replaceAll(regExpression, "");
-        String s_fri_9 =fri_9.replaceAll(regExpression, "");
 
         int i;
         for(i=1; i<=8; i++)
