@@ -14,18 +14,6 @@
         android:layout_weight="0.2"
         />
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"
-        android:src="@mipmap/classroomicon512"
-        />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -106,6 +94,19 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3"
+        />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:src="@mipmap/classroomicon512"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         />
 
 

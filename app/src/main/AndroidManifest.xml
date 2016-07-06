@@ -30,7 +30,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".activities.SetWriteKeyActivity"
-            android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"
             />
         <activity
