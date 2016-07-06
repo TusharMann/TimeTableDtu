@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="350dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="50dp"
+        android:translationZ="3dp"
+        card_view:cardElevation="3dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/load_class_id"
+            android:text="Class_Id"
+            android:textSize="10dp"
+            android:layout_margin="5dp"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-bold"
+            android:layout_gravity="center"
+        />
 
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/load_class_id"
-        android:textSize="10dp"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5"/>
-
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:id="@+id/load_class_name"
-        android:textSize="10dp"/>
+        android:text="Class_name"
+        android:textSize="10dp"
+        android:layout_margin="5dp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-bold"
+        android:layout_gravity="center"
+        />
 
 
-    <TextView
+        <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:id="@+id/load_class_api"
-        android:textSize="10dp"/>
+        android:text="Api_Key"
+        android:textSize="10dp"
+        android:layout_margin="5dp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-bold"
+        android:layout_gravity="center"
+        />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
