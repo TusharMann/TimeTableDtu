@@ -43,6 +43,11 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
     FancyButton btnSave;
     EditText etName, etContactNo;
+    String regExpression="(\\r|\\n|\\r\\n)+";
+
+    EditText[][] etMon=new EditText[5][10];
+
+    String[] strMon=new String[10];
 
     //ProgressDialog progressDialog;
 
@@ -96,15 +101,25 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         etName.setFilters(new InputFilter[] {new InputFilter.LengthFilter(30)});
         etContactNo.setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
 
-        et_mon_1=(EditText)findViewById(R.id.et_monday_1);
-        et_mon_2=(EditText)findViewById(R.id.et_monday_2);
-        et_mon_3=(EditText)findViewById(R.id.et_monday_3);
-        et_mon_4=(EditText)findViewById(R.id.et_monday_4);
-        et_mon_5=(EditText)findViewById(R.id.et_monday_5);
-        et_mon_6=(EditText)findViewById(R.id.et_monday_6);
-        et_mon_7=(EditText)findViewById(R.id.et_monday_7);
-        et_mon_8=(EditText)findViewById(R.id.et_monday_8);
-        et_mon_9=(EditText)findViewById(R.id.et_monday_9);
+        for(int i=1; i<=9; i++)
+        {
+            //for monday
+            int ressourceId = getResources().getIdentifier(
+                    "et_monday_"+i,
+                    "id",
+                    getApplicationContext().getPackageName());
+            etMon[i]=(EditText)findViewById(ressourceId);
+        }
+//
+//        et_mon_1=(EditText)findViewById(R.id.et_monday_1);
+//        et_mon_2=(EditText)findViewById(R.id.et_monday_2);
+//        et_mon_3=(EditText)findViewById(R.id.et_monday_3);
+//        et_mon_4=(EditText)findViewById(R.id.et_monday_4);
+//        et_mon_5=(EditText)findViewById(R.id.et_monday_5);
+//        et_mon_6=(EditText)findViewById(R.id.et_monday_6);
+//        et_mon_7=(EditText)findViewById(R.id.et_monday_7);
+//        et_mon_8=(EditText)findViewById(R.id.et_monday_8);
+//        et_mon_9=(EditText)findViewById(R.id.et_monday_9);
 
 
         et_tue_1=(EditText)findViewById(R.id.et_tuesday_1);
@@ -147,15 +162,10 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         et_fri_8=(EditText)findViewById(R.id.et_friday_8);
         et_fri_9=(EditText)findViewById(R.id.et_friday_9);
 
-        et_mon_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_3.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_4.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_5.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_6.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_7.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_mon_9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
+        for(int i=1; i<=9; i++)
+        {
+            etMon[i].setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
+        }
 
         et_tue_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
         et_tue_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
@@ -227,25 +237,34 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     private void getInputFromEditTextsToUpload() {
 
         /////////////////  MONDAY ////////////////////////
-        String mon_1=et_mon_1.getText().toString();
-        String mon_2=et_mon_2.getText().toString();
-        String mon_3=et_mon_3.getText().toString();
-        String mon_4=et_mon_4.getText().toString();
-        String mon_5=et_mon_5.getText().toString();
-        String mon_6=et_mon_6.getText().toString();
-        String mon_7=et_mon_7.getText().toString();
-        String mon_8=et_mon_8.getText().toString();
-        String mon_9=et_mon_9.getText().toString();
 
-        String s_mon_l = mon_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_2 = mon_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_3 =mon_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_4 =mon_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_5 =mon_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_6 =mon_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_7 =mon_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_8 =mon_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_mon_9 =mon_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        for(int i=1; i<=9; i++)
+        {
+            strMon[i]=etMon[i].getText().toString();
+            strMon[i]=strMon[i].replaceAll(regExpression, "");
+        }
+
+//        String mon_1=et_mon_1.getText().toString();
+//        String mon_2=et_mon_2.getText().toString();
+//        String mon_3=et_mon_3.getText().toString();
+//        String mon_4=et_mon_4.getText().toString();
+//        String mon_5=et_mon_5.getText().toString();
+//        String mon_6=et_mon_6.getText().toString();
+//        String mon_7=et_mon_7.getText().toString();
+//        String mon_8=et_mon_8.getText().toString();
+//        String mon_9=et_mon_9.getText().toString();
+
+
+
+//        String s_mon_l = mon_1.replaceAll(regExpression, "");
+//        String s_mon_2 = mon_2.replaceAll(regExpression, "");
+//        String s_mon_3 =mon_3.replaceAll(regExpression, "");
+//        String s_mon_4 =mon_4.replaceAll(regExpression, "");
+//        String s_mon_5 =mon_5.replaceAll(regExpression, "");
+//        String s_mon_6 =mon_6.replaceAll(regExpression, "");
+//        String s_mon_7 =mon_7.replaceAll(regExpression, "");
+//        String s_mon_8 =mon_8.replaceAll(regExpression, "");
+//        String s_mon_9 =mon_9.replaceAll(regExpression, "");
 
         /////////////////  TUESDAY ////////////////////////
         String tue_1=et_tue_1.getText().toString();
@@ -258,15 +277,15 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         String tue_8=et_tue_8.getText().toString();
         String tue_9=et_tue_9.getText().toString();
 
-        String s_tue_l = tue_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_2 = tue_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_3 =tue_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_4 =tue_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_5 =tue_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_6 =tue_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_7 =tue_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_8 =tue_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_tue_9 =tue_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_tue_l = tue_1.replaceAll(regExpression, "");
+        String s_tue_2 = tue_2.replaceAll(regExpression, "");
+        String s_tue_3 =tue_3.replaceAll(regExpression, "");
+        String s_tue_4 =tue_4.replaceAll(regExpression, "");
+        String s_tue_5 =tue_5.replaceAll(regExpression, "");
+        String s_tue_6 =tue_6.replaceAll(regExpression, "");
+        String s_tue_7 =tue_7.replaceAll(regExpression, "");
+        String s_tue_8 =tue_8.replaceAll(regExpression, "");
+        String s_tue_9 =tue_9.replaceAll(regExpression, "");
 
         /////////////////  WEDNESDAY ////////////////////////
         String wed_1=et_wed_1.getText().toString();
@@ -279,15 +298,15 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         String wed_8=et_wed_8.getText().toString();
         String wed_9=et_wed_9.getText().toString();
 
-        String s_wed_l = wed_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_2 = wed_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_3 =wed_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_4 =wed_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_5 =wed_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_6 =wed_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_7 =wed_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_8 =wed_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_wed_9 =wed_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_wed_l = wed_1.replaceAll(regExpression, "");
+        String s_wed_2 = wed_2.replaceAll(regExpression, "");
+        String s_wed_3 =wed_3.replaceAll(regExpression, "");
+        String s_wed_4 =wed_4.replaceAll(regExpression, "");
+        String s_wed_5 =wed_5.replaceAll(regExpression, "");
+        String s_wed_6 =wed_6.replaceAll(regExpression, "");
+        String s_wed_7 =wed_7.replaceAll(regExpression, "");
+        String s_wed_8 =wed_8.replaceAll(regExpression, "");
+        String s_wed_9 =wed_9.replaceAll(regExpression, "");
 
         /////////////////  THURSDAY ////////////////////////
         String thu_1=et_thu_1.getText().toString();
@@ -300,15 +319,15 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         String thu_8=et_thu_8.getText().toString();
         String thu_9=et_thu_9.getText().toString();
 
-        String s_thu_l = thu_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_2 = thu_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_3 =thu_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_4 =thu_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_5 =thu_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_6 =thu_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_7 =thu_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_8 =thu_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_thu_9 =thu_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_thu_l = thu_1.replaceAll(regExpression, "");
+        String s_thu_2 = thu_2.replaceAll(regExpression, "");
+        String s_thu_3 =thu_3.replaceAll(regExpression, "");
+        String s_thu_4 =thu_4.replaceAll(regExpression, "");
+        String s_thu_5 =thu_5.replaceAll(regExpression, "");
+        String s_thu_6 =thu_6.replaceAll(regExpression, "");
+        String s_thu_7 =thu_7.replaceAll(regExpression, "");
+        String s_thu_8 =thu_8.replaceAll(regExpression, "");
+        String s_thu_9 =thu_9.replaceAll(regExpression, "");
 
         /////////////////  FRIDAY ////////////////////////
         String fri_1=et_fri_1.getText().toString();
@@ -321,17 +340,24 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         String fri_8=et_fri_8.getText().toString();
         String fri_9=et_fri_9.getText().toString();
 
-        String s_fri_l = fri_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_2 = fri_2.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_3 =fri_3.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_4 =fri_4.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_5 =fri_5.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_6 =fri_6.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_7 =fri_7.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_8 =fri_8.replaceAll("(\\r|\\n|\\r\\n)+", "");
-        String s_fri_9 =fri_9.replaceAll("(\\r|\\n|\\r\\n)+", "");
+        String s_fri_l = fri_1.replaceAll(regExpression, "");
+        String s_fri_2 = fri_2.replaceAll(regExpression, "");
+        String s_fri_3 =fri_3.replaceAll(regExpression, "");
+        String s_fri_4 =fri_4.replaceAll(regExpression, "");
+        String s_fri_5 =fri_5.replaceAll(regExpression, "");
+        String s_fri_6 =fri_6.replaceAll(regExpression, "");
+        String s_fri_7 =fri_7.replaceAll(regExpression, "");
+        String s_fri_8 =fri_8.replaceAll(regExpression, "");
+        String s_fri_9 =fri_9.replaceAll(regExpression, "");
 
-        fixedTimeTable+=s_mon_l+yen+s_mon_2+yen+s_mon_3+yen+s_mon_4+yen+s_mon_5+yen+s_mon_6+yen+s_mon_7+yen+s_mon_8+yen+s_mon_9+euro;
+        int i;
+        for(i=1; i<=8; i++)
+        {
+            fixedTimeTable=fixedTimeTable+strMon[i]+yen;
+        }
+        fixedTimeTable=fixedTimeTable+strMon[i]+euro;
+
+        //fixedTimeTable+=s_mon_l+yen+s_mon_2+yen+s_mon_3+yen+s_mon_4+yen+s_mon_5+yen+s_mon_6+yen+s_mon_7+yen+s_mon_8+yen+s_mon_9+euro;
 
         fixedTimeTable+=s_tue_l+yen+s_tue_2+yen+s_tue_3+yen+s_tue_4+yen+s_tue_5+yen+s_tue_6+yen+s_tue_7+yen+s_tue_8+yen+s_tue_9+euro;
 
@@ -553,16 +579,22 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         ////monday
         singleDay=DaysList[1];
         singleDaySlotsList=singleDay.split(sp.getPrimary());
-        et_mon_1.setText(singleDaySlotsList[0]);
-        et_mon_2.setText(singleDaySlotsList[1]);
-        et_mon_3.setText(singleDaySlotsList[2]);
-        et_mon_4.setText(singleDaySlotsList[3]);
-        et_mon_5.setText(singleDaySlotsList[4]);
-        et_mon_6.setText(singleDaySlotsList[5]);
-        et_mon_7.setText(singleDaySlotsList[6]);
-        et_mon_8.setText(singleDaySlotsList[7]);
-        et_mon_9.setText(singleDaySlotsList[8]);        
-        //--monday
+
+        for(int i=1; i<=9; i++)
+        {
+            etMon[i].setText(singleDaySlotsList[i-1]);
+        }
+
+//        et_mon_1.setText(singleDaySlotsList[0]);
+//        et_mon_2.setText(singleDaySlotsList[1]);
+//        et_mon_3.setText(singleDaySlotsList[2]);
+//        et_mon_4.setText(singleDaySlotsList[3]);
+//        et_mon_5.setText(singleDaySlotsList[4]);
+//        et_mon_6.setText(singleDaySlotsList[5]);
+//        et_mon_7.setText(singleDaySlotsList[6]);
+//        et_mon_8.setText(singleDaySlotsList[7]);
+//        et_mon_9.setText(singleDaySlotsList[8]);
+//        //--monday
 
         ////tuesday
         singleDay=DaysList[2];
