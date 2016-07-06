@@ -262,7 +262,6 @@ public class UpdateSingleDayTTActivity extends AppCompatActivity {
     private void setSelectedDayTimeTableToViews(JSONObject serverResponse) {
 
         try {
-
             //tvLastUpdatedOn.setText("");
             selectedDayTimeTableString=serverResponse.getString("field"+dayNo);
 
