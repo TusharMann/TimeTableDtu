@@ -1,5 +1,6 @@
 package timetable.insectiousapp.com.timetable.activities;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     String yen="¥";
     String fixedTimeTable=euro;
     String CRDetails;
+    ProgressDialog progressDialog;
 
     String writeKey, classId;
     String field1, field2, field3, field4, field5, field6, field7, field8;
@@ -58,6 +60,10 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_time_table);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+
 
         Log.i("crashbug", "update default timetable OnCreate");
 
@@ -442,7 +448,12 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
     /////////fetching timetable
     public void requestTimeTableFromServer() {
-       // progressDialog.setTitle("Fetching Timetable");
+
+        progressDialog.setTitle("Fetching Timetable");
+        progressDialog.setMessage("Please Wait...");
+        progressDialog.show();
+
+        // progressDialog.setTitle("Fetching Timetable");
         //progressDialog.setMessage("Please Wait...");
        // progressDialog.show();
 
@@ -484,7 +495,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
             @Override
             public void onResponse(JSONObject serverResponse) {
 
-                //progressDialog.hide();
+                progressDialog.hide();
 
                 try {
                     field1=serverResponse.getString("field1");
@@ -522,7 +533,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
                 Log.i("responsecheckingg", "Server Error response : " + error.toString());
                 btnSave.setEnabled(false);
                 Toast.makeText(getApplicationContext(), "Cannot fetch timetable , network/class id error", Toast.LENGTH_LONG).show();
-               // progressDialog.hide();
+                progressDialog.hide();
             }
         };
 
