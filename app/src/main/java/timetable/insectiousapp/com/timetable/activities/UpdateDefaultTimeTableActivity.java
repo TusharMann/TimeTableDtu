@@ -160,22 +160,23 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
             }
         }
 
+        int j;
+
+        for(int i=1; i<=5; i++) {
+            for (j = 1; j <= 8; j++)
+            {
+                fixedTimeTable=fixedTimeTable+strMon[i][j]+yen;
+            }
+            fixedTimeTable=fixedTimeTable+strMon[i][j]+euro;
+
+        }
+
         int i;
         for(i=1; i<=8; i++)
         {
             fixedTimeTable=fixedTimeTable+strMon[i]+yen;
         }
         fixedTimeTable=fixedTimeTable+strMon[i]+euro;
-
-        //fixedTimeTable+=s_mon_l+yen+s_mon_2+yen+s_mon_3+yen+s_mon_4+yen+s_mon_5+yen+s_mon_6+yen+s_mon_7+yen+s_mon_8+yen+s_mon_9+euro;
-
-        fixedTimeTable+=s_tue_l+yen+s_tue_2+yen+s_tue_3+yen+s_tue_4+yen+s_tue_5+yen+s_tue_6+yen+s_tue_7+yen+s_tue_8+yen+s_tue_9+euro;
-
-        fixedTimeTable+=s_wed_l+yen+s_wed_2+yen+s_wed_3+yen+s_wed_4+yen+s_wed_5+yen+s_wed_6+yen+s_wed_7+yen+s_wed_8+yen+s_wed_9+euro;
-
-        fixedTimeTable+=s_thu_l+yen+s_thu_2+yen+s_thu_3+yen+s_thu_4+yen+s_thu_5+yen+s_thu_6+yen+s_thu_7+yen+s_thu_8+yen+s_thu_9+euro;
-
-        fixedTimeTable+=s_fri_l+yen+s_fri_2+yen+s_fri_3+yen+s_fri_4+yen+s_fri_5+yen+s_fri_6+yen+s_fri_7+yen+s_fri_8+yen+s_fri_9+euro;
 
         CRDetails=etName.getText().toString()+euro+etContactNo.getText().toString();
 
@@ -209,33 +210,9 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         StringRequest myReq = new StringRequest(Request.Method.POST, serverPostDataUrl
                 , reqCreateNewAccountSuccessListener(), reqCreateNewAccountErrorListener()) {
 
-//            public String getBodyContentType() {
-//                return "application/json; charset=utf-8";
-//            }
-//
-//            @Override
-//            public Map<String, String> getHeaders() throws AuthFailureError {
-//                Map<String, String> headers = new HashMap<String, String>();
-//
-//                headers.put("Content-Type", "application/json");
-//
-//                return headers;
-//            }
-
             protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
 
-//                params.put("api_key", authorizationKey);
-//                params.put("name", spYear.getSelectedItem().toString()+"-"+spBranch.getSelectedItem().toString()+"-"+spBatch.getSelectedItem().toString());
-//                params.put("field1", "Field1");
-//                params.put("field2", "Field2");
-//                params.put("field3", "Field3");
-//                params.put("field4", "Field4");
-//                params.put("field5", "Field5");
-//                params.put("field6", "Field6");
-//                params.put("field7", "Field7");
-//                params.put("field8", "Field8");
-//                params.put("public_flag", "true");
 
                 return params;
             }
@@ -390,78 +367,17 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         singleDay=DaysList[1];
         singleDaySlotsList=singleDay.split(sp.getPrimary());
 
-        for(int i=1; i<=9; i++)
-        {
-            etMon[i].setText(singleDaySlotsList[i-1]);
+        for(int i=1; i<=5; i++) {
+
+            singleDay=DaysList[i];
+            singleDaySlotsList=singleDay.split(sp.getPrimary());
+
+            for (int j = 1; j <= 9; j++)
+            {
+                etMon[i][j].setText(singleDaySlotsList[j-1]);
+            }
         }
-
-//        et_mon_1.setText(singleDaySlotsList[0]);
-//        et_mon_2.setText(singleDaySlotsList[1]);
-//        et_mon_3.setText(singleDaySlotsList[2]);
-//        et_mon_4.setText(singleDaySlotsList[3]);
-//        et_mon_5.setText(singleDaySlotsList[4]);
-//        et_mon_6.setText(singleDaySlotsList[5]);
-//        et_mon_7.setText(singleDaySlotsList[6]);
-//        et_mon_8.setText(singleDaySlotsList[7]);
-//        et_mon_9.setText(singleDaySlotsList[8]);
-//        //--monday
-
-        ////tuesday
-        singleDay=DaysList[2];
-        singleDaySlotsList=singleDay.split(sp.getPrimary());
-        et_tue_1.setText(singleDaySlotsList[0]);
-        et_tue_2.setText(singleDaySlotsList[1]);
-        et_tue_3.setText(singleDaySlotsList[2]);
-        et_tue_4.setText(singleDaySlotsList[3]);
-        et_tue_5.setText(singleDaySlotsList[4]);
-        et_tue_6.setText(singleDaySlotsList[5]);
-        et_tue_7.setText(singleDaySlotsList[6]);
-        et_tue_8.setText(singleDaySlotsList[7]);
-        et_tue_9.setText(singleDaySlotsList[8]);
-        //--tuesday
-
-        ////wednesday
-        singleDay=DaysList[3];
-        singleDaySlotsList=singleDay.split(sp.getPrimary());
-        et_wed_1.setText(singleDaySlotsList[0]);
-        et_wed_2.setText(singleDaySlotsList[1]);
-        et_wed_3.setText(singleDaySlotsList[2]);
-        et_wed_4.setText(singleDaySlotsList[3]);
-        et_wed_5.setText(singleDaySlotsList[4]);
-        et_wed_6.setText(singleDaySlotsList[5]);
-        et_wed_7.setText(singleDaySlotsList[6]);
-        et_wed_8.setText(singleDaySlotsList[7]);
-        et_wed_9.setText(singleDaySlotsList[8]);
-        //--wednesday
-
-        ////thursday
-        singleDay=DaysList[4];
-        singleDaySlotsList=singleDay.split(sp.getPrimary());
-        et_thu_1.setText(singleDaySlotsList[0]);
-        et_thu_2.setText(singleDaySlotsList[1]);
-        et_thu_3.setText(singleDaySlotsList[2]);
-        et_thu_4.setText(singleDaySlotsList[3]);
-        et_thu_5.setText(singleDaySlotsList[4]);
-        et_thu_6.setText(singleDaySlotsList[5]);
-        et_thu_7.setText(singleDaySlotsList[6]);
-        et_thu_8.setText(singleDaySlotsList[7]);
-        et_thu_9.setText(singleDaySlotsList[8]);
-        //--thursday
-
-        ////friday
-        singleDay=DaysList[5];
-        singleDaySlotsList=singleDay.split(sp.getPrimary());
-        et_fri_1.setText(singleDaySlotsList[0]);
-        et_fri_2.setText(singleDaySlotsList[1]);
-        et_fri_3.setText(singleDaySlotsList[2]);
-        et_fri_4.setText(singleDaySlotsList[3]);
-        et_fri_5.setText(singleDaySlotsList[4]);
-        et_fri_6.setText(singleDaySlotsList[5]);
-        et_fri_7.setText(singleDaySlotsList[6]);
-        et_fri_8.setText(singleDaySlotsList[7]);
-        et_fri_9.setText(singleDaySlotsList[8]);
-        //--friday
-
+        
         String[] details=CrDetails.split(sp.getMain());
         etName.setText(details[0]);
         etContactNo.setText(details[1]);
