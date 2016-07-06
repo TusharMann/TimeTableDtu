@@ -45,9 +45,9 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
     EditText etName, etContactNo;
     String regExpression="(\\r|\\n|\\r\\n)+";
 
-    EditText[][] etMon=new EditText[5][10];
+    EditText[][] etMon=new EditText[6][10];
 
-    String[][] strMon=new String[5][10];
+    String[][] strMon=new String[6][10];
 
     //ProgressDialog progressDialog;
 
@@ -171,12 +171,6 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
 
         }
 
-        int i;
-        for(i=1; i<=8; i++)
-        {
-            fixedTimeTable=fixedTimeTable+strMon[i]+yen;
-        }
-        fixedTimeTable=fixedTimeTable+strMon[i]+euro;
 
         CRDetails=etName.getText().toString()+euro+etContactNo.getText().toString();
 
@@ -377,7 +371,7 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
                 etMon[i][j].setText(singleDaySlotsList[j-1]);
             }
         }
-        
+
         String[] details=CrDetails.split(sp.getMain());
         etName.setText(details[0]);
         etContactNo.setText(details[1]);
