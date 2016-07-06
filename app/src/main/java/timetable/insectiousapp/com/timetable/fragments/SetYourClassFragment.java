@@ -168,6 +168,12 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
 
             Toast.makeText(getActivity(), "Class Id updated",Toast.LENGTH_SHORT).show();
 
+                SharedPreferences sp1 =getActivity().getSharedPreferences("CheckDatabase",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = sp1.edit();
+                editor2.putBoolean("CheckKey", false);
+                editor2.commit();
+
+
                 Intent i = getActivity().getBaseContext().getPackageManager()
                         .getLaunchIntentForPackage( getActivity().getBaseContext().getPackageName() );
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

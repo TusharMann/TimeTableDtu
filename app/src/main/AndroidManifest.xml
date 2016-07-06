@@ -35,9 +35,9 @@
             android:name=".activities.UpdateDefaultTimeTableActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustResize" />
-
         <activity android:name=".activities.LoadList" />
-        <activity android:name=".activities.WeekDayTimeTableActivity"></activity>
+        <activity android:name=".activities.WeekDayTimeTableActivity" />
+        <activity android:name=".activities.SelectedIdTimetable"></activity>
     </application>
 
 </manifest>

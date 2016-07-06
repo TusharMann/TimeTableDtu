@@ -2,8 +2,7 @@ package timetable.insectiousapp.com.timetable.fragments;
 
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -25,14 +24,15 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.others.ClassroomListAdapter;
+import timetable.insectiousapp.com.timetable.activities.SelectedIdTimetable;
 import timetable.insectiousapp.com.timetable.others.Classroom;
-import timetable.insectiousapp.com.timetable.others.SharedPreferencesFiles;
+import timetable.insectiousapp.com.timetable.others.ClassroomListAdapter;
 import timetable.insectiousapp.com.timetable.volley.MyVolley;
 
 /**
@@ -75,20 +75,10 @@ public class AllClassroomFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Classroom c=adapter.getItem(position);
-                String cid=c.id;
-
-                SharedPreferencesFiles sharedPreferencesFiles = new SharedPreferencesFiles();
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPreferencesFiles.getSPClassId(), Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(sharedPreferencesFiles.getClassId(),cid );
-                editor.commit();
-
-                Toast.makeText(getActivity(), "Class Id updated",Toast.LENGTH_SHORT).show();
-
-                DefaultTimetableFragment fragment=new DefaultTimetableFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
-                getActivity().setTitle("Default Timetable");
-
+                Intent i=new Intent();
+                i.setClass(getContext(), SelectedIdTimetable.class);
+                i.putExtra("ClassroomObject",c);
+                startActivity(i);
 
 
             }

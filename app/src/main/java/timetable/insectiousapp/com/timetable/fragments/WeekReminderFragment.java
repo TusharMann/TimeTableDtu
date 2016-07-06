@@ -242,7 +242,7 @@ public class WeekReminderFragment extends Fragment {
                     fri=field5.split(specialSymbolsAndOthers.getMain());
 
                     frirem=fri[10];
-                    frirem=fri[11];
+                    friupd=fri[11];
 
                     reminder_slot5.setText(frirem);
                     update_slot5.setText(friupd);
