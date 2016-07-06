@@ -101,112 +101,26 @@ public class UpdateDefaultTimeTableActivity extends AppCompatActivity implements
         etName.setFilters(new InputFilter[] {new InputFilter.LengthFilter(30)});
         etContactNo.setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
 
-        for(int i=1; i<=9; i++)
+        for(int i=1; i<=5; i++)
         {
-            //for monday
-            int ressourceId = getResources().getIdentifier(
-                    "et_monday_"+i,
-                    "id",
-                    getApplicationContext().getPackageName());
-            etMon[i]=(EditText)findViewById(ressourceId);
-        }
-//
-//        et_mon_1=(EditText)findViewById(R.id.et_monday_1);
-//        et_mon_2=(EditText)findViewById(R.id.et_monday_2);
-//        et_mon_3=(EditText)findViewById(R.id.et_monday_3);
-//        et_mon_4=(EditText)findViewById(R.id.et_monday_4);
-//        et_mon_5=(EditText)findViewById(R.id.et_monday_5);
-//        et_mon_6=(EditText)findViewById(R.id.et_monday_6);
-//        et_mon_7=(EditText)findViewById(R.id.et_monday_7);
-//        et_mon_8=(EditText)findViewById(R.id.et_monday_8);
-//        et_mon_9=(EditText)findViewById(R.id.et_monday_9);
-
-
-        et_tue_1=(EditText)findViewById(R.id.et_tuesday_1);
-        et_tue_2=(EditText)findViewById(R.id.et_tuesday_2);
-        et_tue_3=(EditText)findViewById(R.id.et_tuesday_3);
-        et_tue_4=(EditText)findViewById(R.id.et_tuesday_4);
-        et_tue_5=(EditText)findViewById(R.id.et_tuesday_5);
-        et_tue_6=(EditText)findViewById(R.id.et_tuesday_6);
-        et_tue_7=(EditText)findViewById(R.id.et_tuesday_7);
-        et_tue_8=(EditText)findViewById(R.id.et_tuesday_8);
-        et_tue_9=(EditText)findViewById(R.id.et_tuesday_9);
-
-        et_wed_1=(EditText)findViewById(R.id.et_wednesday_1);
-        et_wed_2=(EditText)findViewById(R.id.et_wednesday_2);
-        et_wed_3=(EditText)findViewById(R.id.et_wednesday_3);
-        et_wed_4=(EditText)findViewById(R.id.et_wednesday_4);
-        et_wed_5=(EditText)findViewById(R.id.et_wednesday_5);
-        et_wed_6=(EditText)findViewById(R.id.et_wednesday_6);
-        et_wed_7=(EditText)findViewById(R.id.et_wednesday_7);
-        et_wed_8=(EditText)findViewById(R.id.et_wednesday_8);
-        et_wed_9=(EditText)findViewById(R.id.et_wednesday_9);
-
-        et_thu_1=(EditText)findViewById(R.id.et_thursday_1);
-        et_thu_2=(EditText)findViewById(R.id.et_thursday_2);
-        et_thu_3=(EditText)findViewById(R.id.et_thursday_3);
-        et_thu_4=(EditText)findViewById(R.id.et_thursday_4);
-        et_thu_5=(EditText)findViewById(R.id.et_thursday_5);
-        et_thu_6=(EditText)findViewById(R.id.et_thursday_6);
-        et_thu_7=(EditText)findViewById(R.id.et_thursday_7);
-        et_thu_8=(EditText)findViewById(R.id.et_thursday_8);
-        et_thu_9=(EditText)findViewById(R.id.et_thursday_9);
-
-        et_fri_1=(EditText)findViewById(R.id.et_friday_1);
-        et_fri_2=(EditText)findViewById(R.id.et_friday_2);
-        et_fri_3=(EditText)findViewById(R.id.et_friday_3);
-        et_fri_4=(EditText)findViewById(R.id.et_friday_4);
-        et_fri_5=(EditText)findViewById(R.id.et_friday_5);
-        et_fri_6=(EditText)findViewById(R.id.et_friday_6);
-        et_fri_7=(EditText)findViewById(R.id.et_friday_7);
-        et_fri_8=(EditText)findViewById(R.id.et_friday_8);
-        et_fri_9=(EditText)findViewById(R.id.et_friday_9);
-
-        for(int i=1; i<=9; i++)
-        {
-            etMon[i].setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
+            for (int j = 1; j <= 9; j++) {
+                //for monday
+                int ressourceId = getResources().getIdentifier(
+                        "et_" + i + "_" + j,
+                        "id",
+                        getApplicationContext().getPackageName());
+                etMon[i][j] = (EditText) findViewById(ressourceId);
+            }
         }
 
-        et_tue_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_3.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_4.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_5.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_6.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_7.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_tue_9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
+        for(int i=1; i<=5; i++) {
+            for (int j = 1; j <= 9; j++)
+            {
+                etMon[i][j].setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
+            }
+        }
 
-        et_wed_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_3.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_4.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_5.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_6.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_7.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_wed_9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-
-        et_thu_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_3.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_4.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_5.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_6.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_7.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_thu_9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-
-        et_fri_1.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_2.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_3.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_4.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_5.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_6.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_7.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_8.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-        et_fri_9.setFilters(new InputFilter[] {new InputFilter.AllCaps(), new InputFilter.LengthFilter(17)});
-
+     
     }
 
 
