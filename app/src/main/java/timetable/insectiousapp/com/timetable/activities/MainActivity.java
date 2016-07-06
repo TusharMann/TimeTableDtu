@@ -255,8 +255,8 @@ public class MainActivity extends AppCompatActivity
         db.execSQL("DELETE FROM "+TT_Sqlite.tname);
         db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
 
-        DefaultTimetableFragment fragment=new DefaultTimetableFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment);
+        DefaultTimetableFragment defaultTimetableFragment = new DefaultTimetableFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, defaultTimetableFragment).commit();
         setTitle("Default Timetable");
 
 
