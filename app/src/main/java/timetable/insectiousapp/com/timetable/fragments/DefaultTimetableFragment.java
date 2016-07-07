@@ -329,14 +329,11 @@ public class DefaultTimetableFragment extends Fragment {
              }
 
             else{
+                 TT_Sqlite sqlite=new TT_Sqlite(getContext(),1);
+                 SQLiteDatabase db=sqlite.getWritableDatabase();
 
-//            TT_Sqlite sqlite1=new TT_Sqlite(getContext(),1);
-//            SQLiteDatabase sb=sqlite1.getWritableDatabase();
-//
-//
-//            String query="DROP TABLE "+TT_Sqlite.tname+" IF EXISTS";
-//            sb.execSQL(query);
-//
+                 db.execSQL("DELETE FROM "+TT_Sqlite.tname);
+                 db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
 
 
                  requestFetchTimeTableFromServer();
