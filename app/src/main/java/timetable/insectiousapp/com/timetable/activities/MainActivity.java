@@ -238,7 +238,6 @@ public class MainActivity extends AppCompatActivity
 
     public void refresh(){
         Log.i("Refresh","Inside refresh function");
-
         SharedPreferences sp1 = getSharedPreferences("CheckDatabase", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp1.edit();
         editor.putBoolean("CheckKey", false);
