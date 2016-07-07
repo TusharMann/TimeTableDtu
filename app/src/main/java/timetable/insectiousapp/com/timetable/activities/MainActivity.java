@@ -1,7 +1,6 @@
 package timetable.insectiousapp.com.timetable.activities;
 
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import timetable.insectiousapp.com.timetable.R;
-import timetable.insectiousapp.com.timetable.Sqlite.TT_Sqlite;
 import timetable.insectiousapp.com.timetable.fragments.AllClassroomFragment;
 import timetable.insectiousapp.com.timetable.fragments.CreateNewClassFragment;
 import timetable.insectiousapp.com.timetable.fragments.DefaultTimetableFragment;
@@ -165,7 +163,10 @@ public class MainActivity extends AppCompatActivity
         if(id == R.id.menu_refresh){
 
             Log.i("Refresh","Clicked");
-            refresh();
+
+            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+            setTitle("Default Timetable");
 
             return true;
 
@@ -236,24 +237,5 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void refresh(){
-        Log.i("Refresh","Inside refresh function");
-        SharedPreferences sp1 = getSharedPreferences("CheckDatabase", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp1.edit();
-        editor.putBoolean("CheckKey", false);
-        editor.commit();
-
-        TT_Sqlite sqlite=new TT_Sqlite(this,1);
-        SQLiteDatabase db=sqlite.getWritableDatabase();
-
-        db.execSQL("DELETE FROM "+TT_Sqlite.tname);
-        db.execSQL("DELETE FROM "+TT_Sqlite.tdet);
-
-        DefaultTimetableFragment defaultTimetableFragment = new DefaultTimetableFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout, defaultTimetableFragment).commit();
-        setTitle("Default Timetable");
-
-
-    }
 
 }

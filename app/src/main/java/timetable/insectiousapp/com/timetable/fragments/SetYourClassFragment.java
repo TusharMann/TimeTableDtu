@@ -178,11 +178,11 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
                         .getLaunchIntentForPackage( getActivity().getBaseContext().getPackageName() );
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getActivity().finish();
-                startActivity(i);
-
-            //DefaultTimetableFragment fragment=new DefaultTimetableFragment();
-           // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
-            //getActivity().setTitle("Default Timetable");
+               startActivity(i);
+//
+//            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainactivity_framelayout,fragment).commit();
+//            getActivity().setTitle("Default Timetable");
 
             }
 
