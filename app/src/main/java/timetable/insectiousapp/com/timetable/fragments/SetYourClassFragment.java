@@ -2,6 +2,7 @@ package timetable.insectiousapp.com.timetable.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -173,15 +174,15 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
                 editor2.commit();
 
 
-//                Intent i = getActivity().getBaseContext().getPackageManager()
-//                        .getLaunchIntentForPackage( getActivity().getBaseContext().getPackageName() );
-//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                getActivity().finish();
-//               startActivity(i);
+                Intent i = getActivity().getBaseContext().getPackageManager()
+                        .getLaunchIntentForPackage( getActivity().getBaseContext().getPackageName() );
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                getActivity().finish();
+               startActivity(i);
 
-            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.mainactivity_framelayout,fragment).commit();
-            getActivity().setTitle("Default Timetable");
+//            DefaultTimetableFragment fragment=new DefaultTimetableFragment();
+//            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.mainactivity_framelayout,fragment).commit();
+//            getActivity().setTitle("Default Timetable");
 
             }
 
