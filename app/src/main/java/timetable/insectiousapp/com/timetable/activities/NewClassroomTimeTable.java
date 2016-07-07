@@ -222,14 +222,14 @@ public class NewClassroomTimeTable extends AppCompatActivity implements View.OnC
 
         /////////////////  TUESDAY ////////////////////////
         String tue_1=et_tue_1.getText().toString();
-        String tue_2=et_mon_2.getText().toString();
-        String tue_3=et_mon_3.getText().toString();
-        String tue_4=et_mon_4.getText().toString();
-        String tue_5=et_mon_5.getText().toString();
-        String tue_6=et_mon_6.getText().toString();
-        String tue_7=et_mon_7.getText().toString();
-        String tue_8=et_mon_8.getText().toString();
-        String tue_9=et_mon_9.getText().toString();
+        String tue_2=et_tue_2.getText().toString();
+        String tue_3=et_tue_3.getText().toString();
+        String tue_4=et_tue_4.getText().toString();
+        String tue_5=et_tue_5.getText().toString();
+        String tue_6=et_tue_6.getText().toString();
+        String tue_7=et_tue_7.getText().toString();
+        String tue_8=et_tue_8.getText().toString();
+        String tue_9=et_tue_9.getText().toString();
 
         String s_tue_l = tue_1.replaceAll("(\\r|\\n|\\r\\n)+", "");
         String s_tue_2 = tue_2.replaceAll("(\\r|\\n|\\r\\n)+", "");

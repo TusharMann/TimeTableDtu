@@ -110,7 +110,6 @@ public class NewClassroomDetailActivity extends AppCompatActivity implements Vie
                 i.setClass(this, NewClassroomTimeTable.class);
                 i.putExtra("write_api_key_from_detail_activity", writeKey);
                 startActivity(i);
-                finish();
 
                 break;
 
