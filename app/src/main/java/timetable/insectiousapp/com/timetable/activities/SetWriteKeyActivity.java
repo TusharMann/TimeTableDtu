@@ -38,7 +38,15 @@ public class SetWriteKeyActivity extends AppCompatActivity {
         SharedPreferencesFiles sharedPreferencesFiles=new SharedPreferencesFiles();
         SharedPreferences sharedPreferences=getSharedPreferences(sharedPreferencesFiles.getSPWriteKey(), 0);
         String classId=sharedPreferences.getString(sharedPreferencesFiles.getWriteKey(), "Not set Yet");
-        etWriteKey.setText(classId);
+
+        if(classId.contentEquals("Not set Yet")){
+            etWriteKey.setHint("Not Yet Set");
+        }
+
+        else{
+            etWriteKey.setText(classId);
+        }
+
 
         btnLoad.setOnClickListener(new View.OnClickListener() {
             @Override
