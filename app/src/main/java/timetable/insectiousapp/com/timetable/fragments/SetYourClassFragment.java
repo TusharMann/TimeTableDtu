@@ -63,7 +63,15 @@ public class SetYourClassFragment extends Fragment implements View.OnClickListen
         SharedPreferencesFiles sharedPreferencesFiles=new SharedPreferencesFiles();
         SharedPreferences sharedPreferences=getActivity().getSharedPreferences(sharedPreferencesFiles.getSPClassId(), 0);
         String classId=sharedPreferences.getString(sharedPreferencesFiles.getClassId(), "Not set Yet");
-        etClassId.setText(classId);
+
+        if(classId.contentEquals("Not set Yet")){
+            etClassId.setHint("Not Yet Set");
+        }
+
+        else{
+            etClassId.setText(classId);
+        }
+
 
 
         return v;
